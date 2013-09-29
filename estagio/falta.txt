@@ -1,9 +1,39 @@
-cadastro de Disciplina
+cadastro de Afastamento
 
 	- falta confirmações
-	- falta desativar campo de codigo
-	-falta o select do combobox
+	-falta edições
+	-falta a exclusoes
 
+
+
+cadastro de areas 
+
+	- OK
+
+
+cadastro de campus
+
+	-OK
+
+
+
+Cadastro de curso
+
+
+cadastro de titulacao
+	
+	-ok
+
+
+
+
+
+
+cadastro de disciplinas (mais completo até agora seguir como exemplo)
+
+	-falta retornar o combobox
+	-tem um erro q nao dá pra ver no debug(muito rápido)
+	-falta o select do combobox
 
 Cadastro de Dependentes
 
@@ -15,19 +45,11 @@ Cadastro de Dependentes
 
 
 
+cadastro de professor
 
-cadastro de Afastamento
-
-	- falta confirmações
-	-falta edições
-	-falta a exclusoes
+	-fata os combobox
 
 
-cadastro de usuario
-
-	- falta confirmações
-	-falta edições
-	-falta a exclusoes
 
 cadastro de progressoes carreira
 
@@ -36,9 +58,16 @@ cadastro de progressoes carreira
 	-falta a exclusoes
 
 
-cadastro de disciplinas (mais completo até agora seguir como exemplo)
 
-	-falta retornar o combobox
-	-tem um erro q nao dá pra ver no debug(muito rápido)
+cadastro de usuario
+
+	- falta confirmações
+	-falta edições
+	-falta a exclusoes
+
+
+
+
+
 
 	
