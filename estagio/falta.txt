@@ -36,4 +36,9 @@ cadastro de progressoes carreira
 	-falta a exclusoes
 
 
+cadastro de disciplinas (mais completo até agora seguir como exemplo)
+
+	-falta retornar o combobox
+	-tem um erro q nao dá pra ver no debug(muito rápido)
+
 	
