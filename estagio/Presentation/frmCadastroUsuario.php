@@ -43,6 +43,10 @@
            
            
            
+           $(document).ready(function() {
+                $('table#tbl tr:odd').addClass('impar');
+                $('table#tbl tr:even').addClass('par');
+         });
            
   
         
@@ -58,7 +62,7 @@
                       action="./../Controller/CtlCadastroUsuario.php"  onsubmit="return valida(this);">
                     
                     <label name="usuario" for="funcionario">Nome do Funcionário *:</label><br />
-                    <select id="funcionario" name="funcionario"  class="input-div" required="">
+                    <select id="funcionario" name="funcionario"  class="input-div" required="" />
                         <option selected value="0">Selecione</option>
                         
                         <?php
@@ -85,7 +89,7 @@
                     <label name="senha" for="senha">Senha *:</label> <br/>
                     <input type="password" name="senha" id="senha" size="50" required="" placeholder="Senha" class="input-div"/><br />
                     <label name="confirmarSenha" for="confirmarSenha">Confirmação de Senha *:</label><br/>
-                    <input type="password" name="confirmarSenha" id="confirmarSenha" size="50" required="" placeholder="Digite Novamente" class="input-div"/> <br />
+                    <input type="password" name="confirmarSenha" id="confirmarSenha" size="50" required="" placeholder="Digite Novamente" class="input-div" style="position: absolute; left: 65px"/> <br /><br />
                     <input type="submit" name="Cadastrar"  class="botao" value="Cadastrar"/>
                     
                 </form>
@@ -106,15 +110,15 @@
                 echo	"<table class='tbl' name='tbl' id='tbl' border='1' >";
 			echo		"<tr>";
 			echo			"<td class='nomeCampus'  ALIGN=MIDDLE WIDTH=30 ><b>ID<b /></td>";	
-                        echo                        "<td class='nomeCampus' colspan='70' ALIGN=MIDDLE WIDTH=600><b>Usuário<b /></td>";	
-                        echo                        "<td class='nomeCampus' colspan='70' ALIGN=MIDDLE WIDTH=100><b>Nível<b /></td>";
+                        echo                        "<td class='nomeCampus' colspan='70' ALIGN=MIDDLE WIDTH=800><b>Usuário<b /></td>";	
+                        echo                        "<td class='nomeCampus' colspan='70' ALIGN=MIDDLE WIDTH=200><b>Nível<b /></td>";
 			echo		"</tr>";
 		            
                 foreach ($usuario as $a){
                                 echo		"<tr class='linha-td'>";
-				echo			"<td class='linha-td' ALIGN=MIDDLE WIDTH=10>".$a->getId()."</td>";
-				echo			"<td class='linha-td'  colspan='70' ALIGN=MIDDLE WIDTH=200 >".$a->getUsuario()."</td>";
-                                echo			"<td class='linha-td' colspan='70' ALIGN=MIDDLE WIDTH=10>".$a->getNivel()."</td>";
+				echo			"<td class='linha-td' ALIGN=MIDDLE WIDTH=30>".$a->getId()."</td>";
+				echo			"<td class='linha-td'  colspan='70' ALIGN=MIDDLE WIDTH=800 >".$a->getUsuario()."</td>";
+                                echo			"<td class='linha-td' colspan='70' ALIGN=MIDDLE WIDTH=200>".$a->getNivel()."</td>";
 				echo			"<td class='coluna'><a href='#'><img src='./image/editar.png'></a></td>";
 				echo			"<td class='coluna'><a href='#'><img src='./image/excluir.png'></a></td>";
 				echo		"</tr>";

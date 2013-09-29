@@ -10,3 +10,30 @@ Cadastro de Dependentes
 
 
 	- falta confirmações
+	-falta edições
+	-falta a exclusoes
+
+
+
+
+cadastro de Afastamento
+
+	- falta confirmações
+	-falta edições
+	-falta a exclusoes
+
+
+cadastro de usuario
+
+	- falta confirmações
+	-falta edições
+	-falta a exclusoes
+
+cadastro de progressoes carreira
+
+	- falta confirmações
+	-falta edições
+	-falta a exclusoes
+
+
+	

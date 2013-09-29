@@ -7,7 +7,7 @@ class UsuarioDAO {
 		
 		}
    public function abrir( $id){
-                $sql = sprintf("SELECT  * FROM usuario WHERE idUsuario =",$id);
+                $sql = "SELECT  * FROM usuario WHERE idUsuario = $id ";
                 $novo = new Usuario();
 
                 $resultado = mysql_query($sql);
