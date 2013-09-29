@@ -43,7 +43,7 @@
                                 
                                //echo '<script type="text/javascript"> alert("'.$rs['nome'].'")</script>';
                                 
-                                $novo->setId($rs['idDependentes']);
+                                $novo->setId($rs['idDependente']);
                                 $novo->setNome($rs['nome']);
                                 $novo->setDataNascimento(implode("/",array_reverse(explode("-",$rs['dataNascimento'])))); 
                                 $novo->setSexo($rs['sexo']);

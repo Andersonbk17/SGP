@@ -39,6 +39,37 @@
                 $('table#tbl tr:odd').addClass('impar');
                 $('table#tbl tr:even').addClass('par');
          });
+         
+         
+         
+         var idFuncionario = <?php  if(isset($_SESSION['idFuncionario'])){
+                                        echo $id = $_SESSION['idFuncionario'];
+                                        
+                                    }else{
+                                        echo 0;
+                                        //nao tem usuario na secao
+                                    }
+                    
+                ?>;
+             if(idFuncionario == 0){
+                 $(document).ready(function(){
+                    $('._funcionario').show()
+                    $('#proximo').hide()
+                   
+                 })
+             }
+             
+             if(idFuncionario >0){
+                 $(document).ready(function(){
+                     $('#dependentes').show()
+                     $('._funcionario').hide()
+                 })
+             }
+         
+         
+         
+         
+         
 
         
         </script>
@@ -51,6 +82,30 @@
         <fieldset>
             <form action="../Controller/CtlDependente.php" method="post" id="frmCadastroDependentes" name="frmCadastroDependentes">
                 
+                <label name="usuario" class="_funcionario" for="funcionario" >Nome do Funcionário *:</label><br class="_funcionario" />
+                    <select id="funcionario" class="input-div _funcionario" name="funcionario"  required="">
+                        <option selected value="0">Selecione</option>
+                        
+                        <?php
+                       
+                            include_once '../DataAccess/FuncionarioDAO.php';
+                            include_once '../DomainModel/Funcionario.php';
+
+                            $tipo = new Funcionario();
+                            $dao = new FuncionarioDAO();
+
+                            $tipo = $dao->ListarTodos();
+
+                            foreach ($tipo as $i){
+                                echo "<option value=".$i->getId().">".$i->getNome()."</option> ";
+                            }
+                            
+                          
+                    ?>
+                        
+                    </select><br class="_funcionario"  />
+                
+                
                 <label for="nome"> Nome do Dependente *</label><br />
                 <input type="text" id="nome" name="nome" class="input-div" required="" /><br />
                 
@@ -62,9 +117,10 @@
                 <input type="radio" class="input-div" name="sexo" class="sexo" value="1" /><br />
                 <label name="sexo"  for="sexo">Feminino </label> 
                 <input type="radio" class="input-div" name="sexo" class="sexo" value="2" /><br />
-                <input type="hidden" name="idFuncionario" id="idFuncionario" value="<?php echo $_SESSION['idFuncionario'];?>" />
                 
-                <a  class="botao" name='proximo' id='proximo' href="main.php?pagina=frmCadastroAfastamento.php" style="text-decoration: none ">Próximo</a>
+                
+                
+                <a  class="botao" name='avancar' id='proximo' href="main.php?pagina=frmCadastroAfastamento.php" style="text-decoration: none ">Avançar</a>
                 <input type="submit"  class="botao" name='enviar' id='enviar' value="Salvar" />
                 
                 
@@ -76,7 +132,7 @@
             
         </fieldset> <br />
         
-        <fieldset>
+        <fieldset id="dependentes" name="dependentes" style="display: none">
             <legend>Dependentes Cadastrados</legend>
                 <?php
                 include_once '../DataAccess/DependenteDAO.php';
