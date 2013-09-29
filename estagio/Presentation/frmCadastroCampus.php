@@ -38,7 +38,7 @@
 	
 			function confirmacao(id) { 
 				var resposta = confirm("Deseja remover esse registro?");   
-				if (resposta == true) { 
+                                if (resposta == true) { 
 					window.location.href = "../Controller/CtlCampus.php?oP=3&codCampus="+id; 
 				} 
 			} 

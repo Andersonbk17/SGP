@@ -1,0 +1,5 @@
+cadastro de Disciplina
+
+	- falta confirmações
+	- falta desativar campo de codigo
+	-falta o select do combobox

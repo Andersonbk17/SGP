@@ -9,20 +9,12 @@
 		private $area;
 		
 	
-	//Construtores
-		
-		/*function __construct($id, $nome){
-				$this->id = $id;
-				$this->nome = $nome;
-				$this->sigla = $sigla;
-		}
-		*/
 		
 		function __construct(){
 				$this->id = 0;
 				$this->nome = "";
 				$this->sigla = "";
-				$tihs->area = "";
+				$this->area = 0;
 		}
 		
 	// Métodos
