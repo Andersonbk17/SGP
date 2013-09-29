@@ -14,23 +14,20 @@
         }
         
          public function abrir(Afastamento $id){
-                $sql = sprintf("SELECT  * FROM afastamento WHERE idAfastamento = %s ",$id);
-              
-				$lista = new ArrayObject();
+                $sql = "SELECT  * FROM afastamento WHERE idAfastamento = $id ";
+                $novo = new Afastamento();
 
-                $r = mysql_query($sql);
-                while($resultado = mysql_fetch_array($r)){
-				
-					$novo = new Afastamento();
-					
+                $resultado = mysql_query($sql);
+                if($resultado) {
                     $novo->setIdAfastamento(stripslashes($resultado['idAfastamento']));
                     $novo->setMotivo(stripslashes($resultado['motivo']));
                     $novo->setDataInicio($resultado['dataInicio']);
                     $novo->setDataTermino($resultado['dataTermino']);
                     $novo->setIdFuncionario($resultado['idFuncionario']);
-					$lista->append($novo);       
+                    return $novo;
+                }else{
+                    return null;
                 }
-				return $lista;
                 
 	}
         
