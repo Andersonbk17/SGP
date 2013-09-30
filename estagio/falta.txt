@@ -40,10 +40,7 @@ cadastro de progressoes carreira
 -------------------------------------------
 -------------------------------------------
 cadastro de usuario
-
-	- falta confirma��es
-	- falta edi��es
-	- falta a exclusoes
+	- OK
 -------------------------------------------
 
 
