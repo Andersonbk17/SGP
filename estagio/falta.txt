@@ -1,65 +1,53 @@
 cadastro de Afastamento
 
 	- falta confirma��es
-	-falta edi��es
-	-falta a exclusoes
-
-
-
-cadastro de areas 
-
-	- OK
-
-
-cadastro de campus
-
-	-OK
-
-
-
+	- falta edi��es
+	- falta a exclusoes
+-------------------------------------------
+-------------------------------------------
+cadastro de areas
+        - OK
+-------------------------------------------
+-------------------------------------------
+cadastro de campus 
+        - OK
+-------------------------------------------
+-------------------------------------------
 Cadastro de curso
-
-
-cadastro de titulacao
-	
-	-ok
-
-
-
-
-
-
+-------------------------------------------
+-------------------------------------------
+cadastro de titulacao	
+        - OK
+-------------------------------------------
+-------------------------------------------
 cadastro de disciplinas (mais completo at� agora seguir como exemplo)
 
-	-falta retornar o combobox
-	-tem um erro q nao d� pra ver no debug(muito r�pido)
-	-falta o select do combobox
-
-Cadastro de Dependentes
-
-	-ok
-
-
+	- falta retornar o combobox
+	- tem um erro q nao d� pra ver no debug(muito r�pido)
+	- falta o select do combobox
+-------------------------------------------
+-------------------------------------------
+Cadastro de Dependentes	
+        - OK
+-------------------------------------------
+-------------------------------------------
 cadastro de professor
-
-	-fata os combobox
-
-
-
+	- fata os combobox
+-------------------------------------------
+-------------------------------------------
 cadastro de progressoes carreira
 
 	- falta confirma��es
-	-falta edi��es
-	-falta a exclusoes
-
-
-
+	- falta edi��es
+	- falta a exclusoes
+-------------------------------------------
+-------------------------------------------
 cadastro de usuario
 
 	- falta confirma��es
-	-falta edi��es
-	-falta a exclusoes
-
+	- falta edi��es
+	- falta a exclusoes
+-------------------------------------------
 
 
 
