@@ -147,6 +147,15 @@ $progressaoCarreira = $daoProgressoes->ListarTodos($funcionario->getId());
                 } 
             } 
         </script>
+         <script language="Javascript">
+	
+            function confirmacao3(id) { 
+                var resposta = confirm("Deseja remover esse registro?");   
+                if (resposta == true) { 
+                    window.location.href = "../Controller/CtlApagarProgressao.php?id="+id; 
+                } 
+            } 
+        </script>
     </head>
 
     <body>
@@ -332,8 +341,8 @@ echo "</table>";
 
                 echo "<td class='linha-td'  colspan='70' ALIGN=MIDDLE WIDTH=500 >" . $a->getDataProgressao() . "</td>";
                 echo "<td class='linha-td' colspan='70' ALIGN=MIDDLE WIDTH=800>" . $a->getDescricaoNivelCategoria() . "</td>";
-                echo "<td class='coluna'><a href='#'><img src='./image/editar.png'></a></td>";
-                echo "<td class='coluna'><a href='#'><img src='./image/excluir.png'></a></td>";
+                echo "<td class='coluna'><a href=main.php?pagina=frmEditarProgressaoCarreira.php&id=".$a->getId()."><img src='./image/editar.png'></a></td>";
+                echo "<td class='coluna'><a href='javascript:func()' onclick='confirmacao3(" . $a->getId() . ")'><img src='./image/excluir.png'></a></td>";
                 echo "</tr>";
             }
 
