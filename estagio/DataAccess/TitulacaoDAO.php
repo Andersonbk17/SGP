@@ -7,19 +7,18 @@
           
         public function Abrir($id)
         {
-			$sql = sprintf("SELECT  * FROM titulacao WHERE idTitulacao = %s AND status = 1",$id);
+			$sql = sprintf("SELECT  * FROM titulacao WHERE idTitulacao = '%s' ",$id);
 			//$lista = new ArrayObject();
-			
-			$resultado = mysql_query($sql);
+			$novo = new Titulacao();
+                        
+			$resultado = mysql_query($sql) or die(mysql_error());
 			while($rs = mysql_fetch_array($resultado)){
 			
-				$novo = new Titulacao();
-				
 				$novo->setId(stripslashes($rs['idTitulacao']));
 				$novo->setNome(stripslashes($rs['nome']));
-				
+				return $novo;
 			}
-			return $novo;
+			
 		}
 
 

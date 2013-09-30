@@ -7,7 +7,7 @@
           
         public function Abrir($id)
         {
-			$sql = sprintf("SELECT  * FROM campus WHERE idCampus = %s AND status = 1",$id);
+			$sql = sprintf("SELECT  * FROM campus WHERE idCampus = %s",$id);
 			//$lista = new ArrayObject();
 			
 			$resultado = mysql_query($sql);
@@ -17,9 +17,9 @@
 				
 				$novo->setId(stripslashes($rs['idCampus']));
 				$novo->setNome(stripslashes($rs['nome']));
-				
+				return $novo;
 			}
-			return $novo;
+			
 			
 			
 			/*
