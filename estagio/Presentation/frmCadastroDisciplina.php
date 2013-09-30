@@ -128,6 +128,16 @@
 							//$abrir = new Curso();
 							//$abrir = $daoc->ProcurarCurso($id);
 							//foreach($abrir as $cd){
+                                                        
+                                                        
+                                                        //Fazendo a consulta do curso da disciplina para colocar no combobox pois está em uma
+                                                        // entidade fraca enao tem dao para ver o valor
+                                                        $sql = "SELECT * FROM disciplina_curso WHERE idDisciplina=".$i->getId();
+                                                        $resultado = mysql_query($sql);
+                                                        
+                                                        while($rs = mysql_fetch_array($resultado)){
+                                                            $idCurso = $rs['idCurso'];
+                                                        }
 								echo("<option selected='' value=''>Selecione</option>"); 
 								//$cd++;
 							//}*/
@@ -140,6 +150,7 @@
 							$i++;
 						}							
 						echo"</select>";
+                                                 echo"<script type='text/javascript'> $(document).ready(function(){  $('#curso').val($idCurso)      }) </script>";//select ok
 						echo"<a href=main.php?pagina=frmCadastroDisciplina.php&aux=0><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
 						echo"<input type='submit' id='btnDisciplina' name='btnDisciplina' value='Salvar' class='botao'/>";
 					echo"</form>";
