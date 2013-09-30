@@ -1,7 +1,7 @@
 cadastro de Afastamento
 
-	- falta confirmações
-	-falta edições
+	- falta confirmaï¿½ï¿½es
+	-falta ediï¿½ï¿½es
 	-falta a exclusoes
 
 
@@ -29,20 +29,15 @@ cadastro de titulacao
 
 
 
-cadastro de disciplinas (mais completo até agora seguir como exemplo)
+cadastro de disciplinas (mais completo atï¿½ agora seguir como exemplo)
 
 	-falta retornar o combobox
-	-tem um erro q nao dá pra ver no debug(muito rápido)
+	-tem um erro q nao dï¿½ pra ver no debug(muito rï¿½pido)
 	-falta o select do combobox
 
 Cadastro de Dependentes
 
-
-
-	- falta confirmações
-	-falta edições
-	-falta a exclusoes
-
+	-ok
 
 
 cadastro de professor
@@ -53,16 +48,16 @@ cadastro de professor
 
 cadastro de progressoes carreira
 
-	- falta confirmações
-	-falta edições
+	- falta confirmaï¿½ï¿½es
+	-falta ediï¿½ï¿½es
 	-falta a exclusoes
 
 
 
 cadastro de usuario
 
-	- falta confirmações
-	-falta edições
+	- falta confirmaï¿½ï¿½es
+	-falta ediï¿½ï¿½es
 	-falta a exclusoes
 
 
