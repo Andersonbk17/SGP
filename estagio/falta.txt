@@ -34,9 +34,7 @@ cadastro de professor
 -------------------------------------------
 cadastro de progressoes carreira
 
-	- falta confirma��es
-	- falta edi��es
-	- falta a exclusoes
+	- OK
 -------------------------------------------
 -------------------------------------------
 cadastro de usuario
