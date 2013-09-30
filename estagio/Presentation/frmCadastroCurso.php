@@ -134,7 +134,7 @@
 							echo"<input type='text' id='siglaCurso' name='siglaCurso' value='".$i->getSigla()."'required size='40' maxlength='50' class='input-div'/><br/>";
 							echo"<label for='Area' class='label'>Area*</label><br/>";
 							echo"<select name='areaCurso' id='areaCurso' style='width: 160px' class='input-div'>";
-						
+                                                        
 								$daoArea = new AreaDAO();
 								$a = new Area();
 								$a = $daoArea->ListarTodos();
@@ -146,8 +146,11 @@
 									echo("<option value='".$i->getId()."'>".$i->getNome()."</option>");
 									$i++;
 								}
+                                                                
 							echo"</select><br/>";
+                                                         echo"<script type='text/javascript'> $(document).ready(function(){  $('#areaCurso').val($editar->getArea())      }) </script>";//select ok
 						
+                                                         
 							echo"<label for='campusCurso' class='label'>Campus*</label><br/>";
 							echo"<select name='campusCurso' id='campusCurso' style='width: 160px' class='input-div'>";
 						
@@ -163,6 +166,7 @@
 									$cc++;
 								}
 							echo"</select>";
+                                                        echo"<script type='text/javascript'> $(document).ready(function(){  $('#curso').val()      }) </script>";//select ok
 							$i++;
 						}
 						echo"<a href=main.php?pagina=frmCadastroCurso.php&aux=0><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";

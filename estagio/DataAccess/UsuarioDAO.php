@@ -19,6 +19,7 @@
                 $novo->setUsuario(stripslashes($resultado['usuario']));
                 $novo->setSenha(stripcslashes($resultado['senha']));
                 $novo->setNivel(stripcslashes($resultado['nivel']));
+                $novo->setIdFuncionario($resultado['idFuncionario']);
                 return $novo;
             }
         }

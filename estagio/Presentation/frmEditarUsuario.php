@@ -60,6 +60,7 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
          $id = $_GET['id'];
          
          $novo = $daoU->abrir($id);
+         
         
     
     ?>
@@ -91,6 +92,15 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
                     ?>
 
                     </select><br />
+                    
+                    <!-- ###  Colocar o nome do Funcionario editado no comobo do Funconario-->
+                    <?php
+                        $idF = $novo->getIdFuncionario();
+                        if($novo != null){
+                            echo"<script type='text/javascript'> $(document).ready(function(){  $('#funcionario').val($idF)      }) </script>";//select ok
+                        }
+                        
+                    ?>
 
                     <label name="usuario" for="usuario">Nome do Usuário *:</label><br />
                     <input type="hidden" id="idU" name="idU" value="<?php echo $novo->getId(); ?>"/>
