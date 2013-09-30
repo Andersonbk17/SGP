@@ -8,7 +8,7 @@
         public function Abrir($id)
         {
 			$sql = sprintf("SELECT  * FROM titulacao WHERE idTitulacao = %s AND status = 1",$id);
-			$lista = new ArrayObject();
+			//$lista = new ArrayObject();
 			
 			$resultado = mysql_query($sql);
 			while($rs = mysql_fetch_array($resultado)){
@@ -17,9 +17,9 @@
 				
 				$novo->setId(stripslashes($rs['idTitulacao']));
 				$novo->setNome(stripslashes($rs['nome']));
-				$lista->append($novo);
+				
 			}
-			return $lista;
+			return $novo;
 		}
 
 

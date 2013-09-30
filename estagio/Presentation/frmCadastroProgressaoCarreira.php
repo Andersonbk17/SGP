@@ -52,6 +52,11 @@
                  })
              }
              
+             $(document).ready(function() {
+                $('table#tbl tr:odd').addClass('impar');
+                $('table#tbl tr:even').addClass('par');
+            });
+             
              
         
               
@@ -106,7 +111,7 @@
         <br />
         
         <fieldset id='progressoes' style="display: none">
-            <legend>Afastamentos</legend>
+            <legend>Progressões</legend>
             
             <?php
                 include_once '../DataAccess/ProgressaoCarreiraDAO.php';
@@ -119,17 +124,17 @@
                
                 echo	"<table class='tbl' name='tbl' id='tbl' border='1' >";
 			echo		"<tr>";
-			echo			"<td class='nomeCampus'  ALIGN=MIDDLE WIDTH=10 ><b>ID<b /></td>";	
-                        echo                        "<td class='nomeCampus' colspan='70' ALIGN=MIDDLE WIDTH=200><b>Data Progressão<b /></td>";	
-                        echo                        "<td class='nomeCampus' colspan='70' ALIGN=MIDDLE WIDTH=200><b>Descrição/ Nível/Categoria<b /></td>";
+			echo			"<td class='nomeCampus'  ALIGN=MIDDLE WIDTH=30 ><b>ID<b /></td>";	
+                        echo                        "<td class='nomeCampus' colspan='70' ALIGN=MIDDLE WIDTH=500><b>Data Progressão<b /></td>";	
+                        echo                        "<td class='nomeCampus' colspan='70' ALIGN=MIDDLE WIDTH=500><b>Descrição/ Nível/Categoria<b /></td>";
                         
 			echo		"</tr>";
 		            
                 foreach ($progressao as $a){
                        echo		"<tr class='linha-td'>";
-                       echo		"<td class='linha-td' ALIGN=MIDDLE WIDTH=10>".$a->getId()."</td>";
-                       echo		"<td class='linha-td'  colspan='70' ALIGN=MIDDLE WIDTH=200 >".$a->getDataProgressao()."</td>";
-                       echo		"<td class='linha-td' colspan='70' ALIGN=MIDDLE WIDTH=10>".$a->getDescricaoNivelCategoria()."</td>";
+                       echo		"<td class='linha-td' ALIGN=MIDDLE WIDTH=30>".$a->getId()."</td>";
+                       echo		"<td class='linha-td'  colspan='70' ALIGN=MIDDLE WIDTH=500 >".$a->getDataProgressao()."</td>";
+                       echo		"<td class='linha-td' colspan='70' ALIGN=MIDDLE WIDTH=5000>".$a->getDescricaoNivelCategoria()."</td>";
                        echo		"<td class='coluna'><a href='#'><img src='./image/editar.png'></a></td>";
                        echo		"<td class='coluna'><a href='#'><img src='./image/excluir.png'></a></td>";
                         echo		"</tr>";

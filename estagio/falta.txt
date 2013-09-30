@@ -19,6 +19,8 @@ cadastro de campus
 
 Cadastro de curso
 
+	-falta o combobox
+	- erro no debug muito rápido não dá pra saber
 
 cadastro de titulacao
 	
@@ -48,6 +50,7 @@ Cadastro de Dependentes
 cadastro de professor
 
 	-fata os combobox
+	-falta consertar divorcios e casamentos
 
 
 
