@@ -27,7 +27,7 @@ class DependenteDAO {
         while ($resultado = mysql_fetch_array($rs)) {
             $novo->setId($resultado['idDependente']);
             $novo->setNome($resultado['nome']);
-            $novo->setDataNascimento($resultado['dataNascimento']);
+            $novo->setDataNascimento(implode("/", array_reverse(explode("-", $resultado['dataNascimento']))));
             $novo->setSexo($resultado['sexo']);
             $novo->setIdFuncionario($resultado['idFuncionario']);
             return $novo;
