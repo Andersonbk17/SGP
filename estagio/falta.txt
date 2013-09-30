@@ -1,8 +1,5 @@
 cadastro de Afastamento
-
-	- falta confirma��es
-	- falta edi��es
-	- falta a exclusoes
+        - OK
 -------------------------------------------
 -------------------------------------------
 cadastro de areas
