@@ -107,3 +107,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edf6f9', end
   
   .impar{background:#e0f1fc}
 .par{background:#cde5ee}
+
+.dados{
+    font-weight: bold;
+    line-height: 20px;
+    
+}
