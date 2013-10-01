@@ -124,7 +124,20 @@ if (isset($_SESSION['idFuncionario'])) {
                 <label for="motivo">Motivo *</label> <br />
                 <textarea name="motivo" id="motivo" cols="100" rows="10" class="input-div" value="<?php echo $novo->getMotivo();?>" required=""><?php echo $novo->getMotivo();?></textarea><br /><br />
                 
-                <input type="submit" id="enviar" class="botao"name="enviar" value="Salvar" />
+               <?php
+                    if(isset($_GET['op'])){
+                        echo "<a href='main.php?pagina=frmCadastroAfastamento.php'>";
+                        echo "<input type='button'  class='botao' name='enviar' id='enviar' value='Cancelar' />";
+                        echo "</a>";
+                    }else{
+                        echo "<a href='main.php?pagina=frmDetalharFuncionario.php&idFuncionario=".$novo->getIdFuncionario()."'>";
+                        echo "<input type='button'  class='botao' name='enviar' id='enviar' value='Cancelar' />";
+                        echo "</a>";
+                            }
+                ?>
+               
+                
+                <input type="submit" id="enviar" class="botao"name="enviar" value="Atualizar" />
 
 
 
