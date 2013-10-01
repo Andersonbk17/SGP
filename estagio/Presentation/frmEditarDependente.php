@@ -156,7 +156,19 @@ if (isset($_SESSION['idFuncionario'])) {
                         
                     }
                 ?>
-                <input type="submit"  class="botao" name='enviar' id='enviar' value="Salvar" />
+                <?php
+                    if(isset($_GET['op'])){
+                        echo "<a href='main.php?pagina=frmCadastroDependente.php'>";
+                        echo "<input type='button'  class='botao' name='enviar' id='enviar' value='Cancelar' />";
+                        echo "</a>";
+                    }else{
+                        echo "<a href='main.php?pagina=frmDetalharFuncionario.php&idFuncionario=".$novo->getIdFuncionario()."'>";
+                        echo "<input type='button'  class='botao' name='enviar' id='enviar' value='Cancelar' />";
+                        echo "</a>";
+                            }
+                ?>
+               
+                <input type="submit"  class="botao" name='enviar' id='enviar' value="Atualizar" />
 
 
 
