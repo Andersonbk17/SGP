@@ -141,7 +141,7 @@
 				 echo "<form name='frmCadProfessor' method='post' action='../Controller/CtlCadastroProfessor.php' >";
 			   
 					echo"<label name='nome' for='nome'>Nome do professor *:</label><br />";
-					echo"<input type='text' id='nome' class='input-div' name='nome' autofocus='' placeholder='Nome' required='' size='100' /><br />";
+					echo"<input type='text' id='nome' class='input-div' name='nome' autofocus='' placeholder='Nome' required='' size='70' /><br />";
 						
 					echo"<label name='dataNascimento' for='dataNascimento'>Data Nascimento *:</label><br />";
 					echo"<input type='text' class='input-div' name='dataNascimento' id='dataNascimento' placeholder='DD/MM/AAAA' size='24'/><br />";
@@ -152,7 +152,7 @@
 					echo"<input type='text' class='input-div' id='rg' name='rg' placeholder='RG' required='' size='24' /> <br />";
 					echo"<label name='cpf' for='cpf'>CPF *:</label><br />";
 					echo"<input type='text' class='input-div' id='cpf' name='cpf' placeholder='CPF' required='' size='24' /> <br />";
-					echo"<label name='email' for='email'>CPF *:</label><br />";
+					echo"<label name='email' for='email'>Email *:</label><br />";
 					echo"<input type='email' class='input-div' id='email' name='email' placeholder='EMAIL' required='' size='24' /> <br />";
 						
 					echo"<label name='sexo' for='sexo'>Sexo * :</label><br />";
@@ -187,6 +187,7 @@
 								
 								
 				   echo"</select>";
+                                   
 					
 					   echo"<label name='tipoSanguineo' for='tipoSanguineo'>Tipo Sanguineo *:</label>";
 					   echo"<select id='tipoSanguineo' class='input-div' name='tipoSanguineo' required=''>";
@@ -223,9 +224,9 @@
 					
 					
 				   echo"<label name='nomePai' for='nomePai'>Nome do Pai *:</label><br />";
-				   echo"<input type='text' class='input-div' id='nomePai' name='nomePai' placeholder='Nome ' required='' size='100' /> <br />";
+				   echo"<input type='text' class='input-div' id='nomePai' name='nomePai' placeholder='Nome ' required='' size='70' /> <br />";
 				   echo"<label name='nomeMae' for='nomeMae'>Nome da Mãe *:</label><br />";
-				   echo"<input type='text' class='input-div' id='nomeMae' name='nomeMae' placeholder='Nome ' required='' size='100' /> <br />";
+				   echo"<input type='text' class='input-div' id='nomeMae' name='nomeMae' placeholder='Nome ' required='' size='70' /> <br />";
 					
 				   echo"<label name='endereco' for='rua'>Endereço *:</label><br />";
 				   echo"<input type='text' class='input-div' id='rua' name='rua' placeholder='Rua ' required='' size='60' /> ";
@@ -416,6 +417,9 @@
 								
 								
 				   echo"</select>";
+                                   
+                                    //selecionar Automaticamente o combobox estadoCivil
+                                   echo"<script type='text/javascript'> $(document).ready(function(){  $('#estadoCivil').val(".$edit->getIdEstado_Civil().")      }) </script>";//select ok
 					
 					   echo"<label name='tipoSanguineo' for='tipoSanguineo'>Tipo Sanguineo *:</label>";
 					   echo"<select id='tipoSanguineo' class='input-div' name='tipoSanguineo' required=''>";
@@ -434,8 +438,9 @@
 					   }
 										   
 				   echo"</select><br />";
-					
-					
+			
+                                   //selecionar o combobox TipoSanguineo
+                                    echo"<script type='text/javascript'> $(document).ready(function(){  $('#tipoSanguineo').val(".$edit->getIdTipo_Sanguineo().")      }) </script>";//select ok
 					
 				   echo"<br class='casado' style='display: none' /><label name='conjugue' for='conjugue' class='casado' style='display: none'>Conjugue :</label><br class='casado' style='display: none' />";
 				   echo"<input type='text'  id='conjugue' name='conjugue' value='".$edit->getConjugue()."' placeholder='Nome ' style='display: none' required='' class='casado input-div'  size='100'/> <br class='casado' style='display: none' />";
@@ -491,6 +496,15 @@
 					   
 										 
 				   echo"</select>";
+                                   $edit->getEndCidade(); //pega o id da cidade
+                                   include_once '../DataAccess/CidadeDAO.php';
+                                   
+                                   $cid = new CidadeDAO();
+                                   $tmp = new Cidade();
+                                   $tmp = $cid->Abrir($edit->getEndCidade());
+                                           
+                                   //selecionar o combobox Estado
+                                    echo"<script type='text/javascript'> $(document).ready(function(){  $('#estado').val(".$tmp->getIdEstado().")      }) </script>";//select ok
 				   
 				   echo"<label name='cidade' for='cidade'>Cidade *:</label>";
 				   echo"<span class='carregando' style='color:#666;display:none;'>Aguarde, carregando...</span>";
@@ -543,6 +557,9 @@
 					
 										 
 				   echo"</select>";
+                                   
+                                   //selecionar o combobox Campus
+                                    echo"<script type='text/javascript'> $(document).ready(function(){  $('#campus').val(".$edit->getIdCampus().")      }) </script>";//select ok
 				   
 				   echo"<label name='titulacao' for='titulacao'>Titulação *:</label>";
 					   echo"<select id='titulacao' class='input-div' name='titulacao' required=''>";
@@ -564,6 +581,9 @@
 						 }
 						
 				   echo"</select><br />";
+                                   
+                                   //selecionar o combobox Campus
+                                    echo"<script type='text/javascript'> $(document).ready(function(){  $('#titulacao').val(".$edit->getIdTitulacao().")      }) </script>";//select ok
 				   echo"<label name='pendencias' for='pendencias'>Pendências :</label><br/>";
 				   echo"<textarea id='pendencias' class='input-div' name='pendencias' value='".$edit->getPendencias()."' cols='125' rows='20'>";
 						echo "";
