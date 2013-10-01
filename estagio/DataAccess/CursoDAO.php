@@ -18,6 +18,7 @@
 				$novo->setId(stripslashes($rs['idCurso']));
 				$novo->setNome(stripslashes($rs['nome']));
 				$novo->setSigla(stripslashes($rs['sigla']));
+                                $novo->setArea($rs['idArea']);
 			
 			}
 			return $novo;

@@ -84,6 +84,7 @@ $dao = new CursoDAO();
             $i++;
         }
         echo"</select><br/>";
+        
 
         echo"<label for='campusCurso' class='label'>Campus*</label><br/>";
         echo"<select name='campusCurso' id='campusCurso' required style='width: 160px' class='input-div'>";
@@ -147,7 +148,7 @@ $dao = new CursoDAO();
             }
 
             echo"</select><br/>";
-         //   echo"<script type='text/javascript'> $(document).ready(function(){  $('#areaCurso').val($editar->getArea())      }) </script>"; //select ok
+          echo"<script type='text/javascript'> $(document).ready(function(){  $('#areaCurso').val(".$editar->getArea().")      }) </script>"; //select ok
 
 
             echo"<label for='campusCurso' class='label'>Campus*</label><br/>";
@@ -165,7 +166,17 @@ $dao = new CursoDAO();
                 $cc++;
             }
             echo"</select>";
-            echo"<script type='text/javascript'> $(document).ready(function(){  $('#curso').val()      }) </script>"; //select ok
+            
+            //Pegando Valor do campus_curso n:n
+            
+            $sql = "SELECT * FROM curso_campus WHERE idCurso =".$editar->getId();
+            $resultado = mysql_query($sql);
+            while($rs = mysql_fetch_array($resultado)){
+                $idCampus = $rs['idCampus'];
+            }
+            
+            echo"<script type='text/javascript'> $(document).ready(function(){  $('#campusCurso').val(".$idCampus.")      }) </script>"; //select ok
+            
             $i++;
        
         echo"<a href=main.php?pagina=frmCadastroCurso.php&aux=0><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
