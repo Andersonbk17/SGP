@@ -66,8 +66,14 @@ if (isset($_SESSION['idFuncionario'])) {
                         })
                     }
          
-         
-         
+         //recebendo o idfuncionario por parametro na url
+          $(document).ready(function(){  $('#funcionario').val(<?php  if(isset($_GET['idFuncionario'] )){
+                    $idFuncionario = $_GET['idFuncionario'];
+                }else{
+                    $idFuncionario = 0;
+                }   echo $idFuncionario;?>)      
+            
+        }) 
          
          
 
@@ -82,6 +88,8 @@ if (isset($_SESSION['idFuncionario'])) {
         include_once '../DomainModel/Dependente.php';
         
         $id = $_GET['id'];
+        
+    
         
         $daoD = new DependenteDAO();
         $novo = new Dependente();
@@ -123,6 +131,7 @@ if (isset($_SESSION['idFuncionario'])) {
                     ?>
 
                 </select><br class="_funcionario"  />
+                 
 
 
                 <label for="nome"> Nome do Dependente *</label><br />

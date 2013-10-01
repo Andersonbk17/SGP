@@ -287,7 +287,7 @@ if ($funcionario->getReservistaMilitar() != null) {
                 }
 
                 echo "<td class='linha-td'  colspan='70' ALIGN=MIDDLE WIDTH=200 >" . $sexo . "</td>";
-                echo "<td class='coluna'><a href=main.php?pagina=frmEditarDependente.php&id='" . $a->getId() . "'><img src='./image/editar.png'></a></td>";
+                echo "<td class='coluna'><a href=main.php?pagina=frmEditarDependente.php&id='".$a->getId()."'&idFuncionario=".$idFucnionario."><img src='./image/editar.png'></a></td>";
                 echo "<td class='coluna'><a href='javascript:func()' onclick='confirmacao(".$a->getId().",".$idFucnionario.")'><img src='./image/excluir.png'></a></td>";
 
                 echo "</tr>";
