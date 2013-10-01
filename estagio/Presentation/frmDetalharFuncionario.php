@@ -131,10 +131,12 @@ $progressaoCarreira = $daoProgressoes->ListarTodos($funcionario->getId());
         </script>
         <script language="Javascript">
 	
-            function confirmacao(id) { 
-                var resposta = confirm("Deseja remover esse registro?");   
+            function confirmacao(id,idF) { 
+                var resposta = confirm("Deseja remover esse registro?");
                 if (resposta == true) { 
-                    window.location.href = "../Controller/CtlApagarDependente.php?id="+id; 
+                    var local = "../Controller/CtlApagarDependente.php?id="+id+"&idF="+idF;
+         
+                    window.location.href = local; 
                 } 
             } 
         </script>
@@ -286,7 +288,7 @@ if ($funcionario->getReservistaMilitar() != null) {
 
                 echo "<td class='linha-td'  colspan='70' ALIGN=MIDDLE WIDTH=200 >" . $sexo . "</td>";
                 echo "<td class='coluna'><a href=main.php?pagina=frmEditarDependente.php&id='" . $a->getId() . "'><img src='./image/editar.png'></a></td>";
-                echo "<td class='coluna'><a href='javascript:func()' onclick='confirmacao(".$a->getId().")'><img src='./image/excluir.png'></a></td>";
+                echo "<td class='coluna'><a href='javascript:func()' onclick='confirmacao(".$a->getId().",".$idFucnionario.")'><img src='./image/excluir.png'></a></td>";
 
                 echo "</tr>";
             }

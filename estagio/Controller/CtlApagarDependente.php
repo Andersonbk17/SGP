@@ -17,7 +17,10 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
 }
 
 $id = $_GET['id'];
-$idF = $_SESSION['idFuncionario'];
+
+if(isset($_GET['idF'])){
+    $idF = $_GET['idF'];
+}
 
 $dao = new DependenteDAO();
 $dependente = new Dependente();
