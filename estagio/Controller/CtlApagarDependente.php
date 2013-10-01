@@ -25,5 +25,6 @@ $dependente = new Dependente();
 $dependente->setId($id);
 
 $dao->apagar($dependente);
-echo '<script type="text/javascript"> alert("Apagado com Sucesso !"); window.location="../Presentation/main.php?pagina=frmCadastroP.php";</script>';
+echo '<script type="text/javascript"> alert("Apagado com Sucesso !");
+    window.location="../Presentation/main.php?pagina=frmDetalharFuncionario.php&idFuncionario="'.$dependente->getIdFuncionario().'"";</script>';
 ?>

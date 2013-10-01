@@ -155,7 +155,8 @@
 					</li>
 					<!-- Fim Menu Dinamico -->
 					<!-- Inicio Menu Dinamico -->
-					<li class="open">
+					<!--
+                                        <li class="open">
 						<a class=" menuDinamico" href="" >Listagens</a>
 						<ul class="layouts level-2">
 							<li class="open"><a href="#" ></a></li>
@@ -164,6 +165,7 @@
 							<li class="open"><a href="#" >Sub Item 2.4</a></li>
 						</ul>
 					</li>
+                                        -->
 					
 					<!-- Fim Menu Dinamico -->
 					<!-- Inicio Menu Dinamico -->

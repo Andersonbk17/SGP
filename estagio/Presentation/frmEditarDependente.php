@@ -89,10 +89,20 @@ if (isset($_SESSION['idFuncionario'])) {
         $novo = $daoD->abrir($id);
         
     ?>
+    <?php
+        if(isset($_GET['op'])){
+            if(isset($_SESSION['idFuncionario'])){
+                $idF = $_SESSION['idFuncionario'];
+            }
+            $caminho = "../Controller/CtlEditarDependente.php?op=2&func=".$idF."";
+        }else{
+            $caminho = "../Controller/CtlEditarDependente.php?op=1";
+        }
+    ?>
 
     <body>
         <fieldset>
-            <form action="../Controller/CtlEditarDependente.php" method="post" id="frmCadastroDependentes" name="frmCadastroDependentes">
+            <form action="<?php echo $caminho; ?>" method="post" id="frmCadastroDependentes" name="frmCadastroDependentes">
 
                 <label name="usuario" class="_funcionario" for="funcionario" >Nome do Funcionário *:</label><br class="_funcionario" />
                 <select id="funcionario" class="input-div _funcionario" name="funcionario"  required="">
