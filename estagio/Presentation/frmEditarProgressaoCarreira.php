@@ -121,7 +121,20 @@ if (isset($_SESSION['idFuncionario'])) {
                 <input type="text" name="descricaoNivelCategoria" id="descricaoNivelCategoria" value="<?php echo $novo->getDescricaoNivelCategoria(); ?>" class="input-div" required="" /><br />
                 <input type='hidden' name='funcionario' id='funcionario1' value='' />
                 
-                <input type="submit" id="enviar" class="botao"name="enviar" value="Salvar" />
+                  <?php
+                    if(isset($_GET['op'])){
+                        echo "<a href='main.php?pagina=frmCadastroProgressaoCarreira.php'>";
+                        echo "<input type='button'  class='botao' name='enviar' id='enviar' value='Cancelar' />";
+                        echo "</a>";
+                    }else{
+                        echo "<a href='main.php?pagina=frmDetalharFuncionario.php&idFuncionario=".$novo->getIdFuncionario()."'>";
+                        echo "<input type='button'  class='botao' name='enviar' id='enviar' value='Cancelar' />";
+                        echo "</a>";
+                            }
+                ?>
+               
+                
+                <input type="submit" id="enviar" class="botao"name="enviar" value="Atualizar" />
 
 
             </fieldset>
