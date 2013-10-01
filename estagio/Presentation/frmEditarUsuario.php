@@ -109,7 +109,11 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
                     <input type="password" name="senha" id="senha" size="50" value="<?php echo $novo->getSenha(); ?>" required="" placeholder="Senha" class="input-div"/><br />
                     <label name="confirmarSenha" for="confirmarSenha">Confirmação de Senha *:</label><br/>
                     <input type="password" name="confirmarSenha" id="confirmarSenha" size="50" value="<?php echo $novo->getSenha(); ?>" required="" placeholder="Digite Novamente" class="input-div" style="position: absolute; left: 65px"/> <br /><br />
+                    <a href="main.php?pagina=frmCadastroUsuario.php">
+                    <input type="button" name="Cancelar"  class="botao" value="Cancelar"/>
+                    <a>
                     <input type="submit" name="Atualizar"  class="botao" value="Atualizar"/>
+                    
 
                 </form>
             </fieldset>
