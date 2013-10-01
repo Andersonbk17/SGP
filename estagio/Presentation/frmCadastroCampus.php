@@ -92,7 +92,7 @@ $dao = new CampusDAO();
             
        
         echo"<a href=main.php?pagina=frmCadastroCampus.php&aux=0><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
-        echo"<input type='submit' id='btnCampus' name='btnCampus' value='Salvar' class='botao'/>";
+        echo"<input type='submit' id='btnCampus' name='btnCampus' value='Atualizar' class='botao'/>";
         echo"</form>";
     }
 

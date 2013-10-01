@@ -152,7 +152,7 @@
 						echo"</select>";
                                                  echo"<script type='text/javascript'> $(document).ready(function(){  $('#curso').val($idCurso)      }) </script>";//select ok
 						echo"<a href=main.php?pagina=frmCadastroDisciplina.php&aux=0><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
-						echo"<input type='submit' id='btnDisciplina' name='btnDisciplina' value='Salvar' class='botao'/>";
+						echo"<input type='submit' id='btnDisciplina' name='btnDisciplina' value='Atualizar' class='botao'/>";
 					echo"</form>";
 				   
 			   }

@@ -93,7 +93,7 @@
 							$i++;
 						}
 						echo"<a href=main.php?pagina=frmCadastroArea.php&aux=0><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
-						echo"<input type='submit' id='btnArea' name='btnArea' value='Salvar' class='botao'/>";
+						echo"<input type='submit' id='btnArea' name='btnArea' value='Atualizar' class='botao'/>";
 					echo"</form>";
 				   
 			   }
