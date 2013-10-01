@@ -17,6 +17,9 @@
     include_once '../DataAccess/ProgressaoCarreiraDAO.php';
     include_once '../DomainModel/ProgressaoCarreira.php';
     
+    
+    $retorno = $_GET['op'];
+    
     $id = $_POST['idPr'];
     $dataProgressao = implode("-",array_reverse(explode("/",$_POST['dataProgressao']))) ;
     $descricaoNivelCategoria = $_POST['descricaoNivelCategoria'];
@@ -29,23 +32,22 @@
     $progressao->setDescricaoNivelCategoria($descricaoNivelCategoria);
     
     
-    if(isset($_SESSION['idFuncionario'])){
-        $idFuncionario = $_SESSION['idFuncionario'];
-        //echo '<script type="text/javascript"> alert("'.$idFuncionario.' na secao")</script>';
-        
+    if(isset($_GET['func'])){
+        $idFuncionario = $_GET['func'];
     }else{
         $idFuncionario = $_POST['funcionario'];
-        //echo '<script type="text/javascript"> alert("'.$idFuncionario.' pelo formulario")</script>';
     }
     
     $progressao->setIdfuncionario($idFuncionario);
     //echo '<script type="text/javascript"> alert("'.$idFuncionario.' na variavel")</script>';
     
-    if($dao->alterar($progressao)){
-        echo '<script type="text/javascript"> alert("Erro ao Inserir")</script>';
-    }  else {
-        
-        echo '<script type="text/javascript"> alert("Alterado com Sucesso !"); window.location="../Presentation/main.php?pagina=frmCadastroP.php";</script>';
+    $dao->alterar($progressao);
+    if($retorno == 1){
+     echo '<script type="text/javascript"> alert("Alterado com Sucesso !"); 
+         window.location="../Presentation/main.php?pagina=frmDetalharFuncionario.php&idFuncionario='. $idFuncionario .'";</script>';
+    }else{
+        echo '<script type="text/javascript"> alert("Alterado com Sucesso !"); 
+         window.location="../Presentation/main.php?pagina=frmCadastroProgressaoCarreira.php";</script>';
     }
 
 ?>

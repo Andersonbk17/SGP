@@ -14,7 +14,7 @@
                         while($rs = mysql_fetch_array($resultado)){
                             
                             $novo->setId($rs['idProgressaoCarreira']);
-                            $novo->setDataProgressao($rs['dataProgressao']);
+                            $novo->setDataProgressao(implode("/",array_reverse(explode("-",$rs['dataProgressao'])))); 
                             $novo->setDescricaoNivelCategoria($rs['descricaoNivelCategoria']);
                             $novo->setIdfuncionario($rs['idFuncionario']);
                             return $novo;

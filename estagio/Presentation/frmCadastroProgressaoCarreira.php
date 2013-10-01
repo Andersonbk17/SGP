@@ -1,9 +1,16 @@
 <?php
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+// A sessao precisa ser iniciada em cada pagina diferente
+if (!isset($_SESSION))
+    session_start();
+$nivel_necessario = 1;
+// Verifica se não há a variavel da sessao que identifica o usuario
+if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_necessario)) {
+    // Destr?i a sess?o por seguran?a
+    session_destroy();
+    // Redireciona o visitante de volta pro login
+    header("Location: index_.php");
+    exit; // mudar depois dos testes
+}
 ?>
 
 
@@ -58,8 +65,17 @@
             });
              
              
-        
+       
               
+        </script>
+         <script language="Javascript">
+	
+            function confirmacao(id) { 
+                var resposta = confirm("Deseja remover esse registro?");   
+                if (resposta == true) { 
+                    window.location.href = "../Controller/ctlApagarProgressao.php?op=0&id="+id; 
+                } 
+            } 
         </script>
         
     </head>
@@ -135,8 +151,8 @@
                        echo		"<td class='linha-td' ALIGN=MIDDLE WIDTH=30>".$a->getId()."</td>";
                        echo		"<td class='linha-td'  colspan='70' ALIGN=MIDDLE WIDTH=500 >".$a->getDataProgressao()."</td>";
                        echo		"<td class='linha-td' colspan='70' ALIGN=MIDDLE WIDTH=5000>".$a->getDescricaoNivelCategoria()."</td>";
-                       echo		"<td class='coluna'><a href='#'><img src='./image/editar.png'></a></td>";
-                       echo		"<td class='coluna'><a href='#'><img src='./image/excluir.png'></a></td>";
+                       echo		"<td class='coluna'><a href=main.php?pagina=frmEditarProgressaoCarreira.php&op=0&id=".$a->getId()."><img src='./image/editar.png'></a></td>";
+                       echo		"<td class='coluna'><a href='javascript:func()' onclick='confirmacao(" . $a->getId() . ")'><img src='./image/excluir.png'></a></td>";
                         echo		"</tr>";
                        
                     

@@ -19,16 +19,23 @@
     
     $id = $_GET['id'];
    
+    if(isset($_GET['idF'])){
+        $idF = $_GET['idF'];
+    }
+    
     $dao = new ProgressaoCarreiraDAO();
     $progressao = new ProgressaoCarreira();
     
     $progressao->setId($id);
   
-    if($dao->apagar($progressao)){
-        echo '<script type="text/javascript"> alert("Erro ao apagar")</script>';
-    }  else {
-        
-        echo '<script type="text/javascript"> alert("Apagado com Sucesso !"); window.location="../Presentation/main.php?pagina=frmCadastroP.php";</script>';
+    $dao->apagar($progressao);
+    if(isset($_GET['op'])){
+        echo '<script type="text/javascript"> alert("Apagado com Sucesso !");
+        window.location="../Presentation/main.php?pagina=frmCadastroProgressaoCarreira.php";</script>';
+    
+    }else{
+        echo '<script type="text/javascript"> alert("Apagado com Sucesso !");
+        window.location="../Presentation/main.php?pagina=frmDetalharFuncionario.php&idFuncionario='. $idF .'";</script>';
     }
-
+           
 ?>

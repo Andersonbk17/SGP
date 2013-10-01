@@ -1,10 +1,17 @@
 <?php
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+// A sessao precisa ser iniciada em cada pagina diferente
+if (!isset($_SESSION))
+    session_start();
+$nivel_necessario = 1;
+// Verifica se não há a variavel da sessao que identifica o usuario
+if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_necessario)) {
+    // Destr?i a sess?o por seguran?a
+    session_destroy();
+    // Redireciona o visitante de volta pro login
+    header("Location: index_.php");
+    exit; // mudar depois dos testes
+}
 ?>
-
 
 <html>
     <head>
@@ -55,11 +62,9 @@ if (isset($_SESSION['idFuncionario'])) {
         $('table#tbl tr:odd').addClass('impar');
         $('table#tbl tr:even').addClass('par');
     });
-             
-             
-        
-              
+                         
         </script>
+       
 
     </head>
     <?php
@@ -73,9 +78,19 @@ if (isset($_SESSION['idFuncionario'])) {
 
     $novo = $daoPr->Abrir($id);
     ?>
+     <?php
+        if(isset($_GET['op'])){
+            if(isset($_SESSION['idFuncionario'])){
+                $idF = $_SESSION['idFuncionario'];
+            }
+            $caminho = "../Controller/CtlEditarProgressaoCarreira.php?op=2&func=".$idF."";
+        }else{
+            $caminho = "../Controller/CtlEditarProgressaoCarreira.php?op=1";
+        }
+    ?>
 
     <body >
-        <form id="frmCadastroProgressaoCarreira" name="frmCadastroProgressaoCarreira" method="post" action="../Controller/CtlEditarProgressaoCarreira.php">
+        <form id="frmCadastroProgressaoCarreira" name="frmCadastroProgressaoCarreira" method="post" action="<?php echo $caminho; ?>">
             <fieldset>
                 <legend> Progressões Carreira</legend>
                 <input type="hidden" name="idPr" id="idPr"value="<?php echo $novo->getId(); ?>"
@@ -110,7 +125,50 @@ if (isset($_SESSION['idFuncionario'])) {
 
 
             </fieldset>
-        </form> 
+        </form>
+         <br />
+        
+        <fieldset id='progressoes' style="display: none">
+            <legend>Progressões</legend>
+            
+            <?php
+                include_once '../DataAccess/ProgressaoCarreiraDAO.php';
+                include_once '../DomainModel/ProgressaoCarreira.php';
+                
+                $dao = new ProgressaoCarreiraDAO();
+                $progressao = new ProgressaoCarreira();
+                
+                $progressao = $dao->ListarTodos($_SESSION['idFuncionario']);
+               
+                echo	"<table class='tbl' name='tbl' id='tbl' border='1' >";
+			echo		"<tr>";
+			echo			"<td class='nomeCampus'  ALIGN=MIDDLE WIDTH=30 ><b>ID<b /></td>";	
+                        echo                        "<td class='nomeCampus' colspan='70' ALIGN=MIDDLE WIDTH=500><b>Data Progressão<b /></td>";	
+                        echo                        "<td class='nomeCampus' colspan='70' ALIGN=MIDDLE WIDTH=500><b>Descrição/ Nível/Categoria<b /></td>";
+                        
+			echo		"</tr>";
+		            
+                foreach ($progressao as $a){
+                       echo		"<tr class='linha-td'>";
+                       echo		"<td class='linha-td' ALIGN=MIDDLE WIDTH=30>".$a->getId()."</td>";
+                       echo		"<td class='linha-td'  colspan='70' ALIGN=MIDDLE WIDTH=500 >".$a->getDataProgressao()."</td>";
+                       echo		"<td class='linha-td' colspan='70' ALIGN=MIDDLE WIDTH=5000>".$a->getDescricaoNivelCategoria()."</td>";
+                       echo		"<td class='coluna'><a href=main.php?pagina=frmEditarProgressaoCarreira.php&op=0&id=".$a->getId()."><img src='./image/editar.png'></a></td>";
+                       echo		"<td class='coluna'><a href='javascript:func()' onclick='confirmacao(" . $a->getId() . ")'><img src='./image/excluir.png'></a></td>";
+                        echo		"</tr>";
+                       
+                    
+                }
+                    
+                echo	"</table>";
+                
+                
+                ?>
+            
+            
+            
+        </fieldset>
+        
     </body>
 
 </html>
