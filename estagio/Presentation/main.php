@@ -147,7 +147,7 @@
 														<li class="open"><a href="main.php?pagina=frmCadastroTitulacao.php" >Titulação</a></li>
                                                         <li class="open"><a href="main.php?pagina=frmCadastroDisciplina.php" >Disciplina</a></li>
                                                         <li class="open"><a href="main.php?pagina=frmCadastroDependente.php" >Dependente</a></li>
-                                                        <li class="open"><a href="main.php?pagina=frmCadastroP.php" >Professor</a></li>
+                                                        <li class="open"><a href="main.php?pagina=frmCadastroP.php" >Funcionario</a></li>
                                                          <li class="open"><a href="main.php?pagina=frmCadastroProgressaoCarreira.php">Progressão Carreira</a></li>
                                                         <li class="open"><a href="main.php?pagina=frmCadastroUsuario.php">Usuários</a></li>
                                                        
