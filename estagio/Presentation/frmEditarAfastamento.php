@@ -78,9 +78,19 @@ if (isset($_SESSION['idFuncionario'])) {
         $novo = $daoA->abrir($id);
         
     ?>
+    <?php
+        if(isset($_GET['op'])){
+            if(isset($_SESSION['idFuncionario'])){
+                $idF = $_SESSION['idFuncionario'];
+            }
+            $caminho = "../Controller/CtlEditarAfastamento.php?op=2&func=".$idF."";
+        }else{
+            $caminho = "../Controller/CtlEditarAfastamento.php?op=1";
+        }
+    ?>
 
     <body>
-        <form id="frmCadastroAfastamento" name="frmCadastroAfastamento" method="post" action="../Controller/CtlEditarAfastamento.php">
+        <form id="frmCadastroAfastamento" name="frmCadastroAfastamento" method="post" action="<?php echo $caminho; ?>">
             <fieldset>
                 <legend> Afastamentos</legend>
 

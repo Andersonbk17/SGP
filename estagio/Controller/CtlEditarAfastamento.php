@@ -15,10 +15,18 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
     exit; // mudar depois dos testes
 }
 
+$retorno = $_GET['op'];
+
 $id = $_POST['idA'];
 $dataInicio = implode("-", array_reverse(explode("/", $_POST['dataInicio'])));
 $dataTermino = implode("-", array_reverse(explode("/", $_POST['dataTermino'])));
 $motivo = $_POST['motivo'];
+
+if(isset($_GET['func'])){
+    $idFuncionario = $_GET['func'];
+}else{
+    $idFuncionario = $_POST['funcionario'];
+}
 
 $dao = new AfastamentoDAO();
 $afastamento = new Afastamento();
@@ -37,10 +45,14 @@ if (isset($_SESSION['idFuncionario'])) {
 $afastamento->setIdFuncionario($idFuncionario);
 
 
-if ($dao->alterar($afastamento)) {
-    echo '<script type="text/javascript"> alert("Erro ao Atualizar")</script>';
-} else {
-
-    echo '<script type="text/javascript"> alert("Alterado com Sucesso !"); window.location="../Presentation/main.php?pagina=frmCadastroP.php";</script>';
+$dao->alterar($afastamento);
+if($retorno == 1){
+    echo '<script type="text/javascript"> alert("Alterado com Sucesso !"); 
+         window.location="../Presentation/main.php?pagina=frmDetalharFuncionario.php&idFuncionario='. $idFuncionario .'";</script>';
+}else{
+    echo '<script type="text/javascript"> alert("Alterado com Sucesso !"); 
+         window.location="../Presentation/main.php?pagina=frmCadastroAfastamento.php";</script>';
 }
+   
+
 ?>

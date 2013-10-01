@@ -142,10 +142,10 @@ $progressaoCarreira = $daoProgressoes->ListarTodos($funcionario->getId());
         </script>
         <script language="Javascript">
 	
-            function confirmacao2(id) { 
+            function confirmacao2(id,idF) { 
                 var resposta = confirm("Deseja remover esse registro?");   
                 if (resposta == true) { 
-                    window.location.href = "../Controller/CtlApagarAfastamento.php?id="+id; 
+                    window.location.href = "../Controller/CtlApagarAfastamento.php?id="+id+"&idF="+idF; 
                 } 
             } 
         </script>
@@ -318,7 +318,7 @@ foreach ($afastamento as $a) {
     echo "<td class='linha-td' colspan='70' ALIGN=MIDDLE WIDTH=10>" . $a->getDataTermino() . "</td>";
     echo "<td class='linha-td' colspan='70' ALIGN=MIDDLE WIDTH=10>" . $a->getMotivo() . "</td>";
     echo "<td class='coluna'><a href=main.php?pagina=frmEditarAfastamento.php&id='" . $a->getIdAfastamento() . "'><img src='./image/editar.png'></a></td>";
-    echo "<td class='coluna'><a href='javascript:func()' onclick='confirmacao2(" . $a->getIdAfastamento() . ")'><img src='./image/excluir.png'></a></td>";
+    echo "<td class='coluna'><a href='javascript:func()' onclick='confirmacao2(".$a->getIdAfastamento().",".$idFucnionario.")'><img src='./image/excluir.png'></a></td>";
     echo "</tr>";
 }
 

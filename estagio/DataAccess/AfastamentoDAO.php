@@ -35,7 +35,7 @@ class AfastamentoDAO {
     }
 
     public function apagar(Afastamento $obj) {
-        $sql = sprintf("UPDATE afastamento SET status = 0 WHERE idAfastamento = '%s'", $obj->getIdAfastamento());
+        $sql = sprintf("UPDATE afastamento SET status = 0 WHERE idAfastamento = %s", $obj->getIdAfastamento());
 
         mysql_query($sql) or die(mysql_error());
     }

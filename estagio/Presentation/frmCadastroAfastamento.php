@@ -63,6 +63,15 @@
         
               
         </script>
+         <script language="Javascript">
+	
+            function confirmacao(id) { 
+                var resposta = confirm("Deseja remover esse registro?");   
+                if (resposta == true) { 
+                    window.location.href = "../Controller/ctlApagarAfastamento.php?op=0&id="+id; 
+                } 
+            } 
+        </script>
         
     </head>
     
@@ -153,8 +162,8 @@
                        echo		"<td class='linha-td'  colspan='70' ALIGN=MIDDLE WIDTH=200 >".$a->getDataInicio()."</td>";
                        echo		"<td class='linha-td' colspan='70' ALIGN=MIDDLE WIDTH=10>".$a->getDataTermino()."</td>";
                        echo		"<td class='linha-td' colspan='70' ALIGN=MIDDLE WIDTH=10>".$a->getMotivo()."</td>";
-                       echo		"<td class='coluna'><a href='#'><img src='./image/editar.png'></a></td>";
-                       echo		"<td class='coluna'><a href='#'><img src='./image/excluir.png'></a></td>";
+                       echo		"<td class='coluna'><a href=main.php?pagina=frmEditarAfastamento.php&op=0&id=".$a->getIdAfastamento()."><img src='./image/editar.png'></a></td>";
+                       echo		"<td class='coluna'><a href='javascript:func()' onclick='confirmacao(" . $a->getIdAfastamento() . ")'><img src='./image/excluir.png'></a></td>";
                         echo		"</tr>";
                         //echo '<script type="text/javascript"> alert("'.$a->getIdAfastamento().'")</script>';
                     

@@ -18,6 +18,9 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
 
 $id = $_GET['id'];
 
+if(isset($_GET['idF'])){
+    $idF = $_GET['idF'];
+}
 
 $dao = new AfastamentoDAO();
 $afastamento = new Afastamento();
@@ -25,6 +28,14 @@ $afastamento = new Afastamento();
 $afastamento->setIdAfastamento($id);
 
 $dao->apagar($afastamento);
-echo '<script type="text/javascript"> alert("Apagado com Sucesso !"); window.location="../Presentation/main.php?pagina=frmCadastroP.php";</script>';
+if(isset($_GET['op'])){
+    echo '<script type="text/javascript"> alert("Apagado com Sucesso !");
+        window.location="../Presentation/main.php?pagina=frmCadastroAfastamento.php";</script>';
+    
+}else{
+    echo '<script type="text/javascript"> alert("Apagado com Sucesso !");
+        window.location="../Presentation/main.php?pagina=frmDetalharFuncionario.php&idFuncionario='. $idF .'";</script>';
+}
+    
 ?>
 
