@@ -13,17 +13,19 @@
 	    header("Location: index_.php"); exit; // mudar depois dos testes
 	}
  
-    
-    
+    $retorno = $_GET['op'];
+
     $id = $_POST['id'];
     $nome = $_POST['nome'];
     $dataNascimento = implode("-",array_reverse(explode("/",$_POST['dataNascimento'])));
-    $sexo = $_POST['sexo'];   
-    $idFuncionario = $_POST['funcionario'];   
+    $sexo = $_POST['sexo'];
+    
+    if(isset($_GET['func'])){
+        $idFuncionario = $_GET['func'];
+    }else{
+        $idFuncionario = $_POST['funcionario'];
+    }
  
-    
-    
-    
     
     $dao = new DependenteDAO();
     $dependente = new Dependente();
@@ -35,7 +37,12 @@
     $dependente->setIdFuncionario($idFuncionario);
     
     $dao->alterar($dependente);
-     echo '<script type="text/javascript"> alert("Alterado com Sucesso !"); window.location="../Presentation/main.php?pagina=frmCadastroP.php";</script>';
-        
+    if($retorno == 1){
+     echo '<script type="text/javascript"> alert("Alterado com Sucesso !"); 
+         window.location="../Presentation/main.php?pagina=frmDetalharFuncionario.php&idFuncionario='. $idFuncionario .'";</script>';
+    }else{
+        echo '<script type="text/javascript"> alert("Alterado com Sucesso !"); 
+         window.location="../Presentation/main.php?pagina=frmCadastroDependente.php";</script>';
+    }
 
 ?>

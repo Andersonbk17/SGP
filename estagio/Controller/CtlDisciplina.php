@@ -57,6 +57,7 @@
     	if(!$dao->Atualizar($disciplina)){
 			
 			$dao->AtualizarCurso($cod,$curso);
+                        
 			echo"<script language='javascript'>
 						window.location.href='../Presentation/main.php?pagina=frmCadastroDisciplina.php&aux=0&msg=1'
 				  </script>";
