@@ -94,7 +94,7 @@ $dao = new TitulacaoDAO();
         echo"<input type='text' id='nomeTitulacao' name='nomeTitulacao' value='" . $editar->getNome() . "' required size='50' maxlength='50' class='input-div'/>";
 
         echo"<a href=main.php?pagina=frmCadastroTitulacao.php&aux=0><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
-        echo"<input type='submit' id='btnTitulo' name='btnTitulo' value='Salvar' class='botao'/>";
+        echo"<input type='submit' id='btnTitulo' name='btnTitulo' value='Atualizar' class='botao'/>";
         echo"</form>";
     }
 
