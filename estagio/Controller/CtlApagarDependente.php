@@ -17,7 +17,7 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
 }
 
 $id = $_GET['id'];
-
+$idF = $_SESSION['idFuncionario'];
 
 $dao = new DependenteDAO();
 $dependente = new Dependente();
@@ -25,6 +25,12 @@ $dependente = new Dependente();
 $dependente->setId($id);
 
 $dao->apagar($dependente);
-echo '<script type="text/javascript"> alert("Apagado com Sucesso !");
-    window.location="../Presentation/main.php?pagina=frmDetalharFuncionario.php&idFuncionario="'.$dependente->getIdFuncionario().'"";</script>';
+if(isset($_GET['op'])){
+    echo '<script type="text/javascript"> alert("Apagado com Sucesso !");
+        window.location="../Presentation/main.php?pagina=frmCadastroDependente.php";</script>';
+    
+}else{
+    echo '<script type="text/javascript"> alert("Apagado com Sucesso !");
+        window.location="../Presentation/main.php?pagina=frmDetalharFuncionario.php&idFuncionario='. $idF .'";</script>';
+}
 ?>
