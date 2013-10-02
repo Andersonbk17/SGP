@@ -341,7 +341,7 @@ foreach ($afastamento as $a) {
     echo "<td class='linha-td'  colspan='70' ALIGN=MIDDLE WIDTH=200 >" . $a->getDataInicio() . "</td>";
     echo "<td class='linha-td' colspan='70' ALIGN=MIDDLE WIDTH=10>" . $a->getDataTermino() . "</td>";
     echo "<td class='linha-td' colspan='70' ALIGN=MIDDLE WIDTH=10>" . $a->getMotivo() . "</td>";
-    //frmEditarDependente.php&id='".$a->getId()."'&idFuncionario=".$idFucnionario."><img src='./image/editar.png'></a></td>";
+    
     
     echo "<td class='coluna'><a href=main.php?pagina=frmEditarAfastamento.php&id='" . $a->getIdAfastamento()."'&idFuncionario=".$idFucnionario."><img src='./image/editar.png'></a></td>";
     echo "<td class='coluna'><a href='javascript:func()' onclick='confirmacao2(".$a->getIdAfastamento().",".$idFucnionario.")'><img src='./image/excluir.png'></a></td>";
@@ -366,10 +366,10 @@ echo "</table>";
 
             foreach ($progressaoCarreira as $a) {
                 echo "<tr class='linha-td'>";
-
+//frmEditarDependente.php&id='".$a->getId()."'&idFuncionario=".$idFucnionario."><img src='./image/editar.png'></a></td>";
                 echo "<td class='linha-td'  colspan='70' ALIGN=MIDDLE WIDTH=500 >" . $a->getDataProgressao() . "</td>";
                 echo "<td class='linha-td' colspan='70' ALIGN=MIDDLE WIDTH=800>" . $a->getDescricaoNivelCategoria() . "</td>";
-                echo "<td class='coluna'><a href=main.php?pagina=frmEditarProgressaoCarreira.php&id=".$a->getId()."><img src='./image/editar.png'></a></td>";
+                echo "<td class='coluna'><a href=main.php?pagina=frmEditarProgressaoCarreira.php&id=".$a->getId()."&idFuncionario=".$idFucnionario."><img src='./image/editar.png'></a></td>";
                 echo "<td class='coluna'><a href='javascript:func()' onclick='confirmacao3(".$a->getId().",".$idFucnionario.")'><img src='./image/excluir.png'></a></td>";
                 echo "</tr>";
             }
