@@ -62,6 +62,17 @@ if (isset($_SESSION['idFuncionario'])) {
                         $('table#tbl tr:even').addClass('par');
                     });
         
+        
+        
+        
+        //recebendo o idfuncionario por parametro na url
+          $(document).ready(function(){  $('#funcionario').val(<?php  if(isset($_GET['idFuncionario'] )){
+                    $idFuncionario = $_GET['idFuncionario'];
+                }else{
+                    $idFuncionario = 0;
+                }   echo $idFuncionario;?>)      
+            
+        }) 
               
         </script>
 
