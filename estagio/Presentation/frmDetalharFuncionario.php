@@ -213,16 +213,31 @@ include_once '../DataAccess/FuncionarioDAO.php';
             ?>
             
             
-            <label for="nome" class="dados">Certidão de Casamento / Divórcio :</label>
+            <?php
+                if($funcionario->getCasadoDivorciado() == 1){
+                    echo "<label for='nome' class='dados'>Certidão de Casamento :</label>";
+                }else if($funcionario->getCasadoDivorciado() == 2){
+                    echo "<label for='nome' class='dados'>Certidão de Divorcio :</label>";
+                }
+            ?>
             
+            <!--
+            <label for="nome" class="dados">Certidão de Casamento / Divórcio :</label>
+            -->
             <?php
                 if($funcionario->getCertidaoCasamentoDivorcio() !="null"){
                     echo "<label name='certidaoCasamentoDivorcio'  >".$funcionario->getCertidaoCasamentoDivorcio()."</label> <br />";
                 }
             ?>
             
+            <?php
+                if($funcionario->getCasadoDivorciado() == 1){
+                    echo "<label for='dataCasamento' class='dados'>Data Casamento :</label>";
+                }else if($funcionario->getCasadoDivorciado() == 2){
+                    echo "<label for='dataCasamento' class='dados'>Divórcio :</label>";
+                }
+            ?>
             
-            <label for="dataCasamento" class="dados">Data Casamento / Divórcio :</label>
             <label name="dataCasamento" ><?php echo $funcionario->getDataCasamento(); ?> </label> <br />
             
             <label for="nomePai" class="dados">Nome do Pai :</label>
@@ -246,6 +261,7 @@ include_once '../DataAccess/FuncionarioDAO.php';
             
             ?>
             
+                       
             <label for="cidade" class="dados">Cidade  :</label>
             <label name="cidade" ><?php echo $cidade->getNome(); ?> </label> <br />
             
@@ -254,6 +270,10 @@ include_once '../DataAccess/FuncionarioDAO.php';
             
             <label for="cep" class="dados">CEP  :</label>
             <label name="cep" ><?php echo $funcionario->getCep(); ?> </label> <br />
+            
+            <label for="email" class="dados">Email  :</label>
+            <label name="email" ><?php echo $funcionario->getEmail(); ?> </label> <br />
+            
             
             <label for="numeroSiape" class="dados">Numero Siape  :</label>
             <label name="numeroSiape" ><?php echo $funcionario->getNumeroSiape(); ?> </label> <br />
