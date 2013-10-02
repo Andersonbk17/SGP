@@ -52,6 +52,7 @@
     $campus = $_POST['campus'];
     $titulacao = $_POST['titulacao'];
     $pendencias = $_POST['pendencias'];
+    $casadoDivorciado = $_POST['casadoDivorciado'];
     
     
     
@@ -90,7 +91,7 @@
     $funcionario = new Funcionario();
     $dao = new FuncionarioDAO();
     
-    
+    $funcionario->setCasadoDivorciado($casadoDivorciado);
     //$funcionario->setCertidaoCasamentoDivorcio($certidaoCasamentoDivorcio);
     $funcionario->setCertidaoNascimento($certidaoNascimento);
     if($certidaoDivorcio == ""){
@@ -154,11 +155,9 @@
     $funcionario->setSexo($sexo);
     $funcionario->setTituloEleitoral($tituloEleitor);
     
-    $Email_ = new Email();
-    $Email_->setNome($email);
+    $funcionario->setEmail($email);
     
     
-    $funcionario->setEmail($Email_);
     
     if($dao->Inserir($funcionario)){
        echo '<script type="text/javascript"> alert("Erro")</script>';

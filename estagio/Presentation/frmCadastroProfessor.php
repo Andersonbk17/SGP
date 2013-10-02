@@ -260,7 +260,7 @@
 				   echo"<label name='dataCasamento' for='dataCasamento'  style='display: none' class='casado' >Data Casamento :</label><br class='casado' style='display: none' />";
 				   
 				   echo"<input type='text' class='input-div emComum' id='dataCasamento' name='dataCasamento'  style='display: none' size='24' name='dataCasamento' placeholder='DD/MM/AAAA' /><br class='emComum' style='display: none' /> ";
-                                   echo "<input type='hidden' id='casadoDivorciado' value='null' name='casadoDivorciado' />";//verificar
+                                   echo "<input type='hidden' id='casadoDivorciado' value='0' name='casadoDivorciado' />";//verificar
 				
                                    
                                    
@@ -423,8 +423,8 @@
 					echo"<input type='text' class='input-div' id='rg' name='rg' value='".$edit->getRg()."' placeholder='RG' required='' size='24' /> <br />";
 					echo"<label name='cpf' for='cpf'>CPF *:</label><br />";
 					echo"<input type='text' class='input-div' id='cpf' name='cpf' value='".$edit->getCpf()."' placeholder='CPF' required='' size='24' /> <br />";
-					//echo"<label name='email' for='email'>CPF *:</label><br />";
-					//echo"<input type='email' class='input-div' id='email' name='email' value='".$edit->getEmail()."' placeholder='EMAIL' required='' size='24' /> <br />";
+					echo"<label name='email' for='email'>Email *:</label><br />";
+					echo"<input type='email' class='input-div' id='email' name='email' value='".$edit->getEmail()."' placeholder='EMAIL' required='' size='24' /> <br />";
 						
 					echo"<label name='sexo' for='sexo'>Sexo * :</label><br />";
                                         
@@ -509,7 +509,7 @@
 				   echo"<label name='dataCasamento' for='dataCasamento'  style='display: none' class='casado' >Data Casamento :</label><br class='casado' style='display: none' />";
 				   
 				   echo"<input type='text' class='input-div emComum' value='".$edit->getDataCasamento()."' id='dataCasamento' name='dataCasamento'  style='display: none' size='24' name='dataCasamento' placeholder='DD/MM/AAAA' /><br class='emComum' style='display: none' /> ";
-                                    
+                                   echo "<input type='hidden' id='casadoDivorciado' value='".$edit->getCasadoDivorciado()."' name='casadoDivorciado' />";//verificar 
                                     
                                     
                                     

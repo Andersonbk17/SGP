@@ -59,7 +59,7 @@
     $campus = $_POST['campus'];
     $titulacao = $_POST['titulacao'];
     $pendencias = $_POST['pendencias'];
-    
+     $casadoDivorciado = $_POST['casadoDivorciado'];
     
     
     $conjugue = $_POST['conjugue'];
@@ -162,11 +162,9 @@
     $funcionario->setSexo($sexo);
     $funcionario->setTituloEleitoral($tituloEleitor);
     
-    $Email_ = new Email();
-    $Email_->setNome($email);
+   $funcionario->setCasadoDivorciado($casadoDivorciado);
     
-    
-    $funcionario->setEmail($Email_);
+    $funcionario->setEmail($email);
     
     if($dao->atualizar($funcionario)){
        echo '<script type="text/javascript"> alert("Erro")</script>';

@@ -15,16 +15,16 @@
 			private $nomeMae; 
 			private $cpf; 
 			private $conjugue;
-		    private $idTipo_Sanguineo; //FOREING KEY
+                        private $idTipo_Sanguineo; //FOREING KEY
 			private $idEstado_Civil; //FOREING KEY
 			private $sexo;
-	        private $portariaNomeacao;
-		    private $dataPosse;
+                        private $portariaNomeacao;
+                        private $dataPosse;
 			private $dataExercicio;
 			private $portariaFG;
-		    private $portariaCD;
+                        private $portariaCD;
 			private $numeroSiape;
-		    private $idCampus; //FOREING KEY
+                        private $idCampus; //FOREING KEY
 			private $idTitulacao; //FOREING KEY
 			private $endereco;
 			private $endNumero;
@@ -33,6 +33,7 @@
 			private $endCidade;
                         private $cep;
                         private $email;
+                        private $casadoDivorciado;
 			
 			
 			
@@ -103,7 +104,8 @@
 				$this->endComplemento = "";
 			    $this->endCidade = "";
                             $this->cep = "";
-                            $this->email = new Email();
+                            $this->email = "";
+                            $this->casadoDivorciado = 0;
 			}
 			
 			//Métodos
@@ -370,6 +372,16 @@
                         public function setEmail($email) {
                             $this->email = $email;
                         }
+                        
+                        public function getCasadoDivorciado() {
+                            return $this->casadoDivorciado;
+                        }
+
+                        public function setCasadoDivorciado($casadoDivorciado) {
+                            $this->casadoDivorciado = $casadoDivorciado;
+                        }
+
+
 
 
 

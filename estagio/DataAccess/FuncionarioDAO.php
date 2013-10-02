@@ -27,10 +27,10 @@
 			$sql = sprintf("INSERT INTO Funcionario (nome,rg,reservistaMilitar,tituloEleitoral,dataNascimento,dataCasamento,
                             certidaoNascimento,certidaoCasamentoDivorcio,pendencias,nomePai,nomeMae,cpf,conjuge,idTipo_Sanguineo,idEstado_Civil,
                             sexo,portariaNomeacao,dataPosse,dataExercicio,portariaFG,portariaCD,numeroSiape,idCampus,idTitulacao,endereco,
-                            endNumero,endBairro,endComplemento,endCep,idCidade,status
-                            ) VALUES('%s','%s','%s','%s','%s','%s','%s','%s',
+                            endNumero,endBairro,endComplemento,endCep,idCidade,status,email,casadoDivorciado)
+                            VALUES('%s','%s','%s','%s','%s','%s','%s','%s',
                             '%s','%s','%s','%s','%s','%d','%d','%s','%s','%s','%s','%s','%s','%s','%d','%d',
-                            '%s','%s','%s','%s','%s','%d','%d')",
+                            '%s','%s','%s','%s','%s','%d','%d','%s','%d')",
 			$obj->getNome(),
 			$obj->getRg(),
 			$obj->getReservistaMilitar(),
@@ -61,7 +61,9 @@
 			$obj->getEndComplemento(),
 			$obj->getCep(),
                         $obj->getEndCidade(),
-                        1
+                        1,
+                        $obj->getEmail(),
+                         $obj->getCasadoDivorciado()
 			);
 			
                    //echo $obj->getIdTitulacao();
@@ -72,12 +74,12 @@
                         $id = mysql_insert_id();
                         $_SESSION['idFuncionario'] = $id;
                         
-                        $emailDAO = new EmailDAO();
-                        $email = new Email();
+                        //$emailDAO = new EmailDAO();
+                        //$email = new Email();
                         
-                        $email = $obj->getEmail();
-                        $email->setIdFuncionario($id);
-                        $emailDAO->Inserir($email);
+                        //$email = $obj->getEmail();
+                       // $email->setIdFuncionario($id);
+                        //$emailDAO->Inserir($email);
 		}
 		
 		//Atualizar
@@ -112,7 +114,9 @@
 								endBairro='%s',
 								endComplemento='%s',
 								endCep='%s',
-								idCidade='%s'
+								idCidade='%s',
+                                                                email='%s',
+                                                                casadoDivorciado='%s' 
 							WHERE idFuncionario='%s'",
 			
 			$obj->getNome(),
@@ -131,20 +135,22 @@
 			$obj->getIdTipo_Sanguineo(), //FOREING KEY
 			$obj->getIdEstado_Civil(), //FOREING KEY
 			$obj->getSexo(),
-            $obj->getPortariaNomeacao(),
-            $obj->getDataPosse(),
+                        $obj->getPortariaNomeacao(),
+                        $obj->getDataPosse(),
 			$obj->getDataExercicio(),
 			$obj->getPortariaFG(),
-            $obj->getPortariaCD(),
+                        $obj->getPortariaCD(),
 			$obj->getNumeroSiape(),
-            $obj->getIdCampus(), //FOREING KEY
+                        $obj->getIdCampus(), //FOREING KEY
 			$obj->getIdTitulacao(), //FOREING KEY
 			$obj->getEndereco(),
 			$obj->getEndNumero(),
 			$obj->getEndBairro(),
 			$obj->getEndComplemento(),
 			$obj->getCep(),
-            $obj->getEndCidade(),
+                        $obj->getEndCidade(),
+                        $obj->getEmail(),
+                        $obj->getCasadoDivorciado(),
 			$obj->getId()
 			);
 			
@@ -195,6 +201,8 @@
                                 $novo->setRg(stripslashes($resultado['rg']));
                                 $novo->setSexo(stripslashes($resultado['sexo']));
                                 $novo->setTituloEleitoral(stripslashes($resultado['tituloEleitoral']));
+                                $novo->setCasadoDivorciado($resultado['casadoDivorciado']);
+                                $novo->setEmail($resultado['email']);
                                 
 				return $novo;
 				
