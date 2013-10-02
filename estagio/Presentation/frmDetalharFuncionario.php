@@ -1,5 +1,5 @@
 <?php
-include_once '../DataAccess/FuncionarioDAO.php';
+    include_once '../DataAccess/FuncionarioDAO.php';
     include_once '../DomainModel/Funcionario.php';
     include_once '../DataAccess/EstadoCivilDAO.php';
     include_once '../DataAccess/TipoSanguineoDAO.php';
@@ -183,12 +183,12 @@ include_once '../DataAccess/FuncionarioDAO.php';
             <label for="cpf" class="dados">CPF :</label>
             <label name="cpf"  ><?php echo $funcionario->getCpf();?> </label> <br />
             
-            <label for="sexo" class="dados"  >SEXO :</label>
+            <label for="sexo" class="dados"  >Sexo :</label>
             <label name="sexo" ><?php  if($funcionario->getSexo() == 1) echo "Masculino "; else echo "Feminino"?> </label> <br />
             
             <?php
                 if($funcionario->getReservistaMilitar() != "null"){
-                    echo "<label for='reservista' class='dados' >Numero da Reservista Militar :</label>";
+                    echo "<label for='reservista' class='dados' >Número da Reservista Militar :</label>";
                     echo "<label name='reservista' > ".$funcionario->getReservistaMilitar(); ".</label> ";
                     echo "<br />";
                 }
@@ -203,12 +203,11 @@ include_once '../DataAccess/FuncionarioDAO.php';
             <label for="nome" class="dados">Estado Civil :</label>
             <label name=nome ><?php echo $estadoCivilNome; ?> </label> <br />
             
-            <label for="nome"class="dados" >Conjugue :</label>
+            
             <?php
                 if($funcionario->getConjugue() != "null"){
+                    echo "<label for='nome' class='dados' >Conjugue :</label>";
                     echo "<label name='nome' >".$funcionario->getConjugue()."</label> <br />";
-                }else{
-                    echo "<br />";
                 }
             ?>
             
@@ -225,20 +224,22 @@ include_once '../DataAccess/FuncionarioDAO.php';
             <label for="nome" class="dados">Certidão de Casamento / Divórcio :</label>
             -->
             <?php
-                if($funcionario->getCertidaoCasamentoDivorcio() !="null"){
-                    echo "<label name='certidaoCasamentoDivorcio'  >".$funcionario->getCertidaoCasamentoDivorcio()."</label> <br />";
+                if($funcionario->getCertidaoCasamentoDivorcio() != "null"){
+                    echo "<label name='certidaoCasamentoDivorcio'  >".$funcionario->getCertidaoCasamentoDivorcio()." </label> <br />";
                 }
             ?>
             
             <?php
                 if($funcionario->getCasadoDivorciado() == 1){
                     echo "<label for='dataCasamento' class='dados'>Data Casamento :</label>";
+                    echo "<label name='dataCasamento' >". $funcionario->getDataCasamento()."</label> <br />";
                 }else if($funcionario->getCasadoDivorciado() == 2){
                     echo "<label for='dataCasamento' class='dados'>Divórcio :</label>";
+                    echo "<label name='dataCasamento' >". $funcionario->getDataCasamento()."</label> <br />";
                 }
             ?>
             
-            <label name="dataCasamento" ><?php echo $funcionario->getDataCasamento(); ?> </label> <br />
+            
             
             <label for="nomePai" class="dados">Nome do Pai :</label>
             <label name="nomePai" ><?php echo $funcionario->getNomePai(); ?> </label> <br />
