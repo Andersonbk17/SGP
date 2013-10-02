@@ -45,7 +45,7 @@
                 <option value="nenhum" selected="" >Nenhum</option>
                 <option value="nome"  >Nome</option>
                 <option value="cpf" >Cpf</option>
-                <option value="cpf" >Id</option>
+                <!--<option value="id" >Id</option> -->
                 
             </select>
             

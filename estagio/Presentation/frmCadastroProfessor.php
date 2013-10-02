@@ -57,20 +57,20 @@
                 var valor = $("#estadoCivil option:selected").val();
                 
                 
-                    if(valor == 1){
+                    if(valor == 1){//casado
                         $(".casado").fadeIn(1400)
                         $(".divorcio").hide(1100)
                     }
-                    else if(valor == 2){
+                    else if(valor == 2){//solteiro
                        $(".casado").hide(1100)
                        $(".divorcio").hide(1100)
                     }
-                   else if(valor == 3){
+                   else if(valor == 3){//divorciado
                        //conferir
                        $(".casado").hide(1100)
                        $(".divorcio").fadeIn(1400)
-                       $("#conjugue").fadeIn(1400)
-                       $("#dataCasamento").fadeIn(1400)
+                       //$("#conjugue").fadeIn(1400)
+                       //$("#dataCasamento").fadeIn(1400)
                        
                    }else{
                        $(".casado").hide(1100)
@@ -211,7 +211,7 @@
 				   echo"</select><br />";
 					
 					
-					
+				//Casado
 				   echo"<br class='casado' style='display: none' /><label name='conjugue' for='conjugue' class='casado' style='display: none'>Conjugue :</label><br class='casado' style='display: none' />";
 				   echo"<input type='text'  id='conjugue' name='conjugue' placeholder='Nome ' style='display: none' required='' class='casado input-div'  size='100'/> <br class='casado' style='display: none' />";
 					
@@ -220,9 +220,23 @@
 					
 					
 				   echo"<label name='dataCasamento' for='dataCasamento'  style='display: none' class='casado' >Data Casamento :</label><br class='casado' style='display: none' />";
-				   echo"<label name='dataCasamento' for='dataCasamento' style='display: none' class='divorcio' >Data Divórcio :</label><br class='divorcio' style='display: none' />";
+				   
 				   echo"<input type='text' class='input-div casado' id='dataCasamento' name='dataCasamento' class='casado' style='display: none' size='24' name='dataCasamento' placeholder='DD/MM/AAAA' /><br class='casado' style='display: none' /> ";
 					
+                                   //divorcio
+                                   
+                                   
+                                   echo"<br class='divorcio' style='display: none' /><label name='conjugue' for='conjugue' class='divorcio' style='display: none'>Conjugue :</label><br class='divorcio' style='display: none' />";
+				   echo"<input type='text'  id='conjugue' name='conjugue' placeholder='Nome ' style='display: none' required='' class='divorcio input-div'  size='100'/> <br class='divorcio' style='display: none' />";
+					
+				   echo"<label name='certidaoCasamentoDivorcio' for='certidaoCasamentoDivorcio' class='divorcio' style='display: none'>Certidão de Divorcio :</label><br class='divorcio' style='display: none' />";
+				   echo"<input type='text' class='divorcio input-div' id='certidaoCasamentoDivorcio'  name='certidaoCasamentoDivorcio' placeholder='Numero ' size='24' style='display: none' required='' class='divorcio' /> <br class='divorcio' style='display: none' />";
+					
+					
+				   echo"<label name='dataCasamento' for='dataCasamento'  style='display: none' class='divorcio' >Data Divorcio :</label><br class='divorcio' style='display: none' />";
+				   
+				   echo"<input type='text' class='input-div divorcio' id='dataCasamento' name='dataCasamento' class='divorcio' style='display: none' size='24' name='dataCasamento' placeholder='DD/MM/AAAA' /><br class='divorcio' style='display: none' /> ";
+                                   
 				   
 					
 					
