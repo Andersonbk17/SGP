@@ -121,7 +121,10 @@
         })
         
         
+        
+        
         </script>
+        
     </head>
     <body>
         
@@ -386,12 +389,23 @@
 					//echo"<input type='email' class='input-div' id='email' name='email' value='".$edit->getEmail()."' placeholder='EMAIL' required='' size='24' /> <br />";
 						
 					echo"<label name='sexo' for='sexo'>Sexo * :</label><br />";
-					echo"<label name='sexo' for='sexo'>Masculino</label>";
-					echo"<input type='radio'  name='sexo' class='sexo input-div' value='1' /><br />";
-					echo"<label name='sexo' for='sexo'>Feminino</label>";
-					echo"<input type='radio'  name='sexo' class='sexo input-div' value='2' /><br />";
-					
-					
+                                        
+                                        
+                                        if($edit->getSexo()==1){
+                                            echo"<label name='sexo'  for='sexo'>Masculino</label>";
+                                            echo"<input type='radio' class='input-div' name='sexo' class='sexo' value='1' checked='checked' /><br />";
+                                            echo"<label name='sexo'  for='sexo'>Feminino </label>";
+                                            echo"<input type='radio' class='input-div' name='sexo' class='sexo' value='2' /><br />";
+                                        }else{
+                                            echo"<label name='sexo'  for='sexo'>Masculino</label>";
+                                            echo"<input type='radio' class='input-div' name='sexo' class='sexo' value='1' /><br />";
+                                            echo"<label name='sexo'  for='sexo'>Feminino </label>";
+                                            echo"<input type='radio' class='input-div' name='sexo' class='sexo' value='2' checked='checked'/><br />";
+
+                                        }
+                                        
+                                        
+                                        
 					echo"<label name='reservista' for='reservista'  class='reservista' style='display: none'  >Número da Reservista Militar:</label><br class='reservista' style='display: none' />";
 					echo"<input type='text'  id='reservista' name='reservista' value='".$edit->getReservistaMilitar()."' placeholder='' class='reservista input-div' required='' style='display: none' size='24' /> <br class='reservista' style='display: none' />";
 					echo"<label name='titulo' for='titulo'>Título Eleitoral *:</label><br />";
@@ -524,7 +538,7 @@
 					  echo"<label name='numeroSiape' for='numeroSiape'>Numero Siape *:</label><br />";
 					  echo"<input type='text' class='input-div' id='numeroSiape' name='numeroSiape' value='".$edit->getNumeroSiape()."' placeholder='' required='' size='24'/> <br />";
 					  echo"<label name='numeroPortaria' for='numeroPortaria'>Numero Portaria/Nomeação *:</label><br />";
-					  echo"<input type='text' class='input-div' id='numeroPortaria' name='numeroPortaria' placeholder='' required='' size='24' /> <br />";
+					  echo"<input type='text' class='input-div' id='numeroPortaria' name='numeroPortaria' placeholder='' value=".$edit->getPortariaNomeacao()." required='' size='24' /> <br />";
 					  echo"<label name='dataPosse' for='dataPosse'>Data da Posse *:</label><br />";
 					  echo"<input type='text' class='input-div' id='dataPosse' name='dataPosse' placeholder='DD/MM/AAAA'  value='".$edit->getDataPosse()."' required='' size='24' /> <br />";
 					  echo"<label name='dataExercicio' for='dataExercicio'>Data de Exercício *:</label><br />";
