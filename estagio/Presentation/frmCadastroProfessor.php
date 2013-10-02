@@ -46,6 +46,7 @@
                       $(".reservista").fadeIn(1400)
                 }else{
                     $(".reservista").hide(1100)
+                    $('#reservista').val("null")
                 }
             })
         
@@ -111,8 +112,9 @@
         $(document).ready(function(){
         
             $('#enviar').click(function(){
-                $('#reservista').show()
-                $('#reservista').val("null")
+                              
+               $('#reservista').show()
+                
                 
                 
                 if($('#estadoCivil').val() == 2){//se o estado civil = solteiro mostra todos os valores e seta null
@@ -123,32 +125,14 @@
                     $('#certidaoCasamentoDivorcio').val("null")
                     $('#conjugue').val("null")
                     $('#dataCasamento').val("null")
+                    $('#casadoDivorciado').val(0)
                     
                 }else if($('#estadoCivil').val() == 3){//se estado civil = divorciado seta 2 em casadodivorciado
                     $('#casadoDivorciado').val(2)
                 }else if($('#estadoCivil').val() == 2){//se estado civil = casado seta 1 em casadodivorciado
                     $('#casadoDivorciado').val(1)
                 }
-                //else{//pega todosos valores e seta em outras variaveis
-                    
-                  //  var certidaoCasamento = $('#certidaoCasamentoDivorcio').val()
-                   // var conjugue = $('#conjugue').val()
-                   // var dataCasamento = $('#dataCasamento').val()
-                    
-                   // $('#certidaoCasamentoDivorcio').val(certidaoCasamento)
-                   // $('#conjugue').val(conjugue)
-                   // $('#dataCasamento').val(dataCasamento)
-                    
-            //    }
-                
-                //$('#certidaoCasamentoDivorcio').show()
-                //$('#conjugue').show()
-                //$('#dataCasamento').show()
-                
-                
-                
-                //$('#certidaoCasamentoDivorcio').val("null")
-                //$('#conjugue').val("null")
+               
 
             })
         
@@ -260,7 +244,7 @@
 				   echo"<label name='dataCasamento' for='dataCasamento'  style='display: none' class='casado' >Data Casamento :</label><br class='casado' style='display: none' />";
 				   
 				   echo"<input type='text' class='input-div emComum' id='dataCasamento' name='dataCasamento'  style='display: none' size='24' name='dataCasamento' placeholder='DD/MM/AAAA' /><br class='emComum' style='display: none' /> ";
-                                   echo "<input type='hidden' id='casadoDivorciado' value='0' name='casadoDivorciado' />";//verificar
+                                   echo "<input type='hidden' id='casadoDivorciado' value='' name='casadoDivorciado' />";//verificar
 				
                                    
                                    
