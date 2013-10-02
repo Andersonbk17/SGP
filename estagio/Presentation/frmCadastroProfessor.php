@@ -124,6 +124,10 @@
                     $('#conjugue').val("null")
                     $('#dataCasamento').val("null")
                     
+                }else if($('#estadoCivil').val() == 3){//se estado civil = divorciado seta 2 em casadodivorciado
+                    $('#casadoDivorciado').val(2)
+                }else if($('#estadoCivil').val() == 2){//se estado civil = casado seta 1 em casadodivorciado
+                    $('#casadoDivorciado').val(1)
                 }
                 //else{//pega todosos valores e seta em outras variaveis
                     
@@ -256,6 +260,7 @@
 				   echo"<label name='dataCasamento' for='dataCasamento'  style='display: none' class='casado' >Data Casamento :</label><br class='casado' style='display: none' />";
 				   
 				   echo"<input type='text' class='input-div emComum' id='dataCasamento' name='dataCasamento'  style='display: none' size='24' name='dataCasamento' placeholder='DD/MM/AAAA' /><br class='emComum' style='display: none' /> ";
+                                   echo "<input type='hidden' id='casadoDivorciado' value='null' name='casadoDivorciado' />";//verificar
 				
                                    
                                    
@@ -488,7 +493,30 @@
 			
                                    //selecionar o combobox TipoSanguineo
                                     echo"<script type='text/javascript'> $(document).ready(function(){  $('#tipoSanguineo').val(".$edit->getIdTipo_Sanguineo().")      }) </script>";//select ok
+				
+                                    
+                                    echo"<br class='divorcio' style='display: none' /><label name='conjugue' for='conjugue' class='divorcio' style='display: none'>Conjugue :</label><br class='divorcio' style='display: none' />";
+				   echo"<br class='casado' style='display: none' /><label name='conjugue' for='conjugue' class='casado' style='display: none'>Conjugue :</label><br class='casado' style='display: none' />";
+				   
+                                   echo"<input type='text'  id='conjugue' name='conjugue' placeholder='Nome ' value='".$edit->getConjugue()."' style='display: none' required='' class='emComum input-div'  size='100'/> <br class='emComum' style='display: none' />";
 					
+                                   echo"<label name='certidaoCasamentoDivorcio' for='certidaoCasamentoDivorcio' class='divorcio' style='display: none'>Certidão de Divorcio :</label><br class='divorcio' style='display: none' />";
+				   echo"<label name='certidaoCasamentoDivorcio' for='certidaoCasamentoDivorcio' class='casado' style='display: none'>Certidão de Casamento :</label><br class='casado' style='display: none' />";
+				   
+                                   echo"<input type='text' class='emComum input-div' id='certidaoCasamentoDivorcio' value='".$edit->getCertidaoCasamentoDivorcio()."' name='certidaoCasamentoDivorcio' placeholder='Numero ' size='24' style='display: none' required='' class='casado' /> <br class='emComum' style='display: none' />";
+					
+				   echo"<label name='dataCasamento' for='dataCasamento'  style='display: none' class='divorcio' >Data Divorcio :</label><br class='divorcio' style='display: none' />";
+				   echo"<label name='dataCasamento' for='dataCasamento'  style='display: none' class='casado' >Data Casamento :</label><br class='casado' style='display: none' />";
+				   
+				   echo"<input type='text' class='input-div emComum' value='".$edit->getDataCasamento()."' id='dataCasamento' name='dataCasamento'  style='display: none' size='24' name='dataCasamento' placeholder='DD/MM/AAAA' /><br class='emComum' style='display: none' /> ";
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    /*
+                                    
 				   echo"<br class='casado' style='display: none' /><label name='conjugue' for='conjugue' class='casado' style='display: none'>Conjugue :</label><br class='casado' style='display: none' />";
 				   echo"<input type='text'  id='conjugue' name='conjugue' value='".$edit->getConjugue()."' placeholder='Nome ' style='display: none' required='' class='casado input-div'  size='100'/> <br class='casado' style='display: none' />";
 					
@@ -500,7 +528,7 @@
 				   echo"<label name='dataCasamento' for='dataCasamento' style='display: none' class='divorcio' >Data Divórcio :</label><br class='divorcio' style='display: none' />";
 				   echo"<input type='text' class='input-div casado' id='dataCasamento' name='dataCasamento' value='".$edit->getDataCasamento()."' class='casado' style='display: none' size='24' name='dataCasamento' placeholder='DD/MM/AAAA' /><br class='casado' style='display: none' /> ";
 					
-				   
+				   */
 					
 					
 				   echo"<label name='nomePai' for='nomePai'>Nome do Pai *:</label><br />";
