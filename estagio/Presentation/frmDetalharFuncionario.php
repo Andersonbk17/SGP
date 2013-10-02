@@ -276,10 +276,10 @@
             <label name="email" ><?php echo $funcionario->getEmail(); ?> </label> <br />
             
             
-            <label for="numeroSiape" class="dados">Numero Siape  :</label>
+            <label for="numeroSiape" class="dados">Número Siape  :</label>
             <label name="numeroSiape" ><?php echo $funcionario->getNumeroSiape(); ?> </label> <br />
             
-            <label for="numeroPortaria" class="dados">Numero Portaria/Nomeação  :</label>
+            <label for="numeroPortaria" class="dados">Número Portaria/Nomeação  :</label>
             <label name="numeroPortaria" ><?php echo $funcionario->getPortariaNomeacao(); ?> </label> <br />
             
             <label for="dataPosse" class="dados">Data da Posse  :</label>
