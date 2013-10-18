@@ -125,17 +125,6 @@
                 //$funcionario = $dao->Busca($funcionario, $ordem);
 
                 
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-              
                
                         echo	"<table class='tbl' name='tbl' id='tbl' border='1' >";
 			echo		"<tr>";

@@ -78,6 +78,47 @@
 			return $lista;
 		
 		}
+                
+                
+                public function Busca(Campus $obj,$ordem){
+                    $sql = sprintf("SELECT * FROM campus WHERE status = 1 ");
+                    
+                    $filtro = "";
+                    
+                               
+                    
+                    if($obj->getNome() != ""){
+                        $filtro = sprintf("AND nome LIKE  '%s%s%s'  ORDER BY nome %s","%",$obj->getNome(),"%",$ordem);
+                    }
+                    
+                    
+                    if($obj->getId() != 0){
+                        $filtro = sprintf("AND idFuncionario = '%d' ORDER BY id %s",$obj->getId(),$ordem);
+                    }
+                    
+                    $sql.=$filtro;
+                    
+                                     
+                    
+                        $resultado = mysql_query($sql);
+			$lista = new ArrayObject();
+			while($rs = mysql_fetch_array($resultado)){
+				
+				$n = new Campus();
+				
+				$n->setId(stripslashes($rs['idCampus']));
+				$n->setNome(stripslashes($rs['nome']));
+                                //continua ......
+                                $lista->append($n);
+				
+			}
+			return $lista;
+                        
+		}
+		
+		
+	
+	
 
 }
 
