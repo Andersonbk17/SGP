@@ -96,7 +96,7 @@
                  }
 
                 if(!isset($_POST['busca'])){
-                    $buca = "";
+                    $busca = "";
 
                 }else{
                     $busca = $_POST['busca'];

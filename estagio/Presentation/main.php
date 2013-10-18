@@ -142,7 +142,7 @@
                                                     
 							<li class="open"><a href="main.php?pagina=frmCadastroAfastamento.php" >Afastamentos</a></li>
                                                         <li class="open"><a href="main.php?pagina=frmCadastroArea.php" >Áreas</a></li>
-                                                        <li class="open"><a href="main.php?pagina=frmCadastroCampus.php" >Campus</a></li>
+                                                        <li class="open"><a href="main.php?pagina=frmListarCampus.php" >Campus</a></li>
                                                         <li class="open"><a href="main.php?pagina=frmCadastroCurso.php" >Curso</a></li>
 														<li class="open"><a href="main.php?pagina=frmCadastroTitulacao.php" >Titulação</a></li>
                                                         <li class="open"><a href="main.php?pagina=frmCadastroDisciplina.php" >Disciplina</a></li>

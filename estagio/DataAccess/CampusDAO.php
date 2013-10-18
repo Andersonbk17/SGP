@@ -93,7 +93,7 @@
                     
                     
                     if($obj->getId() != 0){
-                        $filtro = sprintf("AND idFuncionario = '%d' ORDER BY id %s",$obj->getId(),$ordem);
+                        $filtro = sprintf("AND idCampus = '%d' ORDER BY idCampus %s",$obj->getId(),$ordem);
                     }
                     
                     $sql.=$filtro;
@@ -116,9 +116,6 @@
                         
 		}
 		
-		
-	
-	
 
 }
 
