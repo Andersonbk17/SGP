@@ -14,6 +14,7 @@
 ?>
 
 <!DOCTYPE html>
+<html>
 
 	<?php
 		include_once ("../DataAccess/DisciplinaDAO.php");
@@ -44,11 +45,9 @@
 			} 
 		</script>
 	</head>
-	<!-- Fim Head -->
-	
-	<!-- Inicio Body -->
-	<body>
-		
+        <body>
+            
+            
 		<!-- Inicio Formulario -->
 		<?php
 		echo"<fieldset class='moldura1'>";
@@ -228,7 +227,6 @@
 		     
 		?>
 	
-	</body>
-	<!-- Fim Body -->
-
+        </body>
+        
 </html>

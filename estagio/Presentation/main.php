@@ -145,7 +145,7 @@
                                                         <li class="open"><a href="main.php?pagina=frmListarCampus.php" >Campus</a></li>
                                                         <li class="open"><a href="main.php?pagina=frmListarCurso.php" >Curso</a></li>
 							<li class="open"><a href="main.php?pagina=frmListarTitulacao.php" >Titulação</a></li>
-                                                        <li class="open"><a href="main.php?pagina=frmCadastroDisciplina.php" >Disciplina</a></li>
+                                                        <li class="open"><a href="main.php?pagina=frmListarDisciplina.php" >Disciplina</a></li>
                                                         <li class="open"><a href="main.php?pagina=frmCadastroDependente.php" >Dependente</a></li>
                                                         <li class="open"><a href="main.php?pagina=frmCadastroP.php" >Funcionário</a></li>
                                                          <li class="open"><a href="main.php?pagina=frmCadastroProgressaoCarreira.php">Progressão Carreira</a></li>

@@ -72,6 +72,50 @@ class DisciplinaDAO {
         }
         return $lista;
     }
+    
+    
+    
+                public function Busca(Disciplina $obj,$ordem){
+                    $sql = sprintf("SELECT * FROM disciplina WHERE status = 1 ");
+                    
+                    $filtro = "";
+                    
+                               
+                    
+                    if($obj->getNome() != ""){
+                        $filtro = sprintf("AND nome LIKE  '%s%s%s'  ORDER BY nome %s","%",$obj->getNome(),"%",$ordem);
+                    }
+                    
+                    
+                    if($obj->getId() != 0){
+                        $filtro = sprintf("AND idDisciplina = '%d' ORDER BY idDisciplina %s",$obj->getId(),$ordem);
+                    }
+                    
+                    if($obj->getSigla() != ""){
+                        $filtro = sprintf("AND sigla LIKE  '%s%s%s'  ORDER BY sigla %s","%",$obj->getSigla(),"%",$ordem);
+                    }
+                    
+                    
+                    $sql.=$filtro;
+                    
+                                     
+                    
+                        $resultado = mysql_query($sql);
+			$lista = new ArrayObject();
+			while($rs = mysql_fetch_array($resultado)){
+				$novo = new Disciplina();
+
+                                $novo->setId(stripslashes($rs['idDisciplina']));
+                                $novo->setNome(stripslashes($rs['nome']));
+                                $novo->setSigla(stripslashes($rs['sigla']));
+                                $novo->setCargaHoraria(stripslashes($rs['cargaHoraria']));
+                                                    //continua ......
+                                $lista->append($novo);
+				
+			}
+			return $lista;
+                        
+		}
 
 }
 
