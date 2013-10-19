@@ -15,6 +15,7 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
 
 
 <!DOCTYPE html>
+<html>
 
 <?php
 include_once ("../DataAccess/TitulacaoDAO.php");
@@ -50,8 +51,8 @@ $dao = new TitulacaoDAO();
 
 <!-- Inicio Body -->
 <body>
-
-    <!-- Inicio Formulario -->
+   
+    <!-- Inicio Formulário -->
     <?php
     echo"<fieldset class='moldura1'>";
     if (isset($_GET['aux'])) {
@@ -157,8 +158,8 @@ echo "</fieldset>";
     }
     //Fim Alerta --------------------
     ?>
-
+    
+    
 </body>
-<!-- Fim Body -->
-
+    
 </html>

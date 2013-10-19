@@ -23,7 +23,7 @@ $dao = new CampusDAO();
 ?>
 <!-- Inicio Head -->
 <head>
-    <title>Cadastar Campus</title>
+    <title>Cadastrar Campus</title>
     <link rel="stylesheet" type="text/css" href="style/estiloConteudo.css"/>
     <script type="text/javascript" src="script/jquery-1.8.1.min.js"></script>
     <script type="text/javascript" src="script/jquery.maskedinput-1.1.4.pack.js"></script>
