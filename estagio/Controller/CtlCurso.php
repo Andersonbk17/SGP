@@ -45,12 +45,12 @@
 			mysql_query($sql);
 			
 			echo"<script language='javascript'>
-						window.location.href='../Presentation/main.php?pagina=frmCadastroCurso.php&aux=0&msg=1'
+						window.location.href='../Presentation/main.php?pagina=frmCadastrarCurso.php&aux=0&msg=1'
 				  </script>";
 				  
 		}else{
 			echo"<script language='javascript'>
-						window.location.href='../Presentation/main.php?pagina=frmCadastroCurso.php&aux=0&msg=2'
+						window.location.href='../Presentation/main.php?pagina=frmCadastrarCurso.php&aux=0&msg=2'
 				  </script>";
 		}
 	}
@@ -63,11 +63,11 @@
 			$dao->AtualizarCampus($cod,$campus);
 			
 			echo"<script language='javascript'>
-						window.location.href='../Presentation/main.php?pagina=frmCadastroCurso.php&aux=0&msg=1'
+						window.location.href='../Presentation/main.php?pagina=frmCadastrarCurso.php&aux=0&msg=1'
 				  </script>";
 		}else{
 			echo"<script language='javascript'>
-						window.location.href='../Presentation/main.php?pagina=frmCadastroCurso.php?aux=0&msg=2'
+						window.location.href='../Presentation/main.php?pagina=frmCadastrarCurso.php?aux=0&msg=2'
 				  </script>";
 		}
 	}
@@ -78,11 +78,11 @@
 		
 		if(!$dao->Apagar($cod)){
 			echo"<script language='javascript'>
-						window.location.href='../Presentation/main.php?pagina=frmCadastroCurso.php&aux=0&msg=1'
+						window.location.href='../Presentation/main.php?pagina=frmCadastrarCurso.php&aux=0&msg=1'
 				  </script>";
 		}else{
 			echo"<script language='javascript'>
-						window.location.href='../Presentation/main.php?pagina=frmCadastroCurso.php?aux=0&msg=2'
+						window.location.href='../Presentation/main.php?pagina=frmCadastrarCurso.php?aux=0&msg=2'
 				  </script>";
 		}
 	}

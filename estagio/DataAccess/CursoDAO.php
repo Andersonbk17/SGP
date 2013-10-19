@@ -97,6 +97,49 @@
 			return $lista;
 		
 		}
+                
+                
+                
+                
+                public function Busca(Curso $obj,$ordem){
+                    $sql = sprintf("SELECT * FROM curso WHERE status = 1 ");
+                    
+                    $filtro = "";
+                    
+                               
+                    
+                    if($obj->getNome() != ""){
+                        $filtro = sprintf("AND nome LIKE  '%s%s%s'  ORDER BY nome %s","%",$obj->getNome(),"%",$ordem);
+                    }
+                    
+                    
+                    if($obj->getId() != 0){
+                        $filtro = sprintf("AND idCurso = '%d' ORDER BY idCurso %s",$obj->getId(),$ordem);
+                    }
+                    
+                    $sql.=$filtro;
+                    
+                                     
+                    
+                        $resultado = mysql_query($sql);
+			$lista = new ArrayObject();
+			while($rs = mysql_fetch_array($resultado)){
+				
+				$n = new Curso();
+				
+				$n->setId(stripslashes($rs['idCurso']));
+				$n->setNome(stripslashes($rs['nome']));
+                                $n->setSigla(stripslashes($rs['sigla']));
+                                //continua ......
+                                $lista->append($n);
+				
+			}
+			return $lista;
+                        
+		}
+                
+                
+                
 
 }
 
