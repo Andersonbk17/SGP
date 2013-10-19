@@ -106,6 +106,9 @@ $dao = new TitulacaoDAO();
     <!-- Inicio Tabela -->
 <?php
 //----
+/*
+ * 
+ *          NAO MOSTRAR A TABELA NO CADASTRO
 $t = new Titulacao();
 
 $t = $dao->ListarTodos();
@@ -132,6 +135,8 @@ foreach ($t as $i) {
 }
 echo "</table>";
 echo "</fieldset>";
+ * 
+ * */
 ?>
 
     <?php

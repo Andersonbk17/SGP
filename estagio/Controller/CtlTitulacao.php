@@ -33,11 +33,11 @@
 	if($opcao == 1){
 		if(!$dao->Inserir($titulo)){
 			echo"<script language='javascript'>
-						window.location.href='../Presentation/main.php?pagina=frmCadastroTitulacao.php&aux=0&msg=1'
+						window.location.href='../Presentation/main.php?pagina=frmListarTitulacao.php&aux=0&msg=1'
 				  </script>";
 		}else{
 			echo"<script language='javascript'>
-						window.location.href='../Presentation/main.php?pagina=frmCadastroTitulacao.php&aux=0&msg=2'
+						window.location.href='../Presentation/main.php?pagina=frmListarTitulacao.php&aux=0&msg=2'
 				  </script>";
 		}
 	}
@@ -46,11 +46,11 @@
 	if($opcao == 2){
     	if(!$dao->Atualizar($titulo)){
 			echo"<script language='javascript'>
-						window.location.href='../Presentation/main.php?pagina=frmCadastroTitulacao.php&aux=0&msg=1'
+						window.location.href='../Presentation/main.php?pagina=frmListarTitulacao.php&aux=0&msg=1'
 				  </script>";
 		}else{
 			echo"<script language='javascript'>
-						window.location.href='../Presentation/main.php?pagina=frmCadastroTitulacao.php&aux=0&msg=2'
+						window.location.href='../Presentation/main.php?pagina=frmListarTitulacao.php&aux=0&msg=2'
 				  </script>";
 		}
 	}
@@ -61,11 +61,11 @@
 		
 		if(!$dao->Apagar($cod)){
 			echo"<script language='javascript'>
-						window.location.href='../Presentation/main.php?pagina=frmCadastroTitulacao.php&aux=0&msg=1'
+						window.location.href='../Presentation/main.php?pagina=frmListarTitulacao.php&aux=0&msg=1'
 				  </script>";
 		}else{
 			echo"<script language='javascript'>
-						window.location.href='../Presentation/main.php?pagina=frmCadastroTitulacao.php&aux=0&msg=2'
+						window.location.href='../Presentation/main.php?pagina=frmListarTitulacao.php&aux=0&msg=2'
 				  </script>";
 		}
 	}
