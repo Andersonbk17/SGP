@@ -33,11 +33,11 @@
 	if($opcao == 1){
 		if(!$dao->Inserir($area)){
 			echo"<script language='javascript'>
-						window.location.href='../Presentation/main.php?pagina=frmCadastroArea.php&aux=0&msg=1'
+						window.location.href='../Presentation/main.php?pagina=frmListarArea.php&aux=0&msg=1'
 				  </script>";
 		}else{
 			echo"<script language='javascript'>
-						window.location.href='../Presentation/main.php?pagina=frmCadastroArea.php&aux=0&msg=2'
+						window.location.href='../Presentation/main.php?pagina=frmListarArea.php&aux=0&msg=2'
 				  </script>";
 		}
 	}
@@ -46,11 +46,11 @@
 	if($opcao == 2){
     	if(!$dao->Atualizar($area)){
 			echo"<script language='javascript'>
-						window.location.href='../Presentation/main.php?pagina=frmCadastroArea.php&aux=0&msg=1'
+						window.location.href='../Presentation/main.php?pagina=frmListarArea.php&aux=0&msg=1'
 				  </script>";
 		}else{
 			echo"<script language='javascript'>
-						window.location.href='../Presentation/main.php?pagina=frmCadastroArea.php&aux=0&msg=2'
+						window.location.href='../Presentation/main.php?pagina=frmListarArea.php&aux=0&msg=2'
 				  </script>";
 		}
 	}
@@ -61,11 +61,11 @@
 		
 		if(!$dao->Apagar($cod)){
 			echo"<script language='javascript'>
-						window.location.href='../Presentation/main.php?pagina=frmCadastroArea.php&aux=0&msg=1'
+						window.location.href='../Presentation/main.php?pagina=frmListarArea.php&aux=0&msg=1'
 				  </script>";
 		}else{
 			echo"<script language='javascript'>
-						window.location.href='../Presentation/main.php?pagina=frmCadastroArea.php&aux=0&msg=2'
+						window.location.href='../Presentation/main.php?pagina=frmListarArea.php&aux=0&msg=2'
 				  </script>";
 		}
 	}

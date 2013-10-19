@@ -176,15 +176,16 @@
 
                 echo "</tr>";
 
-                foreach ($Area as $i) {
-                    echo "<tr class='linha-td'>";
-                    echo "<td class='linha-td' width='30' align='middle'>" . $i->getId() . "</td>";
-                    echo "<td class='linha-td' width='1200' align='middle'>" . $i->getNome() . "</td>";
-                    echo "<td class='coluna'><a href=main.php?pagina=frmCadastroCampus.php&aux=1&codCampus=" . $i->getId() . "><img src='./image/editar.png'></a></td>";
-                    echo "<td class='coluna'><a href='javascript:func()' onclick='confirmacao(" . $i->getId() . ")'><img src='./image/excluir.png'></a></td>";
-                    echo "</tr>";
-                    $i++;
-                }
+                
+		foreach ($Area as $i){
+			echo		"<tr class='linha-td'>";
+			echo			"<td class='linha-td' width='30' align='middle'>".$i->getId()."</td>";
+			echo			"<td class='linha-td' width='1200' align='middle'>".$i->getNome()."</td>";
+			echo			"<td class='coluna'><a href=main.php?pagina=frmCadastroArea.php&aux=1&codArea=".$i->getId()."><img src='./image/editar.png'></a></td>";
+			echo			"<td class='coluna'><a href='javascript:func()' onclick='confirmacao(".$i->getId().")'><img src='./image/excluir.png'></a></td>";
+			echo		"</tr>";
+		
+		}
                 echo "</table>";
                 echo "</fieldset>";
                 
