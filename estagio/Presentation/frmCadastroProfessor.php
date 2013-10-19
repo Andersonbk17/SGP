@@ -88,6 +88,21 @@
             
             
         })
+        
+        
+        
+        //$(document).ready(function(){    $('#estado').val('1')     $('#estado').val(".$tmp->getIdEstado().")      })
+        //$(document).ready(function (){
+          //  $('#estado').val('1').show(100)
+            //$('#estado').val(".$tmp->getIdEstado().")
+        //})
+        
+        
+        
+        
+        
+        
+        
 
         
         $(document).ready(function(){
@@ -563,14 +578,48 @@
                                    $tmp = $cid->Abrir($edit->getEndCidade());
                                            
                                    //selecionar o combobox Estado
-                                    echo"<script type='text/javascript'> $(document).ready(function(){  $('#estado').val(".$tmp->getIdEstado().")      }) </script>";//select ok
+                                    echo"<script type='text/javascript'> $(document).ready(function(){  $('#estado').val(".$tmp->getIdEstado().")  }) </script>";//select ok
 				   
+                                    // CARREGAR CIDADE POIS O METODO AJAX NAO SUPORTA O CARREGAMENTO AUTOMATICO NA EDICAO
+                                    
+                                    //$cidadeTmp = new Cidade();
+                                    
+                                    
+
+                                    $sql = "SELECT * FROM cidade
+                                                    WHERE idEstado=".$tmp->getIdEstado()." ORDER BY nome";
+                                    $resultado = mysql_query($sql);
+                                    $lista = new ArrayObject();
+                                    while ($rs = mysql_fetch_array($resultado)) {
+
+                                        $novo = new Cidade();
+      
+                                        $novo->setId(stripslashes($rs['idCidade']));
+                                        $novo->setNome(stripslashes($rs['nome']));
+                                        $novo->setIdEstado(stripslashes($rs['idEstado']));
+                                        $lista->append($novo);
+                                    }
+        
+        
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    //Fim do CARREGAMENTO DAS CIDADES
+                                    
 				   echo"<label name='cidade' for='cidade'>Cidade *:</label>";
 				   echo"<span class='carregando' style='color:#666;display:none;'>Aguarde, carregando...</span>";
 				   echo"<select id='cidade' class='input-div' name='cidade' required=''>";
 					   echo"<option selected value='0'>-- Escolha um estado --</option>";
+                                           foreach ($lista as $es){
+                                                echo "<option value='".$es->getId()."'>".$es->getNome()."</option>";
+                                           }
 						 
 				   echo"</select><br />";
+                                   
+                                   echo"<script type='text/javascript'> $(document).ready(function(){  $('#cidade').val(".$edit->getEndCidade().")      }) </script>";//select ok
 				   echo"<label name='cep' for='cep'>Cep *:</label><br />";
 				   echo"<input type='text' class='input-div' id='cep' name='cep' value='".$edit->getCep()."' placeholder='cep' size='24' required='' /><br />";
 				   
