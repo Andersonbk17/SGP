@@ -141,13 +141,13 @@
 						<ul class="layouts level-2">
                                                     
 							<li class="open"><a href="main.php?pagina=frmCadastroAfastamento.php" >Afastamentos</a></li>
-                                                        <li class="open"><a href="main.php?pagina=frmCadastroArea.php" >Áreas</a></li>
+                                                        <li class="open"><a href="main.php?pagina=frmListarArea.php" >Áreas</a></li>
                                                         <li class="open"><a href="main.php?pagina=frmListarCampus.php" >Campus</a></li>
                                                         <li class="open"><a href="main.php?pagina=frmCadastroCurso.php" >Curso</a></li>
 														<li class="open"><a href="main.php?pagina=frmCadastroTitulacao.php" >Titulação</a></li>
                                                         <li class="open"><a href="main.php?pagina=frmCadastroDisciplina.php" >Disciplina</a></li>
                                                         <li class="open"><a href="main.php?pagina=frmCadastroDependente.php" >Dependente</a></li>
-                                                        <li class="open"><a href="main.php?pagina=frmCadastroP.php" >Funcionario</a></li>
+                                                        <li class="open"><a href="main.php?pagina=frmCadastroP.php" >Funcionário</a></li>
                                                          <li class="open"><a href="main.php?pagina=frmCadastroProgressaoCarreira.php">Progressão Carreira</a></li>
                                                         <li class="open"><a href="main.php?pagina=frmCadastroUsuario.php">Usuários</a></li>
                                                        

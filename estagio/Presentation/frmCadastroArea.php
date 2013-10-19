@@ -14,6 +14,7 @@
 ?>
 
 <!DOCTYPE html>
+<html>
 
 	<?php
 		include_once ("../DataAccess/AreaDAO.php");
@@ -24,7 +25,7 @@
 	?>
 	<!-- Inicio Head -->
 	<head>
-		<title>Cadrastar Campus</title>
+		<title>Cadastrar Campus</title>
 		<link rel="stylesheet" type="text/css" href="style/estiloConteudo.css"/>
 		<script type="text/javascript" src="script/jquery-1.8.1.min.js"></script>
         <script type="text/javascript" src="script/jquery.maskedinput-1.1.4.pack.js"></script>
@@ -48,8 +49,10 @@
 	
 	<!-- Inicio Body -->
 	<body>
-		
-		<!-- Inicio Formulario -->
+        
+        
+            
+                
 		<?php
 		echo"<fieldset class='moldura1'>";
 				if(isset($_GET['aux'])){
@@ -161,8 +164,7 @@
 		    //Fim Alerta --------------------
 		     
 		?>
-	
-	</body>
-	<!-- Fim Body -->
-
-</html>
+            
+        </body>
+           
+        </html>
