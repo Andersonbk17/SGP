@@ -195,11 +195,16 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
     <!-- Inicio Tabela -->
     <?php
     //----
+    
+    /*
+     * 
+     *              NAO MOSTRAR A TABELA NO CADASTRP DE CURSO
     $d = new Curso();
 
     $d = $dao->ListarTodos();
 
     //----
+    
     echo "<br/>";
     echo "<fieldset class='moldura2'>";
     echo "<legend>Cursos Registrados</legend>";
@@ -222,6 +227,7 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
     }
     echo "</table>";
     echo "</fieldset>";
+    */
     ?>
 
         <?php

@@ -179,7 +179,7 @@ $dao = new CursoDAO();
                 echo "<td class='linha-td' width='30' align='middle'>" . $i->getId() . "</td>";
                 echo "<td class='linha-td' width='900' align='middle'>" . $i->getNome() . "</td>";
                 echo "<td class='linha-td' width='300' align='middle'>" . $i->getSigla() . "</td>";
-                echo "<td class='coluna'><a href=main.php?pagina=frmCadastroCurso.php&aux=1&cod=" . $i->getId() . "><img src='./image/editar.png'></a></td>";
+                echo "<td class='coluna'><a href=main.php?pagina=frmCadastrarCurso.php&aux=1&cod=" . $i->getId() . "><img src='./image/editar.png'></a></td>";
                 echo "<td class='coluna'><a href='javascript:func()' onclick='confirmacao(" . $i->getId() . ")'><img src='./image/excluir.png'></a></td>";
                 echo "</tr>";
                 //$i++;
