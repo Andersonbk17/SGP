@@ -79,7 +79,7 @@
 					$editar = new Area();
 					//----
 					$editar = $dao->Abrir($id);	
-					
+                                        
 					echo"<legend>Editar Area</legend>";
 					echo"<form name='frmCadastroArea' action='../Controller/CtlArea.php?oP=2' method='POST'>";
 					    
