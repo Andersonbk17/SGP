@@ -113,6 +113,13 @@ $dao = new CampusDAO();
     <!-- Inicio Tabela -->
     <?php
     //----
+    /*
+     * 
+     * 
+     * 
+     *                  NAO MOSTRA A TABELA NO CADASTRO
+     * 
+     * 
     $c = new Campus();
 
     $c = $dao->ListarTodos();
@@ -141,7 +148,7 @@ $dao = new CampusDAO();
     echo "</fieldset>";
     
     
-   
+   */
     ?>
 
     <?php
