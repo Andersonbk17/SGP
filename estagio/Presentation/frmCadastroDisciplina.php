@@ -162,7 +162,8 @@
 		
 		<!-- Inicio Tabela -->
 		<?php
-		
+		/*
+                 *          NAO MOSTRAR A TABELA NO CADASTRO DAS DISCIPLINAS
 
 			
 			$d = new Disciplina();
@@ -195,7 +196,7 @@
 			
 			echo "</fieldset>";
 			
-			
+		*/	
 		?>
 		
 		<?php

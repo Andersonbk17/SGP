@@ -43,11 +43,11 @@
 			
 			echo"<script language='javascript'>
 						
-						window.location.href='../Presentation/main.php?pagina=frmCadastroDisciplina.php&aux=0&msg=1'
+						window.location.href='../Presentation/main.php?pagina=frmListarDisciplina.php&aux=0&msg=1'
 				  </script>";
 		}else{
 			echo"<script language='javascript'>
-						window.location.href='../Presentation/main.php?pagina=frmCadastroDisciplina.php&aux=0&msg=2'
+						window.location.href='../Presentation/main.php?pagina=frmListarDisciplina.php&aux=0&msg=2'
 				  </script>";
 		}
 	}
@@ -59,11 +59,11 @@
 			$dao->AtualizarCurso($cod,$curso);
                         
 			echo"<script language='javascript'>
-						window.location.href='../Presentation/main.php?pagina=frmCadastroDisciplina.php&aux=0&msg=1'
+						window.location.href='../Presentation/main.php?pagina=frmListarDisciplina.php&aux=0&msg=1'
 				  </script>";
 		}else{
 			echo"<script language='javascript'>
-						window.location.href='../Presentation/main.php?pagina=frmCadastroDisciplina.php&aux=0&msg=2'
+						window.location.href='../Presentation/main.php?pagina=frmListarDisciplina.php&aux=0&msg=2'
 				  </script>";
 		}
 	}
@@ -73,11 +73,11 @@
 		$cod = $_GET['codDisciplina'];
 		if(!$dao->Apagar($cod)){
 			echo"<script language='javascript'>
-						window.location.href='../Presentation/main.php?pagina=frmCadastroDisciplina.php&aux=0&msg=1'
+						window.location.href='../Presentation/main.php?pagina=frmListarDisciplina.php&aux=0&msg=1'
 				  </script>";
 		}else{
 			echo"<script language='javascript'>
-						window.location.href='../Presentation/main.php?pagina=frmCadastroDisciplina.php&aux=0&msg=2'
+						window.location.href='../Presentation/main.php?pagina=frmListarDisciplina.php&aux=0&msg=2'
 				  </script>";
 		}
 	}
