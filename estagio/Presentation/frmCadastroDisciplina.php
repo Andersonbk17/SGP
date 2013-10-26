@@ -71,13 +71,13 @@
 				if($aux == 0){
 					echo"<legend>Registrar Disciplina</legend>";
 					echo"<form name='frmCadastroDisciplina' action='../Controller/CtlDisciplina.php?oP=1' method='POST'>";
-						echo"<label for='nomeDisciplina'>Nome*</label><br/>";
+						echo"<label for='nomeDisciplina' class='labelForms'>Nome:</label>";
 						echo"<input type='text' id='nomeDisciplina' name='nomeDisciplina' required size='40' maxlength='50' class='input-div'/><br/>";
-						echo"<label for='nomeCampus'>Sigla*</label><br/>";
+						echo"<label for='nomeCampus' class='labelForms'>Sigla:</label>";
 						echo"<input type='text' id='siglaDisciplina' name='siglaDisciplina' required size='40' maxlength='50' class='input-div'/><br/>";
-						echo"<label for='chDisciplina'>Carga Horaria*</label><br/>";
+						echo"<label for='chDisciplina' class='labelForms'>Carga Horaria:</label>";
 						echo"<input type='text' id='chDisciplina' name='chDisciplina' required size='40' maxlength='50' class='input-div'/><br/>";
-						echo"<label for='curso' class='label'>Curso*</label><br/>";
+						echo"<label for='curso' class='labelForms'>Curso:</label>";
 						echo"<select name='curso' id='curso' style='width: 160px' class='input-div' required>";
 						
 							//Valor padrão
@@ -88,6 +88,8 @@
 								$ic++;
 							}
 						echo"</select>";
+                                                
+                                                echo"<a href=main.php?pagina=frmListarDisciplina.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
 						echo"<input type='submit' id='btnDisciplina' name='btnDisciplina' value='Salvar' class='botao' /><br/>";
 					echo"</form>";
 					
@@ -108,18 +110,18 @@
 					echo"<legend>Editar Disciplina</legend>";
 					echo"<form name='frmCadastroDisciplina' action='../Controller/CtlDisciplina.php?oP=2' method='POST'>";
 					    
-						echo"<label for='codigo'>Código </label><br/>";
-						
+						echo"<label for='codigo' class='labelForms'>Código:</label>";
+			
 						foreach ($editar as $i){
 							echo"<input type='text' id='id' name='id' value='".$i->getId()."' disabled size='2' class='input-div'/>";
 							echo"<input type='hidden' id='codDisciplina' name='codDisciplina' value='".$i->getId()."' size='2'/><br/>";
-							echo"<label for='nomeDisciplina'>Nome*</label><br/>";
+							echo"<label for='nomeDisciplina' class='labelForms'>Nome:</label>";
 							echo"<input type='text' id='nomeDisciplina' name='nomeDisciplina' value='".$i->getNome()."' required size='40' maxlength='50' class='input-div'/><br/>";
-							echo"<label for='siglaDisciplina'>Sigla*</label><br/>";
+							echo"<label for='siglaDisciplina' class='labelForms'>Sigla:</label>";
 							echo"<input type='text' id='siglaDisciplina' name='siglaDisciplina' value='".$i->getSigla()."'required size='40' maxlength='50' class='input-div'/><br/>";
-							echo"<label for='chDisciplina'>Carga Horaria</label><br/>";
+							echo"<label for='chDisciplina' class='labelForms'>Carga Horaria</label>";
 							echo"<input type='text' id='chDisciplina' name='chDisciplina' value='".$i->getCargaHoraria()."'required size='40' maxlength='50' class='input-div'/><br/>";
-							echo"<label for='curso'>Curso*</label><br/>";
+							echo"<label for='curso' class='labelForms'>Curso:</label>";
 							echo"<select name='curso' id='curso' style='width: 160px' class='input-div' required>";
 						
 							//Valor padrão
@@ -150,7 +152,7 @@
 						}							
 						echo"</select>";
                                                 echo"<script type='text/javascript'> $(document).ready(function(){  $('#curso').val(".$idCurso." )      }) </script>";//select ok
-						echo"<a href=main.php?pagina=frmCadastroDisciplina.php&aux=0><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
+						echo"<a href=main.php?pagina=frmListarDisciplina.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
 						echo"<input type='submit' id='btnDisciplina' name='btnDisciplina' value='Atualizar' class='botao'/>";
 					echo"</form>";
 				   

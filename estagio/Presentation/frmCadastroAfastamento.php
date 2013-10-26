@@ -80,7 +80,8 @@
             <fieldset>
                 <legend> Afastamentos</legend>
                 
-                <label name="usuario" class="_funcionario" for="funcionario" >Nome do Funcionário *:</label><br class="_funcionario" />
+                <!--<label name="usuario" class="_funcionario" for="funcionario" >Funcionário:</label><br class="_funcionario" /> -->
+                <label name="usuario" class="labelForms" for="funcionario" >Funcionário:</label>
                     <select id="funcionario" class="input-div _funcionario" name="funcionario"  required="">
                         <option selected value="0">Selecione</option>
                         
@@ -104,12 +105,12 @@
                     </select><br class="_funcionario"  />
                 
                 
-                <label for="dataInicio">Data Inicio *</label><br />
+                <label for="dataInicio" class="labelForms">Data Inicio:</label>
                 <input type="text" name="dataInicio" autofocus="" class="input-div" id="dataInicio" required="" /><br />
-                <label for="dataTermino">Data Termino *</label><br />
+                <label for="dataTermino" class="labelForms">Data Término:</label>
                 <input type="text" name="dataTermino" id="dataTermino" class="input-div" required="" /><br />
                 
-                <label for="motivo">Motivo *</label> <br />
+                <label for="motivo" class="labelForms">Motivo:</label>
                 <textarea name="motivo" id="motivo" cols="100" rows="10" class="input-div" required=""><?php echo"";?></textarea><br /><br />
                 
                 <a  class="botao" name='proximo' id='proximo' href="main.php?pagina=frmCadastroProgressaoCarreira.php" style="text-decoration: none ">Próximo</a>

@@ -37,11 +37,11 @@
         
         <fieldset >
             <form action="main.php?pagina=frmCadastroP.php" method="post" name="frmListaFuncionarioBusca">
-            <label for="busca" >Pesquisar: </label>
-            <input type="text" name="busca" id="busca" class="input-div" size="60"/>
+                <label for="busca" class="labelFiltro">Pesquisar: </label>
+            <input type="text" name="busca" id="busca" class="input-div-filtro" size="60"/>
             
-            <label for="parametro1" >Filtro: </label>
-            <select name="parametro1" class="input-div" id="parametro" >
+            <label for="parametro1" class="labelFiltro">Filtro: </label>
+            <select name="parametro1" class="input-div-filtro" id="parametro" >
                 <option value="nenhum" selected="" >Nenhum</option>
                 <option value="nome"  >Nome</option>
                 <option value="cpf" >Cpf</option>
@@ -49,8 +49,8 @@
                 
             </select>
             
-            <label for="parametro2" >Ordenação: </label>
-            <select name="parametro2" class="input-div" id="parametro2" >
+            <label for="parametro2" class="labelFiltro" >Ordenação: </label>
+            <select name="parametro2" class="input-div-filtro" id="parametro2" >
                 
                 <option value="crescente" selected="" >Crescente</option>
                 <option value="decrescente"  >Decrescente</option>
@@ -59,7 +59,10 @@
             <input type="submit" id="Buscar" name="Buscar" class="botao" />
         </fieldset> <br />
         </form>
-		<a href="main.php?pagina=frmCadastroProfessor.php"><img src="image/novo.png"/></a><br/>
+		<!--<a href="main.php?pagina=frmCadastroProfessor.php"><img src="image/novo.png"/></a><br/>-->
+                 <a href="main.php?pagina=frmCadastroProfessor.php">        
+                    <input type="submit" id="btnNovo" name="btnNovo" value='Novo' class='botaoNovo' />
+                </a>
         <fieldset>
             
             <?php
@@ -128,6 +131,7 @@
                
                         echo	"<table class='tbl' name='tbl' id='tbl' border='1' >";
 			echo		"<tr>";
+                        echo "<td class='colunaTop' colspan='3'><b>OPÇÃO</b></td>"; //espaço para botão editar e excluir
 			echo			"<td class='nomeCampus'  ALIGN=MIDDLE WIDTH=30 ><b>ID<b /></td>";	
                         echo                        "<td class='nomeCampus' colspan='70' ALIGN=MIDDLE WIDTH=600><b>NOME<b /></td>";	
                         echo                        "<td class='nomeCampus' colspan='70' ALIGN=MIDDLE WIDTH=150><b>CPF<b /></td>";
@@ -136,13 +140,17 @@
 		            
                 foreach ($funcionario as $a){
                                 echo		"<tr class='linha-td'>";
+                                
+                                echo			"<td class='coluna'><a href='main.php?pagina=frmCadastroProfessor.php&aux=1&idFuncionario=".$a->getId()."'><img src='./image/editar.png'></a></td>";
+				echo			"<td class='coluna'><a href='javascript:func()' onclick='confirmacao(".$a->getId().")'><img src='./image/excluir.png'></a></td>";
+                                echo			"<td class='coluna'><a href='main.php?pagina=frmDetalharFuncionario.php&idFuncionario=".$a->getId()."'><img src='./image/detalhes.png'></a></td>";
+                                
+                                
 				echo			"<td class='linha-td' ALIGN=MIDDLE WIDTH=10>".$a->getId()."</td>";
 				echo			"<td class='linha-td'  colspan='70' ALIGN=MIDDLE WIDTH=200 >".$a->getNome()."</td>";
                                 echo			"<td class='linha-td' colspan='70' ALIGN=MIDDLE WIDTH=10>".$a->getCpf()."</td>";
                                 echo			"<td class='linha-td' colspan='70' ALIGN=MIDDLE WIDTH=10>".$a->getNumeroSiape()."</td>";
-				echo			"<td class='coluna'><a href='main.php?pagina=frmCadastroProfessor.php&aux=1&idFuncionario=".$a->getId()."'><img src='./image/editar.png'></a></td>";
-				echo			"<td class='coluna'><a href='javascript:func()' onclick='confirmacao(".$a->getId().")'><img src='./image/excluir.png'></a></td>";
-                                echo			"<td class='coluna'><a href='main.php?pagina=frmDetalharFuncionario.php&idFuncionario=".$a->getId()."'><img src='./image/detalhes.png'></a></td>";
+				
 				echo		"</tr>";
                     
                 }

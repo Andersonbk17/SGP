@@ -56,11 +56,11 @@ $dao = new CampusDAO();
     
     <fieldset >
             <form action="main.php?pagina=frmListarCampus.php" method="post" name="frmListaFuncionarioBusca">
-            <label for="busca" >Pesquisar: </label>
-            <input type="text" name="busca" id="busca" class="input-div" size="60"/>
+            <label for="busca" class="labelFiltro">Pesquisar: </label>
+            <input type="text" name="busca" id="busca" class="input-div-filtro" size="60"/>
             
-            <label for="parametro1" >Filtro: </label>
-            <select name="parametro1" class="input-div" id="parametro" >
+            <label for="parametro1" class="labelFiltro">Filtro: </label>
+            <select name="parametro1" class="input-div-filtro" id="parametro" >
                 <option value="nenhum" selected="" >Nenhum</option>
                 <option value="nome"  >Nome</option>
                 <option value="id" >Id</option>
@@ -68,8 +68,8 @@ $dao = new CampusDAO();
                 
             </select>
             
-            <label for="parametro2" >Ordenação: </label>
-            <select name="parametro2" class="input-div" id="parametro2" >
+            <label for="parametro2" class="labelFiltro">Ordenação: </label>
+            <select name="parametro2" class="input-div-filtro" id="parametro2" >
                 
                 <option value="crescente" selected="" >Crescente</option>
                 <option value="decrescente"  >Decrescente</option>
@@ -78,7 +78,11 @@ $dao = new CampusDAO();
             <input type="submit" id="Buscar" name="Buscar" class="botao" />
         </fieldset> <br />
         </form>
-		<a href="main.php?pagina=frmCadastroCampus.php"><img src="image/novo.png"/></a><br/>
+		<!--<a href="main.php?pagina=frmCadastroCampus.php"><img src="image/novo.png"/></a><br/>-->
+                <a href="main.php?pagina=frmCadastroCampus.php">        
+                    <input type="submit" id="btnNovo" name="btnNovo" value='Novo' class='botaoNovo' />
+                </a>
+                
         <fieldset>
     
    <!-- FIM DO FORMULARIO DE BUSCA 
@@ -165,6 +169,7 @@ $dao = new CampusDAO();
                 echo "<legend>Campus Registrados</legend>";
                 echo "<table class='tbl' name='tbl' id='tbl' border='1'>";
                 echo "<tr>";
+                echo "<td class='colunaTop' colspan='2'><b>OPÇÃO</b></td>"; //espaço para botão editar e excluir
                 echo "<td class='nomeCampus' width='30' align='middle'><b>ID</b></td>";
                 echo "<td class='nomeCampus' width='600' align='middle'><b>NOME</b></td>";
 
@@ -172,10 +177,10 @@ $dao = new CampusDAO();
 
                 foreach ($campus as $i) {
                     echo "<tr class='linha-td'>";
-                    echo "<td class='linha-td' width='30' align='middle'>" . $i->getId() . "</td>";
-                    echo "<td class='linha-td' width='1200' align='middle'>" . $i->getNome() . "</td>";
                     echo "<td class='coluna'><a href=main.php?pagina=frmCadastroCampus.php&aux=1&codCampus=" . $i->getId() . "><img src='./image/editar.png'></a></td>";
                     echo "<td class='coluna'><a href='javascript:func()' onclick='confirmacao(" . $i->getId() . ")'><img src='./image/excluir.png'></a></td>";
+                    echo "<td class='linha-td' width='30' align='middle'>" . $i->getId() . "</td>";
+                    echo "<td class='linha-td' width='1200' align='middle'>" . $i->getNome() . "</td>";
                     echo "</tr>";
                     $i++;
                 }

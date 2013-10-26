@@ -64,9 +64,11 @@
 				if($aux == 0){
 					echo"<legend>Registrar Area</legend>";
 					echo"<form name='frmCadastroArea' action='../Controller/CtlArea.php?oP=1' method='POST'>";
-						echo"<label for='nomeArea'>Nome*</label><br/>";
+						echo"<label for='nomeArea' class='labelForms'>Nome:</label>";
 						echo"<input type='text' id='nomeArea' name='nomeArea' required size='40' maxlength='50' class='input-div'/>";
-						echo"<input type='submit' id='btnArea' name='btnArea' value='Salvar' class='botao' /><br/>";
+						
+                                                echo"<a href=main.php?pagina=frmListarArea.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
+                                                echo"<input type='submit' id='btnArea' name='btnArea' value='Salvar' class='botao' /><br/>";
 					echo"</form>";
 					
 					
@@ -86,16 +88,16 @@
 					echo"<legend>Editar Area</legend>";
 					echo"<form name='frmCadastroArea' action='../Controller/CtlArea.php?oP=2' method='POST'>";
 					    
-						echo"<label for='codigo'>Código </label><br/>";
+						echo"<label for='codigo' class='labelForms'>Código:</label>";
 						
 						foreach ($editar as $i){
 							echo"<input type='text' id='id' name='id' value='".$i->getId()."' disabled size='2' class='input-div'/>";
 							echo"<input type='hidden' id='codArea' name='codArea' value='".$i->getId()."' size='2'/><br/>";
-							echo"<label for='nomeCampus'>Nome*</label><br/>";
+							echo"<label for='nomeCampus' class='labelForms'>Nome:</label>";
 							echo"<input type='text' id='nomeArea' name='nomeArea' value='".$i->getNome()."' required size='40' maxlength='50' class='input-div'/>";
 							$i++;
 						}
-						echo"<a href=main.php?pagina=frmCadastroArea.php&aux=0><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
+						echo"<a href=main.php?pagina=frmListarArea.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
 						echo"<input type='submit' id='btnArea' name='btnArea' value='Atualizar' class='botao'/>";
 					echo"</form>";
 				   

@@ -68,12 +68,12 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
     if ($aux == 0) {
         echo"<legend>Registrar Curso</legend>";
         echo"<form name='frmCadastroCurso' action='../Controller/CtlCurso.php?oP=1' method='POST'>";
-        echo"<label for='nomeCurso'>Nome*</label><br/>";
+        echo"<label for='nomeCurso' class='labelForms'>Nome:</label>";
         echo"<input type='text' id='nomeCurso' name='nomeCurso' required size='40' maxlength='50' class='input-div'/><br/>";
-        echo"<label for='siglaCurso'>Sigla*</label><br/>";
+        echo"<label for='siglaCurso' class='labelForms'>Sigla:</label>";
         echo"<input type='text' id='siglaCurso' name='siglaCurso' required size='40' maxlength='50' class='input-div'/><br/>";
 
-        echo"<label for='Area' class='label'>Area*</label><br/>";
+        echo"<label for='Area' class='labelForms'>Área:</label>";
         echo"<select name='areaCurso' id='areaCurso' required style='width: 160px' class='input-div'>";
 
         $daoArea = new AreaDAO();
@@ -90,7 +90,7 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
         echo"</select><br/>";
         
 
-        echo"<label for='campusCurso' class='label'>Campus*</label><br/>";
+        echo"<label for='campusCurso' class='labelForms'>Campus:</label>";
         echo"<select name='campusCurso' id='campusCurso' required style='width: 160px' class='input-div'>";
 
         $daoCampus = new CampusDAO();
@@ -106,7 +106,7 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
         }
         echo"</select>";
 
-
+        echo"<a href=main.php?pagina=frmListarCurso.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
         echo"<input type='submit' id='btnCurso' name='btnCurso' value='Salvar' class='botao' /><br/>";
         echo"</form>";
 
@@ -127,16 +127,14 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
         echo"<legend>Editar Curso</legend>";
         echo"<form name=frmCadastroCurso' action='../Controller/CtlCurso.php?oP=2' method='POST'>";
 
-        echo"<label for='codigo'>Código </label><br/>";
-
-
+        echo"<label for='codigo' class='labelForms'>Código:</label>";
         echo"<input type='text' id='id' name='id' value='" . $editar->getId() . "' disabled size='2' class='input-div'/>";
         echo"<input type='hidden' id='codCurso' name='codCurso' value='" . $editar->getId() . "' size='2'/><br/>";
-        echo"<label for='nomeDisciplina'>Nome*</label><br/>";
+        echo"<label for='nomeDisciplina' class='labelForms'>Nome:</label>";
         echo"<input type='text' id='nomeCurso' name='nomeCurso' value='" . $editar->getNome() . "' required size='40' maxlength='50' class='input-div'/><br/>";
-        echo"<label for='siglaCurso'>Sigla*</label><br/>";
+        echo"<label for='siglaCurso' class='labelForms'>Sigla:</label>";
         echo"<input type='text' id='siglaCurso' name='siglaCurso' value='" . $editar->getSigla() . "'required size='40' maxlength='50' class='input-div'/><br/>";
-        echo"<label for='Area' class='label'>Area*</label><br/>";
+        echo"<label for='Area' class='labelForms'>Área:</label>";
         echo"<select name='areaCurso' id='areaCurso' style='width: 160px' class='input-div'>";
 
     $daoArea = new AreaDAO();
@@ -155,7 +153,7 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
           echo"<script type='text/javascript'> $(document).ready(function(){  $('#areaCurso').val(".$editar->getArea().")      }) </script>"; //select ok
 
 
-            echo"<label for='campusCurso' class='label'>Campus*</label><br/>";
+            echo"<label for='campusCurso' class='labelForms'>Campus:</label>";
             echo"<select name='campusCurso' id='campusCurso' style='width: 160px' class='input-div'>";
 
             $daoCampus = new CampusDAO();
@@ -182,8 +180,7 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
             echo"<script type='text/javascript'> $(document).ready(function(){  $('#campusCurso').val(".$idCampus.")      }) </script>"; //select ok
             
             $i++;
-       
-        echo"<a href=main.php?pagina=frmCadastrarCurso.php&aux=0><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
+        echo"<a href=main.php?pagina=frmListarCurso.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
         echo"<input type='submit' id='btnDisciplina' name='btnDisciplina' value='Atualizar' class='botao'/>";
         echo"</form>";
     }

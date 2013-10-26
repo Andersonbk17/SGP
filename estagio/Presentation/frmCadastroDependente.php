@@ -89,8 +89,10 @@
         <fieldset>
             <form action="../Controller/CtlDependente.php" method="post" id="frmCadastroDependentes" name="frmCadastroDependentes">
                 
-                <label name="usuario" class="_funcionario" for="funcionario" >Nome do Funcionário *:</label><br class="_funcionario" />
-                    <select id="funcionario" class="input-div _funcionario" name="funcionario"  required="">
+               <!-- <label name="usuario" class="_funcionario" for="funcionario" >Nome do Funcionário *:</label><br class="_funcionario" />-->
+                  <label name="usuario" class="labelForms" for="funcionario" >Funcionário:</label>
+
+               <select id="funcionario" class="input-div _funcionario" name="funcionario"  required="">
                         <option selected value="0">Selecione</option>
                         
                         <?php
@@ -113,17 +115,27 @@
                     </select><br class="_funcionario"  />
                 
                 
-                <label for="nome"> Nome do Dependente *</label><br />
+                    <label for="nome" class="labelForms">Dependente:</label>
                 <input type="text" id="nome" name="nome" class="input-div" required="" /><br />
                 
-                <label for="nome"> Data de Nascimento *</label><br />
+                <label for="nome" class="labelForms">Nascimento:</label>
                 <input type="text" id="dataNascimento" class="input-div" name="dataNascimento" required="" /><br />
                 
-                <label name="sexo" for="sexo">Sexo * :</label><br /> 
-                <label name="sexo"  for="sexo">Masculino</label>
-                <input type="radio" class="input-div" name="sexo" class="sexo" value="1" /><br />
-                <label name="sexo"  for="sexo">Feminino </label> 
-                <input type="radio" class="input-div" name="sexo" class="sexo" value="2" /><br />
+                <label name="sexo" for="sexo" class="labelForms">Sexo:</label><br>
+                
+                <label name="sexo"  for="sexo" class="labelForms">Masculino</label>
+                <input type="radio" class="input-div" name="sexo" class="sexo" value="1" /><br/>
+                <label name="sexo"  for="sexo" class="labelForms">Feminino </label> 
+                <input type="radio" class="input-div" name="sexo" class="sexo" value="2" />
+        
+                <!--
+                <select name="sexo" id="sexo" class="input-div">
+                    <option selected="" value="">Selecione...</option>
+                    <option  value="1">Masculino</option>
+                    <option  value="2">Feminino</option>
+                    
+                </select>
+                -->
                 
                 
                 

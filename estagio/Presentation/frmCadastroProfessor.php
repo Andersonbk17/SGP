@@ -176,35 +176,36 @@
 				 //SERÁ EXECULTADO É O IF PARA PERSISTIR OS DADOS NO BD
 				 echo "<form name='frmCadProfessor' method='post' action='../Controller/CtlCadastroProfessor.php' >";
 			   
-					echo"<label name='nome' for='nome'>Nome do professor *:</label><br />";
+					echo"<label name='nome' for='nome' class='labelForms'>Nome:</label>";
 					echo"<input type='text' id='nome' class='input-div' name='nome' autofocus='' placeholder='Nome' required='' size='70' /><br />";
 						
-					echo"<label name='dataNascimento' for='dataNascimento'>Data Nascimento *:</label><br />";
+					echo"<label name='dataNascimento' for='dataNascimento' class='labelForms'>Nascimento:</label>";
 					echo"<input type='text' class='input-div' name='dataNascimento' id='dataNascimento' placeholder='DD/MM/AAAA' size='24'/><br />";
 						
-					echo"<label name='certidaoNascimento' for='certidaoNascimento'>Certidão de Nascimento:</label><br />";
+					echo"<label name='certidaoNascimento' for='certidaoNascimento' class='labelForms'>Cert. Nasc.:</label>";
 					echo"<input type='text' class='input-div' id='certidaoNascimento' name='certidaoNascimento' placeholder='Número' required='' size='24' /> <br />";
-					echo"<label name='rg' for='rg'>RG *:</label><br />";
+					echo"<label name='rg' for='rg' class='labelForms'>RG:</label>";
 					echo"<input type='text' class='input-div' id='rg' name='rg' placeholder='RG' required='' size='24' /> <br />";
-					echo"<label name='cpf' for='cpf'>CPF *:</label><br />";
+					echo"<label name='cpf' for='cpf' class='labelForms'>CPF:</label>";
 					echo"<input type='text' class='input-div' id='cpf' name='cpf' placeholder='CPF' required='' size='24' /> <br />";
-					echo"<label name='email' for='email'>Email *:</label><br />";
+					echo"<label name='email' for='email' class='labelForms'>E-mail:</label>";
 					echo"<input type='email' class='input-div' id='email' name='email' placeholder='EMAIL' required='' size='24' /> <br />";
 						
-					echo"<label name='sexo' for='sexo'>Sexo * :</label><br />";
+					echo"<label name='sexo' for='sexo' class='labelForms'>Sexo:</label>";
 					echo"<label name='sexo' for='sexo'>Masculino</label>";
 					echo"<input type='radio'  name='sexo' class='sexo input-div' value='1' /><br />";
 					echo"<label name='sexo' for='sexo'>Feminino</label>";
 					echo"<input type='radio'  name='sexo' class='sexo input-div' value='2' /><br />";
 					
 					
-					echo"<label name='reservista' for='reservista'  class='reservista' style='display: none'  >Número da Reservista Militar:</label><br class='reservista' style='display: none' />";
-					echo"<input type='text'  id='reservista' name='reservista' placeholder='' class='reservista input-div' required='' style='display: none' size='24' /> <br class='reservista' style='display: none' />";
-					echo"<label name='titulo' for='titulo'>Título Eleitoral *:</label><br />";
+					//echo"<label name='reservista' for='reservista'  class='reservista labelForms' style='display: none'  >Reservista Militar:</label><br class='reservista' style='display: none' />";
+					echo"<label name='reservista' for='reservista'  class='reservista labelForms' style='display: none'  >Reservista:</label>";
+                                        echo"<input type='text'  id='reservista' name='reservista' placeholder='' class='reservista input-div' required='' style='display: none' size='24' /> <br class='reservista' style='display: none' />";
+					echo"<label name='titulo' for='titulo' class='labelforms'>Título Eleitoral:</label>";
 					echo"<input type='text' class='input-div' id='titulo' name='titulo' placeholder='' required='' size='24' /> <br />";
 					
 			 
-					echo"<label name='estadoCivil' for='estadoCivil'>Estado Civil *:</label><br />";
+					echo"<label name='estadoCivil' for='estadoCivil' class='labelforms'>Estado Civil:</label>";
 					echo"<select id='estadoCivil' class='input-div' name='estadoCivil' required=''>";
 					   echo"<option selected value='0'>Selecione</option>";
 					   
@@ -222,10 +223,10 @@
 								 
 								
 								
-				   echo"</select>";
+				   echo"</select><br/>";
                                    
 					
-					   echo"<label name='tipoSanguineo' for='tipoSanguineo'>Tipo Sanguineo *:</label>";
+					   echo"<label name='tipoSanguineo' for='tipoSanguineo' class='labelforms'>Tipo Sanguineo:</label>";
 					   echo"<select id='tipoSanguineo' class='input-div' name='tipoSanguineo' required=''>";
 					   echo"<option selected value='0'>Selecione</option>";
 					   

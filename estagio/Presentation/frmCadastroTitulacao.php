@@ -64,8 +64,10 @@ $dao = new TitulacaoDAO();
     if ($aux == 0) {
         echo"<legend>Registrar Titulação</legend>";
         echo"<form name='frmCadastroTitulacao' action='../Controller/CtlTitulacao.php?oP=1' method='POST'>";
-        echo"<label for='nomeTitulacao'>Nome*</label><br/>";
+        echo"<label for='nomeTitulacao' class='labelForms'>Nome:</label>";
         echo"<input type='text' id='nomeTitulacao' name='nomeTitulacao' required size='50' maxlength='50' class='input-div'/>";
+        
+         echo"<a href=main.php?pagina=frmListarTitulacao.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
         echo"<input type='submit' id='btnTitulo' name='btnTitulo' value='Salvar' class='botao' /><br/>";
         echo"</form>";
 
@@ -86,15 +88,15 @@ $dao = new TitulacaoDAO();
         echo"<legend>Editar Titulação</legend>";
         echo"<form name='frmCadastroTitulacao' action='../Controller/CtlTitulacao.php?oP=2' method='POST'>";
 
-        echo"<label for='codigo'>Código </label><br/>";
+        echo"<label for='codigo' class='labelForms'>Código:</label>";
 
 
         echo"<input type='text' id='id' name='id' value='" . $editar->getId() . "' disabled size='2' class='input-div'/>";
         echo"<input type='hidden' id='codTitulacao' name='codTitulacao' value='" . $editar->getId() . "' size='2'/><br/>";
-        echo"<label for='nomeTitulacao'>Nome*</label><br/>";
+        echo"<label for='nomeTitulacao' class='labelForms'>Nome:</label>";
         echo"<input type='text' id='nomeTitulacao' name='nomeTitulacao' value='" . $editar->getNome() . "' required size='50' maxlength='50' class='input-div'/>";
 
-        echo"<a href=main.php?pagina=frmCadastroTitulacao.php&aux=0><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
+        echo"<a href=main.php?pagina=frmListarTitulacao.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
         echo"<input type='submit' id='btnTitulo' name='btnTitulo' value='Atualizar' class='botao'/>";
         echo"</form>";
     }

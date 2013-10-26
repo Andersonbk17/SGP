@@ -70,8 +70,10 @@ $dao = new CampusDAO();
     if ($aux == 0) {
         echo"<legend>Registrar Campus</legend>";
         echo"<form name='frmCadastroCampus' action='../Controller/CtlCampus.php?oP=1' method='POST'>";
-        echo"<label for='nomeCampus'>Nome*</label><br/>";
+        echo"<label for='nomeCampus' class='labelForms'>Nome:</label>";
         echo"<input type='text' id='nomeCampus' name='nomeCampus' required size='50' maxlength='50' class='input-div'/>";
+        
+        echo"<a href=main.php?pagina=frmListarCampus.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
         echo"<input type='submit' id='btnCampus' name='btnCampus' value='Salvar' class='botao' /><br/>";
         echo"</form>";
 
@@ -92,16 +94,16 @@ $dao = new CampusDAO();
         echo"<legend>Editar Campus</legend>";
         echo"<form name='frmCadastroCampus' action='../Controller/CtlCampus.php?oP=2' method='POST'>";
 
-        echo"<label for='codigo'>Código </label><br/>";
+        echo"<label for='codigo' class='labelForms'>Código:</label>";
 
      
             echo"<input type='text' id='id' name='id' value='" . $editar->getId() . "' disabled size='2' class='input-div'/><br/>";
-            echo"<input type='hidden' id='codCampus' name='codCampus' value='" . $editar->getId() . "' size='2'/><br/>";
-            echo"<label for='nomeCampus'>Nome*</label><br/>";
+            echo"<input type='hidden' id='codCampus' name='codCampus' value='" . $editar->getId() . "' size='2'/>";
+            echo"<label for='nomeCampus' class='labelForms'>Nome:</label>";
             echo"<input type='text' id='nomeCampus' name='nomeCampus' value='" . $editar->getNome() . "' required size='50' maxlength='50' class='input-div'/>";
             
        
-        echo"<a href=main.php?pagina=frmCadastroCampus.php&aux=0><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
+        echo"<a href=main.php?pagina=frmListarCampus.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
         echo"<input type='submit' id='btnCampus' name='btnCampus' value='Atualizar' class='botao'/>";
         echo"</form>";
     }
