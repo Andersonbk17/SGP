@@ -73,8 +73,8 @@ $dao = new CampusDAO();
         echo"<label for='nomeCampus' class='labelForms'>Nome:</label>";
         echo"<input type='text' id='nomeCampus' name='nomeCampus' required size='50' maxlength='50' class='input-div'/>";
         
-        echo"<a href=main.php?pagina=frmListarCampus.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
-        echo"<input type='submit' id='btnCampus' name='btnCampus' value='Salvar' class='botao' /><br/>";
+        echo"<a href=main.php?pagina=frmListarCampus.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao' title='Cancelar operação atual'/></a>";
+        echo"<input type='submit' id='btnCampus' name='btnCampus' value='Salvar' class='botao' title='Salvar informações'/><br/>";
         echo"</form>";
 
 
@@ -103,8 +103,8 @@ $dao = new CampusDAO();
             echo"<input type='text' id='nomeCampus' name='nomeCampus' value='" . $editar->getNome() . "' required size='50' maxlength='50' class='input-div'/>";
             
        
-        echo"<a href=main.php?pagina=frmListarCampus.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
-        echo"<input type='submit' id='btnCampus' name='btnCampus' value='Atualizar' class='botao'/>";
+        echo"<a href=main.php?pagina=frmListarCampus.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao' title='Cancelar operação atual'/></a>";
+        echo"<input type='submit' id='btnCampus' name='btnCampus' value='Atualizar' class='botao' title='Salvar alterações'/>";
         echo"</form>";
     }
 

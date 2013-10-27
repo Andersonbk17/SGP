@@ -67,8 +67,8 @@ $dao = new TitulacaoDAO();
         echo"<label for='nomeTitulacao' class='labelForms'>Nome:</label>";
         echo"<input type='text' id='nomeTitulacao' name='nomeTitulacao' required size='50' maxlength='50' class='input-div'/>";
         
-         echo"<a href=main.php?pagina=frmListarTitulacao.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
-        echo"<input type='submit' id='btnTitulo' name='btnTitulo' value='Salvar' class='botao' /><br/>";
+         echo"<a href=main.php?pagina=frmListarTitulacao.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao' title='Cancelar operação atual'/></a>";
+        echo"<input type='submit' id='btnTitulo' name='btnTitulo' value='Salvar' class='botao' title='Salvar informações'/><br/>";
         echo"</form>";
 
 
@@ -96,8 +96,8 @@ $dao = new TitulacaoDAO();
         echo"<label for='nomeTitulacao' class='labelForms'>Nome:</label>";
         echo"<input type='text' id='nomeTitulacao' name='nomeTitulacao' value='" . $editar->getNome() . "' required size='50' maxlength='50' class='input-div'/>";
 
-        echo"<a href=main.php?pagina=frmListarTitulacao.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
-        echo"<input type='submit' id='btnTitulo' name='btnTitulo' value='Atualizar' class='botao'/>";
+        echo"<a href=main.php?pagina=frmListarTitulacao.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao' title='Cancelar operação atual'/></a>";
+        echo"<input type='submit' id='btnTitulo' name='btnTitulo' value='Atualizar' class='botao' title='Salvar alterações'/>";
         echo"</form>";
     }
 

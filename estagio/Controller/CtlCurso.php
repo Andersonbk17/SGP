@@ -60,7 +60,7 @@
     	if(!$dao->Atualizar($curso)){
 			
 			//N para N
-			$dao->AtualizarCampus($cod,$campus);
+			$dao->AtualizarCampus($campus,$cod);
 			
 			echo"<script language='javascript'>
 						window.location.href='../Presentation/main.php?pagina=frmListarCurso.php&aux=0&msg=1'

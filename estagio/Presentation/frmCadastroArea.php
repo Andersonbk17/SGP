@@ -67,8 +67,8 @@
 						echo"<label for='nomeArea' class='labelForms'>Nome:</label>";
 						echo"<input type='text' id='nomeArea' name='nomeArea' required size='40' maxlength='50' class='input-div'/>";
 						
-                                                echo"<a href=main.php?pagina=frmListarArea.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
-                                                echo"<input type='submit' id='btnArea' name='btnArea' value='Salvar' class='botao' /><br/>";
+                                                echo"<a href=main.php?pagina=frmListarArea.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'  title='Cancelar operação atual'/></a>";
+                                                echo"<input type='submit' id='btnArea' name='btnArea' value='Salvar' class='botao' title='Salvar informações'/><br/>";
 					echo"</form>";
 					
 					
@@ -97,8 +97,8 @@
 							echo"<input type='text' id='nomeArea' name='nomeArea' value='".$i->getNome()."' required size='40' maxlength='50' class='input-div'/>";
 							$i++;
 						}
-						echo"<a href=main.php?pagina=frmListarArea.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
-						echo"<input type='submit' id='btnArea' name='btnArea' value='Atualizar' class='botao'/>";
+						echo"<a href=main.php?pagina=frmListarArea.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao' title='Cancelar operação atual'/></a>";
+						echo"<input type='submit' id='btnArea' name='btnArea' value='Atualizar' class='botao' title='Salvar alterações'/>";
 					echo"</form>";
 				   
 			   }

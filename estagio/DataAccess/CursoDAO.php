@@ -32,7 +32,7 @@
 		}
 		//-----
 		public function AtualizarCampus($cam,$cur){
-			$sql = sprintf("UPDATE curso_campus SET idCurso='%s',idCampus='%s' WHERE idCurso='%s' AND idCampus='%s'",$cam,$cur);
+			$sql = sprintf("UPDATE curso_campus SET idCampus='%s' WHERE idCurso='%s'",$cam,$cur);
 			mysql_query($sql);
 		
 		}

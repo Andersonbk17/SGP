@@ -30,11 +30,11 @@ class DisciplinaDAO {
     }
 
     //Função atualizar N para N
-    public function AtualizarCurso($dis, $cur) {
-        $sql = sprintf("UPDATE disciplina_curso SET idDisciplina='%s',idCurso='%s' WHERE idCurso='%s' AND idDisciplina='%s'", $dis, $cur);
+    public function AtualizarCurso($cur,$dis) {
+        $sql = sprintf("UPDATE disciplina_curso SET idCurso='%s' WHERE idDisciplina='%s'",$cur,$dis);
         mysql_query($sql);
     }
-
+    
     public function Inserir(Disciplina $obj) {
 
         $sql = sprintf("INSERT INTO disciplina(nome,sigla,cargaHoraria,status) VALUES('%s','%s','%s',1)", $obj->getNome(), $obj->getSigla(), $obj->getCargaHoraria());

@@ -124,9 +124,9 @@
                 <label name="sexo" for="sexo" class="labelForms">Sexo:</label><br>
                 
                 <label name="sexo"  for="sexo" class="labelForms">Masculino</label>
-                <input type="radio" class="input-div" name="sexo" class="sexo" value="1" /><br/>
+                <input type="radio" class="input-div2" name="sexo" class="sexo" value="1" /><br/>
                 <label name="sexo"  for="sexo" class="labelForms">Feminino </label> 
-                <input type="radio" class="input-div" name="sexo" class="sexo" value="2" />
+                <input type="radio" class="input-div2" name="sexo" class="sexo" value="2" />
         
                 <!--
                 <select name="sexo" id="sexo" class="input-div">
@@ -139,8 +139,8 @@
                 
                 
                 
-                <a  class="botao" name='avancar' id='proximo' href="main.php?pagina=frmCadastroAfastamento.php" style="text-decoration: none ">Avançar</a>
-                <input type="submit"  class="botao" name='enviar' id='enviar' value="Salvar" />
+                <a  class="botao" name='avancar' id='proximo' href="main.php?pagina=frmCadastroAfastamento.php" style="text-decoration: none " title='Avançar para próxima etapa'>Avançar</a>
+                <input type="submit"  class="botao" name='enviar' id='enviar' value="Salvar" title='Salvar informações'/>
                 
                 
                 

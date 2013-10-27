@@ -114,7 +114,7 @@
                 <textarea name="motivo" id="motivo" cols="100" rows="10" class="input-div" required=""><?php echo"";?></textarea><br /><br />
                 
                 <a  class="botao" name='proximo' id='proximo' href="main.php?pagina=frmCadastroProgressaoCarreira.php" style="text-decoration: none ">Próximo</a>
-                <input type="submit" id="enviar" class="botao"name="enviar" value="Salvar" />
+                <input type="submit" id="enviar" class="botao"name="enviar" value="Salvar" title="salvar informações" />
                 
               
                 
@@ -163,8 +163,8 @@
                        echo		"<td class='linha-td'  colspan='70' ALIGN=MIDDLE WIDTH=200 >".$a->getDataInicio()."</td>";
                        echo		"<td class='linha-td' colspan='70' ALIGN=MIDDLE WIDTH=10>".$a->getDataTermino()."</td>";
                        echo		"<td class='linha-td' colspan='70' ALIGN=MIDDLE WIDTH=10>".$a->getMotivo()."</td>";
-                       echo		"<td class='coluna'><a href=main.php?pagina=frmEditarAfastamento.php&op=0&id=".$a->getIdAfastamento()."><img src='./image/editar.png'></a></td>";
-                       echo		"<td class='coluna'><a href='javascript:func()' onclick='confirmacao(" . $a->getIdAfastamento() . ")'><img src='./image/excluir.png'></a></td>";
+                       echo		"<td class='coluna'><a href=main.php?pagina=frmEditarAfastamento.php&op=0&id=".$a->getIdAfastamento()."><img src='./image/editar.png' title='Editar informações'></a></td>";
+                       echo		"<td class='coluna'><a href='javascript:func()' onclick='confirmacao(" . $a->getIdAfastamento() . ")'><img src='./image/excluir.png' title='Remover registro'></a></td>";
                         echo		"</tr>";
                         //echo '<script type="text/javascript"> alert("'.$a->getIdAfastamento().'")</script>';
                     

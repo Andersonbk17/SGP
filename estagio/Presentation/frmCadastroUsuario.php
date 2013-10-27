@@ -68,7 +68,7 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
                 <form name="frmCadastroUsuario" id="frmCadastroUsuario" method="POST" 
                       action="./../Controller/CtlCadastroUsuario.php"  onsubmit="return valida(this);">
 
-                    <label name="usuario" for="funcionario">Nome do Funcionário *:</label><br />
+                    <label name="usuario" for="funcionario" class="labelForms">Funcionário:</label>
                     <select id="funcionario" name="funcionario"  class="input-div" required="" />
                     <option selected value="0">Selecione</option>
 
@@ -88,17 +88,18 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
 
                                         </select><br />
 
-                                        <label name="usuario" for="usuario">Nome do Usuário *:</label><br />
-                                        <input class="input input-div"type="text" name="usuario" id="usuario" size="50"  required="" placeholder="Novo Usuario"/> <br />
-                                        <label name="senha" for="senha">Senha *:</label> <br/>
+                                        <label name="usuario" for="usuario" class="labelForms">Usuário:</label>
+                                        <input type="text" name="usuario" id="usuario" size="50"  required="" class="input-div" placeholder="Novo Usuario"/> <br />
+                                        <label name="senha" for="senha" class="labelForms">Senha:</label>
                                         <input type="password" name="senha" id="senha" size="50" required="" placeholder="Senha" class="input-div"/><br />
-                                        <label name="confirmarSenha" for="confirmarSenha">Confirmação de Senha *:</label><br/>
-                                        <input type="password" name="confirmarSenha" id="confirmarSenha" size="50" required="" placeholder="Digite Novamente" class="input-div" style="position: absolute; left: 65px"/> <br /><br />
-                                        <input type="submit" name="Cadastrar"  class="botao" value="Cadastrar"/>
+                                        <label name="confirmarSenha" for="confirmarSenha" class="labelForms">Confirmar Senha:</label>
+                                        <input type="password" name="confirmarSenha" id="confirmarSenha" size="50" required="" placeholder="Digite Novamente" class="input-div" /> <br />
+                                        <input type="submit" name="Cadastrar"  class="botao" value="Cadastrar" title="Salvar informações"/>
 
                                     </form>
                                 </fieldset>
-                                <br />
+                               
+            
 
                                 <fieldset>
                                     <legend>Usuários Cadastrados</legend>
@@ -113,6 +114,7 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
 
                     echo "<table class='tbl' name='tbl' id='tbl' border='1' >";
                     echo "<tr>";
+                    echo "<td class='colunaTop' colspan='2'><b>OPÇÃO</b></td>"; //espaço para botão editar e excluir
                     echo "<td class='nomeCampus'  ALIGN=MIDDLE WIDTH=30 ><b>ID<b /></td>";
                     echo "<td class='nomeCampus' colspan='70' ALIGN=MIDDLE WIDTH=800><b>Usuário<b /></td>";
                     echo "<td class='nomeCampus' colspan='70' ALIGN=MIDDLE WIDTH=200><b>Nível<b /></td>";
@@ -120,11 +122,12 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
 
                     foreach ($usuario as $a) {
                         echo "<tr class='linha-td'>";
+                        echo "<td class='coluna'><a href=main.php?pagina=frmEditarUsuario.php&id='" . $a->getId() . "'><img src='./image/editar.png'></a></td>";
+                        echo "<td class='coluna'><a href='javascript:func()' onclick='confirmacao(" . $a->getId() . ")'><img src='./image/excluir.png'></a></td>";
                         echo "<td class='linha-td' ALIGN=MIDDLE WIDTH=30>" . $a->getId() . "</td>";
                         echo "<td class='linha-td'  colspan='70' ALIGN=MIDDLE WIDTH=800 >" . $a->getUsuario() . "</td>";
                         echo "<td class='linha-td' colspan='70' ALIGN=MIDDLE WIDTH=200>" . $a->getNivel() . "</td>";
-                        echo "<td class='coluna'><a href=main.php?pagina=frmEditarUsuario.php&id='" . $a->getId() . "'><img src='./image/editar.png'></a></td>";
-                        echo "<td class='coluna'><a href='javascript:func()' onclick='confirmacao(" . $a->getId() . ")'><img src='./image/excluir.png'></a></td>";
+                     
                         echo "</tr>";
                     }
 

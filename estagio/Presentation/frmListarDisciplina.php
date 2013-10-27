@@ -79,12 +79,12 @@
                 <option value="decrescente"  >Decrescente</option>
                 
             </select>
-            <input type="submit" id="Buscar" name="Buscar" class="botao" />
+            <input type="submit" id="Buscar" name="Buscar" class="botao" title='Filtrar registro'/>
         </fieldset> <br />
         </form>
 		<!--<a href="main.php?pagina=frmCadastroDisciplina.php"><img src="image/novo.png"/></a><br/>-->
                  <a href="main.php?pagina=frmCadastroDisciplina.php">        
-                    <input type="submit" id="btnNovo" name="btnNovo" value='Novo' class='botaoNovo' />
+                    <input type="submit" id="btnNovo" name="btnNovo" value='Novo' class='botaoNovo' title='Adicionar novo'/>
                 </a>
         <fieldset>
     
@@ -183,8 +183,8 @@
 			
 			foreach ($disciplina as $i){
 				echo		"<tr class='linha-td'>";
-                                echo			"<td class='coluna'><a href=main.php?pagina=frmCadastroDisciplina.php&aux=1&cod=".$i->getId()."><img src='./image/editar.png'></a></td>";
-				echo			"<td class='coluna'><a href='javascript:func()' onclick='confirmacao(".$i->getId().")'><img src='./image/excluir.png'></a></td>";
+                                echo			"<td class='coluna'><a href=main.php?pagina=frmCadastroDisciplina.php&aux=1&cod=".$i->getId()."><img src='./image/editar.png'title='Editar registro'></a></td>";
+				echo			"<td class='coluna'><a href='javascript:func()' onclick='confirmacao(".$i->getId().")'><img src='./image/excluir.png' title='Remover registro'></a></td>";
 				echo			"<td class='linha-td' width='30' align='middle'>".$i->getId()."</td>";
 				echo			"<td class='linha-td'width='600' align='middle'>".$i->getNome()."</td>";
 				echo			"<td class='linha-td' width='300' align='middle'>".$i->getSigla()."</td>";

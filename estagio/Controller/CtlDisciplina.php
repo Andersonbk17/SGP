@@ -55,8 +55,8 @@
 	//Alterar
 	if($opcao == 2){
     	if(!$dao->Atualizar($disciplina)){
-			
-			$dao->AtualizarCurso($cod,$curso);
+            
+			$dao->AtualizarCurso($curso,$cod);
                         
 			echo"<script language='javascript'>
 						window.location.href='../Presentation/main.php?pagina=frmListarDisciplina.php&aux=0&msg=1'
