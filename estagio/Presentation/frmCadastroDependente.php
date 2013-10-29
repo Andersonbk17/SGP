@@ -92,7 +92,7 @@
                <!-- <label name="usuario" class="_funcionario" for="funcionario" >Nome do Funcionário *:</label><br class="_funcionario" />-->
                   <label name="usuario" class="labelForms" for="funcionario" >Funcionário:</label>
 
-               <select id="funcionario" class="input-div _funcionario" name="funcionario"  required="">
+               <select id="funcionario" class="input-div-select _funcionario" name="funcionario"  required="">
                         <option selected value="0">Selecione</option>
                         
                         <?php
@@ -121,26 +121,26 @@
                 <label for="nome" class="labelForms">Nascimento:</label>
                 <input type="text" id="dataNascimento" class="input-div" name="dataNascimento" required="" /><br />
                 
-                <label name="sexo" for="sexo" class="labelForms">Sexo:</label><br>
-                
+                <label name="sexo" for="sexo" class="labelForms">Sexo:</label>
+                <!--
                 <label name="sexo"  for="sexo" class="labelForms">Masculino</label>
                 <input type="radio" class="input-div2" name="sexo" class="sexo" value="1" /><br/>
                 <label name="sexo"  for="sexo" class="labelForms">Feminino </label> 
                 <input type="radio" class="input-div2" name="sexo" class="sexo" value="2" />
-        
-                <!--
-                <select name="sexo" id="sexo" class="input-div">
-                    <option selected="" value="">Selecione...</option>
+                -->
+               
+                <select name="sexo" id="sexo" class="input-div-select">
+                    <option selected="" value="">Selecione...  </option>
                     <option  value="1">Masculino</option>
                     <option  value="2">Feminino</option>
                     
-                </select>
-                -->
+                </select><br/>
+              
                 
                 
                 
                 <a  class="botao" name='avancar' id='proximo' href="main.php?pagina=frmCadastroAfastamento.php" style="text-decoration: none " title='Avançar para próxima etapa'>Avançar</a>
-                <input type="submit"  class="botao" name='enviar' id='enviar' value="Salvar" title='Salvar informações'/>
+                <input type="submit"  class="botaoDependente" name='enviar' id='enviar' value="Salvar" title='Salvar informações'/>
                 
                 
                 

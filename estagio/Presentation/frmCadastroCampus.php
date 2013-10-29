@@ -71,10 +71,13 @@ $dao = new CampusDAO();
         echo"<legend>Registrar Campus</legend>";
         echo"<form name='frmCadastroCampus' action='../Controller/CtlCampus.php?oP=1' method='POST'>";
         echo"<label for='nomeCampus' class='labelForms'>Nome:</label>";
-        echo"<input type='text' id='nomeCampus' name='nomeCampus' required size='50' maxlength='50' class='input-div'/>";
+        echo"<input type='text' id='nomeCampus' name='nomeCampus' required size='40' maxlength='50' class='input-div'/>";
         
+        echo"<br/><br/><br/><br/>";
+        echo"<div class='btn'>";
         echo"<a href=main.php?pagina=frmListarCampus.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao' title='Cancelar operação atual'/></a>";
         echo"<input type='submit' id='btnCampus' name='btnCampus' value='Salvar' class='botao' title='Salvar informações'/><br/>";
+        echo"</div>";
         echo"</form>";
 
 
@@ -100,11 +103,13 @@ $dao = new CampusDAO();
             echo"<input type='text' id='id' name='id' value='" . $editar->getId() . "' disabled size='2' class='input-div'/><br/>";
             echo"<input type='hidden' id='codCampus' name='codCampus' value='" . $editar->getId() . "' size='2'/>";
             echo"<label for='nomeCampus' class='labelForms'>Nome:</label>";
-            echo"<input type='text' id='nomeCampus' name='nomeCampus' value='" . $editar->getNome() . "' required size='50' maxlength='50' class='input-div'/>";
+            echo"<input type='text' id='nomeCampus' name='nomeCampus' value='" . $editar->getNome() . "' required size='40' maxlength='50' class='input-div'/>";
             
-       
+         echo"<br/><br/><br/><br/>";
+                                                echo"<div class='btnA'>";
         echo"<a href=main.php?pagina=frmListarCampus.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao' title='Cancelar operação atual'/></a>";
         echo"<input type='submit' id='btnCampus' name='btnCampus' value='Atualizar' class='botao' title='Salvar alterações'/>";
+        echo"</div>";
         echo"</form>";
     }
 

@@ -192,21 +192,29 @@
 					echo"<input type='email' class='input-div' id='email' name='email' placeholder='EMAIL' required='' size='24' /> <br />";
 						
 					echo"<label name='sexo' for='sexo' class='labelForms'>Sexo:</label>";
+                                        /*
 					echo"<label name='sexo' for='sexo'>Masculino</label>";
 					echo"<input type='radio'  name='sexo' class='sexo input-div' value='1' /><br />";
 					echo"<label name='sexo' for='sexo'>Feminino</label>";
 					echo"<input type='radio'  name='sexo' class='sexo input-div' value='2' /><br />";
+                       
+                                         */
+                                        echo"<select name='sexo' id='sexo' class='input-div-select'>";
+                                            echo"<option selected='' value=''>Selecione...  </option>";
+                                            echo"<option  value='1'>Masculino</option>";
+                                            echo"<option  value='2'>Feminino</option>";
+                                        echo"</select><br/>";
 					
 					
 					//echo"<label name='reservista' for='reservista'  class='reservista labelForms' style='display: none'  >Reservista Militar:</label><br class='reservista' style='display: none' />";
 					echo"<label name='reservista' for='reservista'  class='reservista labelForms' style='display: none'  >Reservista:</label>";
                                         echo"<input type='text'  id='reservista' name='reservista' placeholder='' class='reservista input-div' required='' style='display: none' size='24' /> <br class='reservista' style='display: none' />";
-					echo"<label name='titulo' for='titulo' class='labelforms'>Título Eleitoral:</label>";
+					echo"<label name='titulo' for='titulo' class='labelForms'>Título Eleitoral:</label>";
 					echo"<input type='text' class='input-div' id='titulo' name='titulo' placeholder='' required='' size='24' /> <br />";
 					
 			 
-					echo"<label name='estadoCivil' for='estadoCivil' class='labelforms'>Estado Civil:</label>";
-					echo"<select id='estadoCivil' class='input-div' name='estadoCivil' required=''>";
+					echo"<label name='estadoCivil' for='estadoCivil' class='labelForms'>Estado Civil:</label>";
+					echo"<select id='estadoCivil' class='input-div-select' name='estadoCivil' required=''>";
 					   echo"<option selected value='0'>Selecione</option>";
 					   
 							include_once '../DataAccess/EstadoCivilDAO.php';
@@ -226,8 +234,8 @@
 				   echo"</select><br/>";
                                    
 					
-					   echo"<label name='tipoSanguineo' for='tipoSanguineo' class='labelforms'>Tipo Sanguineo:</label>";
-					   echo"<select id='tipoSanguineo' class='input-div' name='tipoSanguineo' required=''>";
+					   echo"<label name='tipoSanguineo' for='tipoSanguineo' class='labelForms'>Tipo Sanguineo:</label>";
+					   echo"<select id='tipoSanguineo' class='input-div-select' name='tipoSanguineo' required=''>";
 					   echo"<option selected value='0'>Selecione</option>";
 					   
 					   include_once '../DataAccess/TipoSanguineoDAO.php';
@@ -264,23 +272,23 @@
 				
                                    
                                    
-				   echo"<label name='nomePai' for='nomePai'>Nome do Pai *:</label><br />";
+				   echo"<label name='nomePai' for='nomePai' class='labelForms'>Nome do Pai:</label>";
 				   echo"<input type='text' class='input-div' id='nomePai' name='nomePai' placeholder='Nome ' required='' size='70' /> <br />";
-				   echo"<label name='nomeMae' for='nomeMae'>Nome da Mãe *:</label><br />";
+				   echo"<label name='nomeMae' for='nomeMae' class='labelForms'>Nome da Mãe:</label>";
 				   echo"<input type='text' class='input-div' id='nomeMae' name='nomeMae' placeholder='Nome ' required='' size='70' /> <br />";
 					
-				   echo"<label name='endereco' for='rua'>Endereço *:</label><br />";
-				   echo"<input type='text' class='input-div' id='rua' name='rua' placeholder='Rua ' required='' size='60' /> ";
-				   echo"<label name='bairro' for='bairro'>Bairro *:</label>";
-				   echo"<input type='text' class='input-div' id='bairro' name='bairro' placeholder='Bairro ' required='' size='30' /> ";
-				   echo"<label name='numero' for='numero'>Número *:</label>";
+				   echo"<label name='endereco' for='rua' class='labelForms'>Endereço:</label>";
+				   echo"<input type='text' class='input-div' id='rua' name='rua' placeholder='Rua ' required='' /><br/> ";
+				   echo"<label name='bairro' for='bairro' class='labelForms'>Bairro:</label>";
+				   echo"<input type='text' class='input-div' id='bairro' name='bairro' placeholder='Bairro ' required='' /> <br/>";
+				   echo"<label name='numero' for='numero' class='labelForms'>Número:</label>";
 				   echo"<input type='text' class='input-div' id='numero' name='numero' placeholder='Número ' required='' /> <br />";
-				   echo"<label name='complemento' for='complemento'>Complemento :</label> <br />";
+				   echo"<label name='complemento' for='complemento' class='labelForms'>Complemento:</label>";
 				   echo"<input type='text' class='input-div' id='complemento' name='complemento' placeholder='ex: apt,condominio ' size='60'/> <br />";
 					
 					
 				   
-				   echo"<label name='estado' for='estado'>Estado *:</label><br />";
+				   echo"<label name='estado' for='estado' class='labelForms'>Estado:</label>";
 				   echo"<select id='estado' class='input-div' name='estado' required=''>";
 					   echo"<option selected value='0'>Selecione</option>";
 						
@@ -303,16 +311,16 @@
 								
 					   
 										 
-				   echo"</select>";
+				   echo"</select><br/>";
 				   
-				   echo"<label name='cidade' for='cidade'>Cidade *:</label>";
+				   echo"<label name='cidade' for='cidade' class='labelForms'>Cidade:</label>";
 				   echo"<span class='carregando' style='color:#666;display:none;'>Aguarde, carregando...</span>";
 				   echo"<select id='cidade' class='input-div' name='cidade' required=''>";
-					   echo"<option selected value='0'>-- Escolha um estado --</option>";
+					   echo"<option selected value='0'> Escolha um estado </option>";
 						 
 				   echo"</select><br />";
-				   echo"<label name='cep' for='cep'>Cep *:</label><br />";
-				   echo"<input type='text' class='input-div' id='cep' name='cep' placeholder='cep' size='24' required='' /><br />";
+				   echo"<label name='cep' for='cep' class='labelForms'>Cep:</label>";
+				   echo"<input type='text' class='input-div' id='cep' name='cep' placeholder='cep' required='' /><br />";
 				   
 					
 				echo"</fieldset><br/>";
@@ -320,22 +328,22 @@
 				  echo"<fieldset>";
 					  echo"<legend>Dados do Funcionário</legend>";
 					   
-					  echo"<label name='numeroSiape' for='numeroSiape'>Numero Siape *:</label><br />";
+					  echo"<label name='numeroSiape' for='numeroSiape' class='labelForms'>Numero Siape:</label>";
 					  echo"<input type='text' class='input-div' id='numeroSiape' name='numeroSiape' placeholder='' required='' size='24'/> <br />";
-					  echo"<label name='numeroPortaria' for='numeroPortaria'>Numero Portaria/Nomeação *:</label><br />";
+					  echo"<label name='numeroPortaria' for='numeroPortaria' class='labelForms'>Numero Portaria:</label>";
 					  echo"<input type='text' class='input-div' id='numeroPortaria' name='numeroPortaria' placeholder='' required='' size='24' /> <br />";
-					  echo"<label name='dataPosse' for='dataPosse'>Data da Posse *:</label><br />";
+					  echo"<label name='dataPosse' for='dataPosse' class='labelForms'>Data Posse:</label>";
 					  echo"<input type='text' class='input-div' id='dataPosse' name='dataPosse' placeholder='DD/MM/AAAA' required='' size='24' /> <br />";
-					  echo"<label name='dataExercicio' for='dataExercicio'>Data de Exercício *:</label><br />";
+					  echo"<label name='dataExercicio' for='dataExercicio' class='labelForms'>Data Exercício:</label>";
 					  
 					  echo"<input type='text' class='input-div' id='dataExercicio' name='dataExercicio' placeholder='DD/MM/AAAA' required='' size='24'/> <br />";
-					  echo"<label name='portariaFG'  for='portariaFG'>Portaria FG *:</label><br />";
+					  echo"<label name='portariaFG'  for='portariaFG' class='labelForms'>Portaria FG:</label>";
 					  echo"<input type='text' class='input-div' id='portariaFG' name='portariaFG' placeholder='' required='' size='24' /> <br />";
-					  echo"<label name='portariaCD' for='portariaCD'>Portaria CD *:</label><br />";
+					  echo"<label name='portariaCD' for='portariaCD' class='labelForms'>Portaria CD:</label>";
 					  echo"<input type='text' class='input-div' id='portariaCD' name='portariaCD' placeholder='' required=''  size='24'/> <br />";
 					  
-					  echo"<label name='campus' for='campus'>Campus *:</label>";
-					  echo"<select id='campus' class='input-div' name='campus' required=''>";
+					  echo"<label name='campus' for='campus' class='labelForms'>Campus:</label>";
+					  echo"<select id='campus' class='input-div-select' name='campus' required=''>";
 						 echo"<option selected value='0'>Selecione</option>";
 					 
 						 //header('Content-Type: text/html; charset=ISO-8859-1');
@@ -355,10 +363,10 @@
 
 					
 										 
-				   echo"</select>";
+				   echo"</select><br/>";
 				   
-				   echo"<label name='titulacao' for='titulacao'>Titulação *:</label>";
-					   echo"<select id='titulacao' class='input-div' name='titulacao' required=''>";
+				   echo"<label name='titulacao' for='titulacao' class='labelForms'>Titulação:</label>";
+					   echo"<select id='titulacao' class='input-div-select' name='titulacao' required=''><br/>";
 						echo"<option selected value='0'>Selecione</option>";
 					   
 						 //header('Content-Type: text/html; charset=ISO-8859-1');
@@ -377,13 +385,13 @@
 						 }
 						
 				   echo"</select><br />";
-				   echo"<label name='pendencias' for='pendencias'>Pendências :</label><br/>";
+				   echo"<label name='pendencias' for='pendencias' class='labelForms'>Pendências:</label>";
 				   echo"<textarea id='pendencias' class='input-div' name='pendencias' cols='125' rows='20'>";
 						echo "";
-				   echo "</textarea><br />";
-			 
+				   echo "</textarea><br /><br/><br/>";
+			           echo"<div class='btnS'>";
 				   echo "<input type='submit' id='enviar' class='botao' name='enviar' value='Salvar' />";     
-				  
+				   echo"</div>";
 				echo "</form>";
 		}
 		if($aux == 1){
@@ -411,24 +419,24 @@
 			  
 			    // foreach($editar as $edit){
 			     
-					echo"<label name='nome' for='nome'>Nome do professor *:</label><br />";
+					echo"<label name='nome' for='nome' class='labelForms'>Nome do professor:</label>";
 					echo"<input type='text' id='nome' class='input-div' name='nome' value='".$edit->getNome()."'autofocus='' placeholder='Nome' required='' size='100' /><br />";
 				    echo"<input type='hidden' id='codFun' name='codFun' value='".$edit->getId()."' size='2'/><br/>";
-					echo"<label name='dataNascimento' for='dataNascimento'>Data Nascimento *:</label><br />";
+					echo"<label name='dataNascimento' for='dataNascimento' class='labelForms'>Data Nascimento:</label>";
 					echo"<input type='text' class='input-div' name='dataNascimento' id='dataNascimento' value='".$edit->getDataNascimento()."' placeholder='DD/MM/AAAA' size='24'/><br />";
 						
 					echo"<label name='certidaoNascimento' for='certidaoNascimento'>Certidão de Nascimento:</label><br />";
 					echo"<input type='text' class='input-div' id='certidaoNascimento' name='certidaoNascimento' value='".$edit->getCertidaoNascimento()."' placeholder='Número' required='' size='24' /> <br />";
-					echo"<label name='rg' for='rg'>RG *:</label><br />";
+					echo"<label name='rg' for='rg'  class='labelForms'>RG:</label>";
 					echo"<input type='text' class='input-div' id='rg' name='rg' value='".$edit->getRg()."' placeholder='RG' required='' size='24' /> <br />";
-					echo"<label name='cpf' for='cpf'>CPF *:</label><br />";
+					echo"<label name='cpf' for='cpf'  class='labelForms'>CPF:</label>";
 					echo"<input type='text' class='input-div' id='cpf' name='cpf' value='".$edit->getCpf()."' placeholder='CPF' required='' size='24' /> <br />";
-					echo"<label name='email' for='email'>Email *:</label><br />";
+					echo"<label name='email' for='email'  class='labelForms'>Email:</label>";
 					echo"<input type='email' class='input-div' id='email' name='email' value='".$edit->getEmail()."' placeholder='EMAIL' required='' size='24' /> <br />";
 						
-					echo"<label name='sexo' for='sexo'>Sexo * :</label><br />";
+					echo"<label name='sexo' for='sexo'  class='labelForms'>Sexo:</label>";
                                         
-                                        
+                                        /*
                                         if($edit->getSexo()==1){
                                             echo"<label name='sexo'  for='sexo'>Masculino</label>";
                                             echo"<input type='radio' class='input-div' name='sexo' class='sexo' value='1' checked='checked' /><br />";
@@ -440,18 +448,31 @@
                                             echo"<label name='sexo'  for='sexo'>Feminino </label>";
                                             echo"<input type='radio' class='input-div' name='sexo' class='sexo' value='2' checked='checked'/><br />";
 
+                                        }*/
+                                        if($edit->getSexo()==1){
+                                            echo"<select name='sexo' id='sexo' class='input-div-select'>";
+                                            echo"<option values='1' selected=''>Masculino</option>";
+                                            echo"<option values='2' >Feminino</option>";
+                                            echo"</select><br/>";                                       
+                                            
+                                        }else{
+                                            echo"<select name='sexo' id='sexo' class='input-div-select'>";
+                                            echo"<option values='1'>Masculino</option>";
+                                            echo"<option values='2' selected=''>Feminino</option>";
+                                            echo"</select><br/>";  
+
                                         }
                                         
                                         
                                         
-					echo"<label name='reservista' for='reservista'  class='reservista' style='display: none'  >Número da Reservista Militar:</label><br class='reservista' style='display: none' />";
+					echo"<label name='reservista' for='reservista'  class='reservista' style='display: none'  >Reservista:</label><br class='reservista' style='display: none' />";
 					echo"<input type='text'  id='reservista' name='reservista' value='".$edit->getReservistaMilitar()."' placeholder='' class='reservista input-div' required='' style='display: none' size='24' /> <br class='reservista' style='display: none' />";
-					echo"<label name='titulo' for='titulo'>Título Eleitoral *:</label><br />";
+					echo"<label name='titulo' for='titulo'  class='labelForms'>Título Eleitoral:</label>";
 					echo"<input type='text' class='input-div' id='titulo' name='titulo' value='".$edit->getTituloEleitoral()."' placeholder='' required='' size='24' /> <br />";
 					
 			 
-					echo"<label name='estadoCivil' for='estadoCivil'>Estado Civil *:</label><br />";
-					echo"<select id='estadoCivil' class='input-div' name='estadoCivil' required=''>";
+					echo"<label name='estadoCivil' for='estadoCivil'  class='labelForms'>Estado Civil:</label>";
+					echo"<select id='estadoCivil' class='input-div-select' name='estadoCivil' required=''>";
 					echo"<option selected value='0'>Selecione</option>";
 					   
 							include_once '../DataAccess/EstadoCivilDAO.php';
@@ -468,13 +489,13 @@
 								 
 								
 								
-				   echo"</select>";
+				   echo"</select><br/>";
                                    
                                     //selecionar Automaticamente o combobox estadoCivil
                                    echo"<script type='text/javascript'> $(document).ready(function(){  $('#estadoCivil').val(".$edit->getIdEstado_Civil().")      }) </script>";//select ok
 					
-					   echo"<label name='tipoSanguineo' for='tipoSanguineo'>Tipo Sanguineo *:</label>";
-					   echo"<select id='tipoSanguineo' class='input-div' name='tipoSanguineo' required=''>";
+					   echo"<label name='tipoSanguineo' for='tipoSanguineo'  class='labelForms'>Tipo Sanguineo:</label>";
+					   echo"<select id='tipoSanguineo' class='input-div-select' name='tipoSanguineo' required=''>";
 					   echo"<option selected value='0'>Selecione</option>";
 					   
 					   include_once '../DataAccess/TipoSanguineoDAO.php';
@@ -531,24 +552,24 @@
 				   */
 					
 					
-				   echo"<label name='nomePai' for='nomePai'>Nome do Pai *:</label><br />";
+				   echo"<label name='nomePai' for='nomePai'  class='labelForms'>Nome do Pai:</label>";
 				   echo"<input type='text' class='input-div' id='nomePai' name='nomePai' value='".$edit->getNomePai()."' placeholder='Nome ' required='' size='100' /> <br />";
-				   echo"<label name='nomeMae' for='nomeMae'>Nome da Mãe *:</label><br />";
+				   echo"<label name='nomeMae' for='nomeMae'  class='labelForms'>Nome da Mãe:</label>";
 				   echo"<input type='text' class='input-div' id='nomeMae' name='nomeMae' value='".$edit->getNomeMae()."' placeholder='Nome ' required='' size='100' /> <br />";
 					
-				   echo"<label name='endereco' for='rua'>Endereço *:</label><br />";
-				   echo"<input type='text' class='input-div' id='rua' name='rua' value='".$edit->getEndereco()."' placeholder='Rua ' required='' size='60' /> ";
-				   echo"<label name='bairro' for='bairro'>Bairro *:</label>";
-				   echo"<input type='text' class='input-div' id='bairro' name='bairro' value='".$edit->getEndBairro()."' placeholder='Bairro ' required='' size='30' /> ";
-				   echo"<label name='numero' for='numero'>Número *:</label>";
+				   echo"<label name='endereco' for='rua'  class='labelForms'>Endereço:</label>";
+				   echo"<input type='text' class='input-div' id='rua' name='rua' value='".$edit->getEndereco()."' placeholder='Rua ' required='' size='60' /><br/> ";
+				   echo"<label name='bairro' for='bairro'  class='labelForms'>Bairro:</label>";
+				   echo"<input type='text' class='input-div' id='bairro' name='bairro' value='".$edit->getEndBairro()."' placeholder='Bairro ' required='' /><br/> ";
+				   echo"<label name='numero' for='numero'  class='labelForms'>Número:</label>";
 				   echo"<input type='text' class='input-div' id='numero' name='numero' value='".$edit->getEndNumero()."' placeholder='Número ' required='' /> <br />";
-				   echo"<label name='complemento' for='complemento'>Complemento :</label> <br />";
+				   echo"<label name='complemento' for='complemento'  class='labelForms'>Complemento :</label>";
 				   echo"<input type='text' class='input-div' id='complemento' name='complemento' value='".$edit->getEndComplemento()."' placeholder='ex: apt,condominio ' size='60'/> <br />";
 					
 					
 				   
-				   echo"<label name='estado' for='estado'>Estado *:</label><br />";
-				   echo"<select id='estado' class='input-div' name='estado' required=''>";
+				   echo"<label name='estado' for='estado'  class='labelForms'>Estado:</label>";
+				   echo"<select id='estado' class='input-div-select' name='estado' required=''>";
 					   echo"<option selected value='0'>Selecione</option>";
 						
 						//header('Content-Type: text/html; charset=ISO-8859-1');
@@ -570,7 +591,7 @@
 								
 					   
 										 
-				   echo"</select>";
+				   echo"</select><br/>";
                                    $edit->getEndCidade(); //pega o id da cidade
                                    include_once '../DataAccess/CidadeDAO.php';
                                    
@@ -610,10 +631,10 @@
                                     
                                     //Fim do CARREGAMENTO DAS CIDADES
                                     
-				   echo"<label name='cidade' for='cidade'>Cidade *:</label>";
+				   echo"<label name='cidade' for='cidade' class='labelForms'>Cidade:</label>";
 				   echo"<span class='carregando' style='color:#666;display:none;'>Aguarde, carregando...</span>";
-				   echo"<select id='cidade' class='input-div' name='cidade' required=''>";
-					   echo"<option selected value='0'>-- Escolha um estado --</option>";
+				   echo"<select id='cidade' class='input-div-select' name='cidade' required=''>";
+					   echo"<option selected value='0'>Escolha um estado</option>";
                                            foreach ($lista as $es){
                                                 echo "<option value='".$es->getId()."'>".$es->getNome()."</option>";
                                            }
@@ -621,8 +642,8 @@
 				   echo"</select><br />";
                                    
                                    echo"<script type='text/javascript'> $(document).ready(function(){  $('#cidade').val(".$edit->getEndCidade().")      }) </script>";//select ok
-				   echo"<label name='cep' for='cep'>Cep *:</label><br />";
-				   echo"<input type='text' class='input-div' id='cep' name='cep' value='".$edit->getCep()."' placeholder='cep' size='24' required='' /><br />";
+				   echo"<label name='cep' for='cep' class='labelForms'>Cep:</label>";
+				   echo"<input type='text' class='input-div' id='cep' name='cep' value='".$edit->getCep()."' placeholder='cep'  required='' /><br />";
 				   
 					
 				echo"</fieldset><br/>";
@@ -630,22 +651,22 @@
 				  echo"<fieldset>";
 					  echo"<legend>Dados do Funcionário</legend>";
 					   
-					  echo"<label name='numeroSiape' for='numeroSiape'>Numero Siape *:</label><br />";
+					  echo"<label name='numeroSiape' for='numeroSiape' class='labelForms'>Numero Siape:</label>";
 					  echo"<input type='text' class='input-div' id='numeroSiape' name='numeroSiape' value='".$edit->getNumeroSiape()."' placeholder='' required='' size='24'/> <br />";
-					  echo"<label name='numeroPortaria' for='numeroPortaria'>Numero Portaria/Nomeação *:</label><br />";
+					  echo"<label name='numeroPortaria' for='numeroPortaria' class='labelForms'>Numero Portaria:</label>";
 					  echo"<input type='text' class='input-div' id='numeroPortaria' name='numeroPortaria' placeholder='' value=".$edit->getPortariaNomeacao()." required='' size='24' /> <br />";
-					  echo"<label name='dataPosse' for='dataPosse'>Data da Posse *:</label><br />";
+					  echo"<label name='dataPosse' for='dataPosse' class='labelForms'>Data Posse:</label>";
 					  echo"<input type='text' class='input-div' id='dataPosse' name='dataPosse' placeholder='DD/MM/AAAA'  value='".$edit->getDataPosse()."' required='' size='24' /> <br />";
-					  echo"<label name='dataExercicio' for='dataExercicio'>Data de Exercício *:</label><br />";
+					  echo"<label name='dataExercicio' for='dataExercicio' class='labelForms'>Data Exercício:</label>";
 					  
 					  echo"<input type='text' class='input-div' id='dataExercicio' name='dataExercicio' value='".$edit->getDataExercicio()."' placeholder='DD/MM/AAAA' required='' size='24'/> <br />";
-					  echo"<label name='portariaFG'  for='portariaFG'>Portaria FG *:</label><br />";
+					  echo"<label name='portariaFG'  for='portariaFG' class='labelForms'>Portaria FG:</label>";
 					  echo"<input type='text' class='input-div' id='portariaFG' name='portariaFG' value='".$edit->getPortariaFG()."' placeholder='' required='' size='24' /> <br />";
-					  echo"<label name='portariaCD' for='portariaCD'>Portaria CD *:</label><br />";
+					  echo"<label name='portariaCD' for='portariaCD' class='labelForms'>Portaria CD:</label>";
 					  echo"<input type='text' class='input-div' id='portariaCD' name='portariaCD' value='".$edit->getPortariaCD()."' placeholder='' required=''  size='24'/> <br />";
 					  
-					  echo"<label name='campus' for='campus'>Campus *:</label>";
-					  echo"<select id='campus' class='input-div' name='campus' required=''>";
+					  echo"<label name='campus' for='campus' class='labelForms'>Campus:</label>";
+					  echo"<select id='campus' class='input-div-select' name='campus' required=''>";
 						 echo"<option selected value='0'>Selecione</option>";
 					 
 						 //header('Content-Type: text/html; charset=ISO-8859-1');
@@ -665,13 +686,13 @@
 
 					
 										 
-				   echo"</select>";
+				   echo"</select><br/>";
                                    
                                    //selecionar o combobox Campus
                                     echo"<script type='text/javascript'> $(document).ready(function(){  $('#campus').val(".$edit->getIdCampus().")      }) </script>";//select ok
 				   
-				   echo"<label name='titulacao' for='titulacao'>Titulação *:</label>";
-					   echo"<select id='titulacao' class='input-div' name='titulacao' required=''>";
+				   echo"<label name='titulacao' for='titulacao' class='labelForms'>Titulação:</label>";
+					   echo"<select id='titulacao' class='input-div-select' name='titulacao' required=''>";
 						echo"<option selected value='0'>Selecione</option>";
 					   
 						 //header('Content-Type: text/html; charset=ISO-8859-1');
@@ -693,15 +714,16 @@
                                    
                                    //selecionar o combobox Campus
                                     echo"<script type='text/javascript'> $(document).ready(function(){  $('#titulacao').val(".$edit->getIdTitulacao().")      }) </script>";//select ok
-				   echo"<label name='pendencias' for='pendencias'>Pendências :</label><br/>";
+				   echo"<label name='pendencias' for='pendencias' class='labelForms'>Pendências:</label>";
 				   echo"<textarea id='pendencias' class='input-div' name='pendencias' value='".$edit->getPendencias()."' cols='125' rows='20'>";
 						echo "";
 				   echo "</textarea><br />";
 			 
-				   echo"<input type='submit' id='enviar' class='botao' name='enviar' value='Salvar' />";   
+				   echo "</textarea><br /><br/><br/>";
+			           echo"<div class='btnS1'>";
 				   echo"<a href=main.php?pagina=frmCadastroP.php&aux=0><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
-				
-				
+				    echo"<input type='submit' id='enviar' class='botao' name='enviar' value='Salvar' />";   
+				   echo"</div>";
 				//$edit++;
 				//}
 				echo "</form>";

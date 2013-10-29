@@ -302,8 +302,10 @@
             
             <label for="pendencias" class="dados">Pendências  :</label>
             <label name="pendencias" ><?php echo $funcionario->getPendencias(); ?> </label> <br />
-
+            <br/><br/>
+            <div class="btn">
             <a href="main.php?pagina=frmCadastroP.php"><input type="button" class="botao"  value="Voltar"/></a>
+            </div>
 
 
         </fieldset>
@@ -322,9 +324,9 @@
 
             foreach ($dependentes as $a) {
 
-                echo "<tr class='linha-td'>";
-                echo "<td class='linha-td'  colspan='70' ALIGN=MIDDLE WIDTH=200 >" . $a->getNome() . "</td>";
-                echo "<td class='linha-td'  colspan='70' ALIGN=MIDDLE WIDTH=200 >" . $a->getDataNascimento() . "</td>";
+                echo "<tr class='linha-tdd'>";
+                echo "<td class='linha-tdd'  colspan='70' ALIGN=MIDDLE WIDTH=200 >" . $a->getNome() . "</td>";
+                echo "<td class='linha-tdd'  colspan='70' ALIGN=MIDDLE WIDTH=200 >" . $a->getDataNascimento() . "</td>";
                 if ($a->getSexo() == 1) {
                     $sexo = "Masculino";
                 } else {
@@ -332,8 +334,8 @@
                 }
 
                 echo "<td class='linha-td'  colspan='70' ALIGN=MIDDLE WIDTH=200 >" . $sexo . "</td>";
-                echo "<td class='coluna'><a href=main.php?pagina=frmEditarDependente.php&id='".$a->getId()."'&idFuncionario=".$idFucnionario."><img src='./image/editar.png'></a></td>";
-                echo "<td class='coluna'><a href='javascript:func()' onclick='confirmacao(".$a->getId().",".$idFucnionario.")'><img src='./image/excluir.png'></a></td>";
+                //echo "<td class='coluna'><a href=main.php?pagina=frmEditarDependente.php&id='".$a->getId()."'&idFuncionario=".$idFucnionario."><img src='./image/editar.png'></a></td>";
+                //echo "<td class='coluna'><a href='javascript:func()' onclick='confirmacao(".$a->getId().",".$idFucnionario.")'><img src='./image/excluir.png'></a></td>";
 
                 echo "</tr>";
             }
@@ -359,13 +361,13 @@ echo "</tr>";
 foreach ($afastamento as $a) {
     echo "<tr class='linha-td'>";
 
-    echo "<td class='linha-td'  colspan='70' ALIGN=MIDDLE WIDTH=200 >" . $a->getDataInicio() . "</td>";
-    echo "<td class='linha-td' colspan='70' ALIGN=MIDDLE WIDTH=10>" . $a->getDataTermino() . "</td>";
-    echo "<td class='linha-td' colspan='70' ALIGN=MIDDLE WIDTH=10>" . $a->getMotivo() . "</td>";
+    echo "<td class='linha-tdd'  colspan='70' ALIGN=MIDDLE WIDTH=200 >" . $a->getDataInicio() . "</td>";
+    echo "<td class='linha-tdd' colspan='70' ALIGN=MIDDLE WIDTH=10>" . $a->getDataTermino() . "</td>";
+    echo "<td class='linha-tdd' colspan='70' ALIGN=MIDDLE WIDTH=10>" . $a->getMotivo() . "</td>";
     
     
-    echo "<td class='coluna'><a href=main.php?pagina=frmEditarAfastamento.php&id='" . $a->getIdAfastamento()."'&idFuncionario=".$idFucnionario."><img src='./image/editar.png'></a></td>";
-    echo "<td class='coluna'><a href='javascript:func()' onclick='confirmacao2(".$a->getIdAfastamento().",".$idFucnionario.")'><img src='./image/excluir.png'></a></td>";
+   // echo "<td class='coluna'><a href=main.php?pagina=frmEditarAfastamento.php&id='" . $a->getIdAfastamento()."'&idFuncionario=".$idFucnionario."><img src='./image/editar.png'></a></td>";
+    //echo "<td class='coluna'><a href='javascript:func()' onclick='confirmacao2(".$a->getIdAfastamento().",".$idFucnionario.")'><img src='./image/excluir.png'></a></td>";
     echo "</tr>";
 }
 
@@ -386,12 +388,12 @@ echo "</table>";
             echo "</tr>";
 
             foreach ($progressaoCarreira as $a) {
-                echo "<tr class='linha-td'>";
+                echo "<tr class='linha-tdd'>";
 //frmEditarDependente.php&id='".$a->getId()."'&idFuncionario=".$idFucnionario."><img src='./image/editar.png'></a></td>";
-                echo "<td class='linha-td'  colspan='70' ALIGN=MIDDLE WIDTH=500 >" . $a->getDataProgressao() . "</td>";
-                echo "<td class='linha-td' colspan='70' ALIGN=MIDDLE WIDTH=800>" . $a->getDescricaoNivelCategoria() . "</td>";
-                echo "<td class='coluna'><a href=main.php?pagina=frmEditarProgressaoCarreira.php&id=".$a->getId()."&idFuncionario=".$idFucnionario."><img src='./image/editar.png'></a></td>";
-                echo "<td class='coluna'><a href='javascript:func()' onclick='confirmacao3(".$a->getId().",".$idFucnionario.")'><img src='./image/excluir.png'></a></td>";
+                echo "<td class='linha-tdd'  colspan='70' ALIGN=MIDDLE WIDTH=500 >" . $a->getDataProgressao() . "</td>";
+                echo "<td class='linha-tdd' colspan='70' ALIGN=MIDDLE WIDTH=800>" . $a->getDescricaoNivelCategoria() . "</td>";
+                //echo "<td class='coluna'><a href=main.php?pagina=frmEditarProgressaoCarreira.php&id=".$a->getId()."&idFuncionario=".$idFucnionario."><img src='./image/editar.png'></a></td>";
+               // echo "<td class='coluna'><a href='javascript:func()' onclick='confirmacao3(".$a->getId().",".$idFucnionario.")'><img src='./image/excluir.png'></a></td>";
                 echo "</tr>";
             }
 

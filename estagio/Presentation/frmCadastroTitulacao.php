@@ -65,10 +65,12 @@ $dao = new TitulacaoDAO();
         echo"<legend>Registrar Titulação</legend>";
         echo"<form name='frmCadastroTitulacao' action='../Controller/CtlTitulacao.php?oP=1' method='POST'>";
         echo"<label for='nomeTitulacao' class='labelForms'>Nome:</label>";
-        echo"<input type='text' id='nomeTitulacao' name='nomeTitulacao' required size='50' maxlength='50' class='input-div'/>";
-        
+        echo"<input type='text' id='nomeTitulacao' name='nomeTitulacao' required size='40' maxlength='50' class='input-div'/>";
+         echo"<br/><br/><br/><br/>";
+                                                echo"<div class='btn'>";
          echo"<a href=main.php?pagina=frmListarTitulacao.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao' title='Cancelar operação atual'/></a>";
         echo"<input type='submit' id='btnTitulo' name='btnTitulo' value='Salvar' class='botao' title='Salvar informações'/><br/>";
+        echo"</div>";
         echo"</form>";
 
 
@@ -94,10 +96,12 @@ $dao = new TitulacaoDAO();
         echo"<input type='text' id='id' name='id' value='" . $editar->getId() . "' disabled size='2' class='input-div'/>";
         echo"<input type='hidden' id='codTitulacao' name='codTitulacao' value='" . $editar->getId() . "' size='2'/><br/>";
         echo"<label for='nomeTitulacao' class='labelForms'>Nome:</label>";
-        echo"<input type='text' id='nomeTitulacao' name='nomeTitulacao' value='" . $editar->getNome() . "' required size='50' maxlength='50' class='input-div'/>";
-
+        echo"<input type='text' id='nomeTitulacao' name='nomeTitulacao' value='" . $editar->getNome() . "' required size='40' maxlength='50' class='input-div'/>";
+         echo"<br/><br/><br/><br/>";
+                                                echo"<div class='btnA'>";
         echo"<a href=main.php?pagina=frmListarTitulacao.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao' title='Cancelar operação atual'/></a>";
         echo"<input type='submit' id='btnTitulo' name='btnTitulo' value='Atualizar' class='botao' title='Salvar alterações'/>";
+        echo"</div>";
         echo"</form>";
     }
 

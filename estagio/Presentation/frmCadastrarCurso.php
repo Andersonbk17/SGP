@@ -104,10 +104,11 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
             echo("<option value='" . $cc->getId() . "'>" . $cc->getNome() . "</option>");
             $cc++;
         }
-        echo"</select>";
-
+        echo"</select><br/><br/><br/><br/><br/>";
+        echo "<div class='btn'>";
         echo"<a href=main.php?pagina=frmListarCurso.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao' title='Cancelar operação atual'/></a>";
         echo"<input type='submit' id='btnCurso' name='btnCurso' value='Salvar' class='botao' title='Salvar informações'/><br/>";
+        echo"</div>";
         echo"</form>";
 
 
@@ -167,7 +168,7 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
                 echo("<option value='" . $cc->getId() . "'>" . $cc->getNome() . "</option>");
                 $cc++;
             }
-            echo"</select>";
+            echo"</select><br/><br/><br/><br/>";
             
             //Pegando Valor do campus_curso n:n
             
@@ -180,8 +181,10 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
             echo"<script type='text/javascript'> $(document).ready(function(){  $('#campusCurso').val(".$idCampus.")      }) </script>"; //select ok
             
             $i++;
+        echo "<div class='btnA'>";
         echo"<a href=main.php?pagina=frmListarCurso.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao' title='Cancelar operação atual'/></a>";
         echo"<input type='submit' id='btnDisciplina' name='btnDisciplina' value='Atualizar' class='botao' title='Salvar alterações'/>";
+         echo "</div>";
         echo"</form>";
     }
 

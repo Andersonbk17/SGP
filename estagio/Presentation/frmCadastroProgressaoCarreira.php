@@ -85,8 +85,8 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
             <fieldset>
                 <legend> Progressões Carreira</legend>
                 
-                <label name="usuario" class="_funcionario" for="funcionario" >Nome do Funcionário *:</label><br class="_funcionario" />
-                    <select id="funcionario" class="input-div _funcionario" name="funcionario2"  required="">
+                <label name="usuario" class="labelForms _funcionario" for="funcionario" class="labelForms">Funcionário:</label>
+                    <select id="funcionario" class="input-div-select _funcionario" name="funcionario2"  required="">
                         <option selected value="0">Selecione</option>
                         
                         <?php
@@ -109,14 +109,14 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
                     </select><br class="_funcionario"  />
                 
                 
-                <label for="dataProgressao">Data da Progressão *</label><br />
+                <label for="dataProgressao" class="labelForms">Data Progressão:</label>
                 <input type="text" name="dataProgressao" autofocus="" class="input-div" id="dataProgressao" required="" /><br />
-                <label for="descricaoNivelCategoria">Descrição/Nível/Categoria *</label><br />
+                <label for="descricaoNivelCategoria" class="labelForms">Nível/Categoria:</label>
                 <input type="text" name="descricaoNivelCategoria" id="descricaoNivelCategoria" class="input-div" required="" /><br />
                 <input type='hidden' name='funcionario' id='funcionario1' value='' />
                 
                 <a  class="botao" name='proximo' id='proximo' href="../Controller/CtlFinalizarCadastroFuncionario.php" style="text-decoration: none ">Finalizar</a>
-                <input type="submit" id="enviar" class="botao"name="enviar" value="Salvar" />
+                <input type="submit" id="enviar" class="botaoDependente"name="enviar" value="Salvar" />
               
                 
             </fieldset>

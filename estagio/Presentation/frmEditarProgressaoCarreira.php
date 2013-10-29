@@ -103,7 +103,7 @@ if (isset($_SESSION['idFuncionario'])) {
             <fieldset>
                 <legend> Progressões Carreira</legend>
                 <input type="hidden" name="idPr" id="idPr"value="<?php echo $novo->getId(); ?>"
-                       <label name="usuario" class="_funcionario" for="funcionario" >Nome do Funcionário *:</label><br class="_funcionario" />
+                       <label name="usuario" class="labelForms _funcionario" for="funcionario" >Funcionário:</label>
                 <select id="funcionario" class="input-div _funcionario" name="funcionario2"  required="">
                     <option selected value="0">Selecione</option>
 
@@ -124,9 +124,9 @@ if (isset($_SESSION['idFuncionario'])) {
                 </select><br class="_funcionario"  />
 
 
-                <label for="dataProgressao">Data da Progressão *</label><br />
+                <label for="dataProgressao" class="labelForms">Data Progressão:</label>
                 <input type="text" name="dataProgressao" autofocus="" value="<?php echo $novo->getDataProgressao(); ?>" class="input-div" id="dataProgressao" required="" /><br />
-                <label for="descricaoNivelCategoria">Descrição/Nível/Categoria *</label><br />
+                <label for="descricaoNivelCategoria" class="labelForms">Nível/Categoria:</label>
                 <input type="text" name="descricaoNivelCategoria" id="descricaoNivelCategoria" value="<?php echo $novo->getDescricaoNivelCategoria(); ?>" class="input-div" required="" /><br />
                 <input type='hidden' name='funcionario' id='funcionario1' value='' />
                 
@@ -143,7 +143,7 @@ if (isset($_SESSION['idFuncionario'])) {
                 ?>
                
                 
-                <input type="submit" id="enviar" class="botao"name="enviar" value="Atualizar" />
+                <input type="submit" id="enviar" class="botaoDependente"name="enviar" value="Atualizar" />
 
 
             </fieldset>

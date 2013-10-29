@@ -114,8 +114,9 @@
                 <textarea name="motivo" id="motivo" cols="100" rows="10" class="input-div" required=""><?php echo"";?></textarea><br /><br />
                 
                 <a  class="botao" name='proximo' id='proximo' href="main.php?pagina=frmCadastroProgressaoCarreira.php" style="text-decoration: none ">Próximo</a>
+                <div class="btnSS">
                 <input type="submit" id="enviar" class="botao"name="enviar" value="Salvar" title="salvar informações" />
-                
+                </div><br/>
               
                 
             </fieldset>

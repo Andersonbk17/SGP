@@ -88,10 +88,12 @@
 								$ic++;
 							}
 						echo"</select>";
-                                                
+                                                 echo"<br/><br/><br/><br/>";
+                                                echo"<div class='btn'>";
                                                 echo"<a href=main.php?pagina=frmListarDisciplina.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao' title='Cancelar operação atual'/></a>";
 						echo"<input type='submit' id='btnDisciplina' name='btnDisciplina' value='Salvar' class='botao' title='Salvar informações'/><br/>";
-					echo"</form>";
+					        echo"</div>";
+                                                echo"</form>";
 					
 					
 			   //Atualizar Campus
@@ -152,9 +154,12 @@
 						}							
 						echo"</select>";
                                                 echo"<script type='text/javascript'> $(document).ready(function(){  $('#curso').val(".$idCurso." )      }) </script>";//select ok
-						echo"<a href=main.php?pagina=frmListarDisciplina.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao' title='Cancelar operação atual'/></a>";
+						 echo"<br/><br/><br/><br/>";
+                                                echo"<div class='btnA'>";
+                                                echo"<a href=main.php?pagina=frmListarDisciplina.php><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao' title='Cancelar operação atual'/></a>";
 						echo"<input type='submit' id='btnDisciplina' name='btnDisciplina' value='Atualizar' class='botao' title='Salvar alterações'/>";
-					echo"</form>";
+					        echo"</div>";
+                                                echo"</form>";
 				   
 			   }
 				
