@@ -134,10 +134,10 @@
             <!-- Inicio Menu-->                               
             <div id="nav">          
 				<ul class="layouts level-1 menuDinamico">
-					<li class="open"><a href="#" >Home</a></li>
+					<li class="open" ><a href="#" >Home</a></li>
 					<!-- Inicio Menu Dinamico -->
 					<li class="open">
-						<a class=" menuDinamico" href="" >Cadastros</a>
+						<a class=" menuDinamico" href="" id="mCadastros" >Cadastros</a>
 						<ul class="layouts level-2">
                                                     
 							<li class="open"><a href="main.php?pagina=frmCadastroAfastamento.php" >Afastamentos</a></li>

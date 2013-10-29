@@ -53,6 +53,10 @@
              if(idFuncionario >0){
                  $(document).ready(function(){
                      $('#afastamentos').show()
+                     
+                     //Script para o usuario ser forçado a terminar o cadastro de usuario
+                     
+                     $('#mCadastros').hide(1000)
                  })
              }
              

@@ -56,9 +56,19 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
                      $('#funcionario1').val(idFuncionario)
                      $('#progressoes').show()
                      
+                     //Script para o usuario ser forçado a terminar o cadastro de usuario
+                     
+                     $('#mCadastros').hide(1000)
+                     
                  })
              }
              
+             function mostrarMenuCadastros(){
+                 //Script para mostrar o menu Cadastros ao terminar a edição
+                     
+                     $('#mCadastros').show(1000)
+                 
+             }
              $(document).ready(function() {
                 $('table#tbl tr:odd').addClass('impar');
                 $('table#tbl tr:even').addClass('par');
@@ -115,7 +125,7 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
                 <input type="text" name="descricaoNivelCategoria" id="descricaoNivelCategoria" class="input-div" required="" /><br />
                 <input type='hidden' name='funcionario' id='funcionario1' value='' />
                 
-                <a  class="botao" name='proximo' id='proximo' href="../Controller/CtlFinalizarCadastroFuncionario.php" style="text-decoration: none ">Finalizar</a>
+                <a  class="botao" name='proximo' id='proximo' onclick="mostrarMenuCadastros();" href="../Controller/CtlFinalizarCadastroFuncionario.php" style="text-decoration: none ">Finalizar</a>
                 <input type="submit" id="enviar" class="botao"name="enviar" value="Salvar" />
               
                 
