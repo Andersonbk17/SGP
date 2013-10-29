@@ -61,8 +61,14 @@
                  $(document).ready(function(){
                      $('#dependentes').show()
                      $('._funcionario').hide()
+                     
+                     //Script para o usuario ser forçado a terminar o cadastro de usuario
+                     
+                     $('#mCadastros').hide(1000)
                  })
              }
+         
+         
          
          
          

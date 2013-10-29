@@ -44,7 +44,8 @@
         echo '<script type="text/javascript"> alert("Erro ao Inserir")</script>';
     }  else {
         
-        echo '<script type="text/javascript"> alert("Inserido com Sucesso !"); window.location="../Presentation/main.php?pagina=frmCadastroProgressaoCarreira.php";</script>';
+        
+        echo '<script type="text/javascript">  alert("Inserido com Sucesso !"); window.location="../Presentation/main.php?pagina=frmCadastroProgressaoCarreira.php";</script>';
     }
 
 ?>
