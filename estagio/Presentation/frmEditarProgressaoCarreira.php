@@ -142,9 +142,9 @@ if (isset($_SESSION['idFuncionario'])) {
                             }
                 ?>
                
-                
+                <div class="btn3">
                 <input type="submit" id="enviar" class="botaoDependente"name="enviar" value="Atualizar" />
-
+                </div>
 
             </fieldset>
         </form>

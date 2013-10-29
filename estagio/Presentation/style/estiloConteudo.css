@@ -256,11 +256,30 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edf6f9', end
       margin-top:-25px;
       margin-left: 238px;
   }
+  
+    .btnU{
+      position: absolute;
+      margin-top:-25px;
+      margin-left: 218px;
+  }
+  
+  
+  .btn3{
+      position: absolute;
+      margin-top:-25px;
+      margin-left: 208px;
+  }
+
 
   .btnA{
       position: absolute;
       margin-top:-25px;
       margin-left: 223px;
+  }
+   .btnA2{
+      position: absolute;
+      margin-top:-25px;
+      margin-left: 130px;
   }
 .btnS{
       position: absolute;

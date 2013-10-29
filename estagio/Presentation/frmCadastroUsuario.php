@@ -69,7 +69,7 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
                       action="./../Controller/CtlCadastroUsuario.php"  onsubmit="return valida(this);">
 
                     <label name="usuario" for="funcionario" class="labelForms">Funcionário:</label>
-                    <select id="funcionario" name="funcionario"  class="input-div" required="" />
+                    <select id="funcionario" name="funcionario"  class="input-div" style="position: absolute;top: 334px; left: 94px;" required="" />
                     <option selected value="0">Selecione</option>
 
                     <?php
@@ -88,14 +88,16 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
 
                                         </select><br />
 
-                                        <label name="usuario" for="usuario" class="labelForms">Usuário:</label>
-                                        <input type="text" name="usuario" id="usuario" size="50"  required="" class="input-div" placeholder="Novo Usuario"/> <br />
-                                        <label name="senha" for="senha" class="labelForms">Senha:</label>
-                                        <input type="password" name="senha" id="senha" size="50" required="" placeholder="Senha" class="input-div"/><br />
-                                        <label name="confirmarSenha" for="confirmarSenha" class="labelForms">Confirmar Senha:</label>
-                                        <input type="password" name="confirmarSenha" id="confirmarSenha" size="50" required="" placeholder="Digite Novamente" class="input-div" /> <br />
-                                        <input type="submit" name="Cadastrar"  class="botao" value="Cadastrar" title="Salvar informações"/>
-
+                                        <label name="usuario" for="usuario" class="labelForms" style="position: absolute;top: 368px; left: 82px;">Usuário:</label>
+                                        <input type="text" name="usuario" id="usuario"   required="" class="input-div" style="position: absolute;top: 368px; left: 212px;" placeholder="Novo Usuario"/> <br />
+                                        <label name="senha" for="senha" class="labelForms" style="position: absolute;top: 398px; left: 82px;">Senha:</label>
+                                        <input type="password" name="senha" id="senha"  required="" placeholder="Senha" class="input-div" style="position: absolute;top: 400px; left: 212px;"/><br />
+                                        <label name="confirmarSenha" for="confirmarSenha" class="labelForms" style="position: absolute;top: 432px; left: 82px;">Confirmar Senha:</label>
+                                        <input type="password" name="confirmarSenha" id="confirmarSenha"  required="" placeholder="Digite Novamente" class="input-div" style="position: absolute; top:433px; left: 94px;" /> <br />
+                                        <br/><br/><br/><br/><br/><br/>
+                                        <div class="btnU">
+                                        <input type="submit" name="Cadastrar"  class="botao" value="Salvar" title="Salvar informações"/>
+                                        </div>
                                     </form>
                                 </fieldset>
                                

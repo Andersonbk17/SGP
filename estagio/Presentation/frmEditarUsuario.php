@@ -73,8 +73,8 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
                 <form name="frmCadastroUsuario" id="frmCadastroUsuario" method="POST" 
                       action="../Controller/CtlEditarUsuario.php"  onsubmit="return valida(this);">
 
-                    <label name="usuario" for="funcionario">Nome do Funcionário *:</label><br />
-                    <select id="funcionario" name="funcionario"  class="input-div" required="" />
+                    <label name="usuario" for="funcionario" class="labelForms">Funcionário:</label>
+                    <select id="funcionario" name="funcionario"  class="input-div" style="position: absolute;top: 334px; left: 94px;" required="" />
                     <option selected value="0">Selecione</option>
 
                     <?php
@@ -102,17 +102,20 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
                         
                     ?>
 
-                    <label name="usuario" for="usuario">Nome do Usuário *:</label><br />
+                    <label name="usuario" for="usuario" class="labelForms" style="position: absolute;top: 368px; left: 82px;">Usuário:</label>
                     <input type="hidden" id="idU" name="idU" value="<?php echo $novo->getId(); ?>"/>
-                    <input class="input input-div"type="text" name="usuario" id="usuario" size="50" value="<?php echo $novo->getUsuario(); ?>" required="" placeholder="Novo Usuario"/> <br />
-                    <label name="senha" for="senha">Senha *:</label> <br/>
-                    <input type="password" name="senha" id="senha" size="50" value="<?php echo $novo->getSenha(); ?>" required="" placeholder="Senha" class="input-div"/><br />
-                    <label name="confirmarSenha" for="confirmarSenha">Confirmação de Senha *:</label><br/>
-                    <input type="password" name="confirmarSenha" id="confirmarSenha" size="50" value="<?php echo $novo->getSenha(); ?>" required="" placeholder="Digite Novamente" class="input-div" style="position: absolute; left: 65px"/> <br /><br />
+                    <input class="input-div"  style="position: absolute;top: 368px; left: 212px;" type="text" name="usuario" id="usuario" value="<?php echo $novo->getUsuario(); ?>" required="" placeholder="Novo Usuario"/> <br />
+                    <label name="senha" for="senha" class="labelForms"  style="position: absolute;top: 398px; left: 82px;">Senha:</label> 
+                    <input type="password" name="senha" id="senha"  value="<?php echo $novo->getSenha(); ?>" required="" placeholder="Senha" class="input-div" style="position: absolute;top: 400px; left: 212px;"/><br />
+                    <label name="confirmarSenha" for="confirmarSenha" class="labelForms" style="position: absolute;top: 432px; left: 82px;">Confirmar Senha:</label>
+                    <input type="password" name="confirmarSenha" id="confirmarSenha"  value="<?php echo $novo->getSenha(); ?>" required="" placeholder="Digite Novamente" class="input-div" style="position: absolute; top:433px; left: 94px;"/> <br /><br />
+                    <br/><br/><br/><br/><br/><br/>
+                    <div class="btnA2">
                     <a href="main.php?pagina=frmCadastroUsuario.php">
                     <input type="button" name="Cancelar"  class="botao" value="Cancelar"/>
                     <a>
                     <input type="submit" name="Atualizar"  class="botao" value="Atualizar"/>
+                    </dvi>
                     
 
                 </form>

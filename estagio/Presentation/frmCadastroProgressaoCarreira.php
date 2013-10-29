@@ -125,8 +125,11 @@ if (!isset($_SESSION['usuarioNome']) OR ($_SESSION['usuarioNivel'] < $nivel_nece
                 <input type="text" name="descricaoNivelCategoria" id="descricaoNivelCategoria" class="input-div" required="" /><br />
                 <input type='hidden' name='funcionario' id='funcionario1' value='' />
                 
+                <br/><br/>
+                <div class="btn3">
                 <a  class="botao" name='proximo' id='proximo' onclick="mostrarMenuCadastros();" href="../Controller/CtlFinalizarCadastroFuncionario.php" style="text-decoration: none ">Finalizar</a>
                 <input type="submit" id="enviar" class="botao"name="enviar" value="Salvar" />
+                </div>
               
                 
             </fieldset>
