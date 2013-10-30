@@ -197,18 +197,20 @@
 					echo"<input type='radio'  name='sexo' class='sexo input-div' value='1' /><br />";
 					echo"<label name='sexo' for='sexo'>Feminino</label>";
 					echo"<input type='radio'  name='sexo' class='sexo input-div' value='2' /><br />";
-                       
-                                         */
+                       **/
+                                        
+                                        
                                         echo"<select name='sexo' id='sexo' class='input-div-select'>";
-                                            echo"<option selected='' value=''>Selecione...  </option>";
+                                            echo"<option selected='' value=''>Selecione  </option>";
                                             echo"<option  value='1'>Masculino</option>";
                                             echo"<option  value='2'>Feminino</option>";
                                         echo"</select><br/>";
 					
 					
+                                        
 					//echo"<label name='reservista' for='reservista'  class='reservista labelForms' style='display: none'  >Reservista Militar:</label><br class='reservista' style='display: none' />";
 					echo"<label name='reservista' for='reservista'  class='reservista labelForms' style='display: none'  >Reservista:</label>";
-                                        echo"<input type='text'  id='reservista' name='reservista' placeholder='' class='reservista input-div' required='' style='display: none' size='24' /> <br class='reservista' style='display: none' />";
+                                        echo"<input type='text'  id='reservista' name='reservista' placeholder='' class='reservista input-div' required='' style='display: none' size='24' />";
 					echo"<label name='titulo' for='titulo' class='labelForms'>Título Eleitoral:</label>";
 					echo"<input type='text' class='input-div' id='titulo' name='titulo' placeholder='' required='' size='24' /> <br />";
 					
@@ -436,7 +438,7 @@
 						
 					echo"<label name='sexo' for='sexo'  class='labelForms'>Sexo:</label>";
                                         
-                                        /*
+                                        
                                         if($edit->getSexo()==1){
                                             echo"<label name='sexo'  for='sexo'>Masculino</label>";
                                             echo"<input type='radio' class='input-div' name='sexo' class='sexo' value='1' checked='checked' /><br />";
@@ -448,7 +450,8 @@
                                             echo"<label name='sexo'  for='sexo'>Feminino </label>";
                                             echo"<input type='radio' class='input-div' name='sexo' class='sexo' value='2' checked='checked'/><br />";
 
-                                        }*/
+                                        }
+                                        /*
                                         if($edit->getSexo()==1){
                                             echo"<select name='sexo' id='sexo' class='input-div-select'>";
                                             echo"<option values='1' selected=''>Masculino</option>";
@@ -461,7 +464,7 @@
                                             echo"<option values='2' selected=''>Feminino</option>";
                                             echo"</select><br/>";  
 
-                                        }
+                                        }*/
                                         
                                         
                                         
