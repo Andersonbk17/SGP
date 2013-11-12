@@ -192,28 +192,30 @@
 					echo"<input type='email' class='input-div' id='email' name='email' placeholder='EMAIL' required='' size='24' /> <br />";
 						
 					echo"<label name='sexo' for='sexo' class='labelForms'>Sexo:</label>";
-                                        /*
-					echo"<label name='sexo' for='sexo'>Masculino</label>";
+                                        
+					echo"<label name='sexo' for='sexo' class='cssSexo'>Masculino</label>";
 					echo"<input type='radio'  name='sexo' class='sexo input-div' value='1' /><br />";
-					echo"<label name='sexo' for='sexo'>Feminino</label>";
+					echo"<label name='sexo' for='sexo' class='cssSexo'>Feminino</label>";
 					echo"<input type='radio'  name='sexo' class='sexo input-div' value='2' /><br />";
-                       **/
+                       
                                         
-                                        
+                                        /*
                                         echo"<select name='sexo' id='sexo' class='input-div-select'>";
                                             echo"<option selected='' value=''>Selecione  </option>";
                                             echo"<option  value='1'>Masculino</option>";
                                             echo"<option  value='2'>Feminino</option>";
                                         echo"</select><br/>";
-					
+					*/
 					
                                         
 					//echo"<label name='reservista' for='reservista'  class='reservista labelForms' style='display: none'  >Reservista Militar:</label><br class='reservista' style='display: none' />";
-					echo"<label name='reservista' for='reservista'  class='reservista labelForms' style='display: none'  >Reservista:</label>";
-                                        echo"<input type='text'  id='reservista' name='reservista' placeholder='' class='reservista input-div' required='' style='display: none' size='24' />";
-					echo"<label name='titulo' for='titulo' class='labelForms'>Título Eleitoral:</label>";
+					echo "<br/><div>";
+                                        echo"<label name='reservista' for='reservista'  class='reservista labelForms' style='display: none'  >Reservista:</label>";
+                                        echo"<input type='text'  id='reservista' name='reservista' placeholder='' class='reservista input-div' required='' style='display: none' size='24' /><br/>";
+				        echo "</div>";
+                                        
+				        echo"<label name='titulo' for='titulo' class='labelForms'>Título Eleitoral:</label>";
 					echo"<input type='text' class='input-div' id='titulo' name='titulo' placeholder='' required='' size='24' /> <br />";
-					
 			 
 					echo"<label name='estadoCivil' for='estadoCivil' class='labelForms'>Estado Civil:</label>";
 					echo"<select id='estadoCivil' class='input-div-select' name='estadoCivil' required=''>";
@@ -256,22 +258,23 @@
 					
 					
 				//Casado
-                                   echo"<br class='divorcio' style='display: none' /><label name='conjugue' for='conjugue' class='divorcio' style='display: none'>Conjugue :</label><br class='divorcio' style='display: none' />";
-				   echo"<br class='casado' style='display: none' /><label name='conjugue' for='conjugue' class='casado' style='display: none'>Conjugue :</label><br class='casado' style='display: none' />";
+                                echo "<div class='cssCas'>";
+                                   echo"<br class='divorcio' style='display: none' /><label name='conjugue' for='conjugue' class='divorcio' style='display: none'>Conjugue:</label>";
+				   echo"<br class='casado' style='display: none' /><label name='conjugue' for='conjugue' class='casado' style='display: none'>Conjugue:</label>";
 				   
-                                   echo"<input type='text'  id='conjugue' name='conjugue' placeholder='Nome ' style='display: none' required='' class='emComum input-div'  size='100'/> <br class='emComum' style='display: none' />";
+                                   echo"<input type='text'  id='conjugue' name='conjugue' placeholder='Nome ' style='display: none; margin-left:110px;' required='' class='emComum input-div'  size='70'/> <br class='emComum' style='display: none' />";
 					
-                                   echo"<label name='certidaoCasamentoDivorcio' for='certidaoCasamentoDivorcio' class='divorcio' style='display: none'>Certidão de Divorcio :</label><br class='divorcio' style='display: none' />";
-				   echo"<label name='certidaoCasamentoDivorcio' for='certidaoCasamentoDivorcio' class='casado' style='display: none'>Certidão de Casamento :</label><br class='casado' style='display: none' />";
+                                   echo"<label name='certidaoCasamentoDivorcio' for='certidaoCasamentoDivorcio' class='divorcio' style='display: none'>Certidão de Divorcio:</label>";
+				   echo"<label name='certidaoCasamentoDivorcio' for='certidaoCasamentoDivorcio' class='casado' style='display: none'>Certidão de Casamento:</label>";
 				   
-                                   echo"<input type='text' class='emComum input-div' id='certidaoCasamentoDivorcio'  name='certidaoCasamentoDivorcio' placeholder='Numero ' size='24' style='display: none' required='' class='casado' /> <br class='emComum' style='display: none' />";
+                                   echo"<input type='text' class='emComum input-div' id='certidaoCasamentoDivorcio'  name='certidaoCasamentoDivorcio' placeholder='Numero ' size='24' style='display: none; margin-left:24px;' required=''/> <br/>";
 					
-				   echo"<label name='dataCasamento' for='dataCasamento'  style='display: none' class='divorcio' >Data Divorcio :</label><br class='divorcio' style='display: none' />";
-				   echo"<label name='dataCasamento' for='dataCasamento'  style='display: none' class='casado' >Data Casamento :</label><br class='casado' style='display: none' />";
+				   echo"<label name='dataCasamento' for='dataCasamento'  style='display: none' class='divorcio' >Data Divorcio:</label>";
+				   echo"<label name='dataCasamento' for='dataCasamento'  style='display: none' class='casado' >Data Casamento:</label>";
 				   
-				   echo"<input type='text' class='input-div emComum' id='dataCasamento' name='dataCasamento'  style='display: none' size='24' name='dataCasamento' placeholder='DD/MM/AAAA' /><br class='emComum' style='display: none' /> ";
+				   echo"<input type='text' class='input-div emComum' id='dataCasamento' name='dataCasamento'  style='display: none; margin-left:69px;' size='24' name='dataCasamento' placeholder='DD/MM/AAAA' /><br class='emComum' style='display: none' /> ";
                                    echo "<input type='hidden' id='casadoDivorciado' value='' name='casadoDivorciado' />";//verificar
-				
+				echo "</div>";
                                    
                                    
 				   echo"<label name='nomePai' for='nomePai' class='labelForms'>Nome do Pai:</label>";
@@ -421,13 +424,13 @@
 			  
 			    // foreach($editar as $edit){
 			     
-					echo"<label name='nome' for='nome' class='labelForms'>Nome do professor:</label>";
+					echo"<label name='nome' for='nome' class='labelForms'>Nome:</label>";
 					echo"<input type='text' id='nome' class='input-div' name='nome' value='".$edit->getNome()."'autofocus='' placeholder='Nome' required='' size='100' /><br />";
-				    echo"<input type='hidden' id='codFun' name='codFun' value='".$edit->getId()."' size='2'/><br/>";
-					echo"<label name='dataNascimento' for='dataNascimento' class='labelForms'>Data Nascimento:</label>";
+				    echo"<input type='hidden' id='codFun' name='codFun' value='".$edit->getId()."' size='2'/>";
+					echo"<label name='dataNascimento' for='dataNascimento' class='labelForms'>Nascimento:</label>";
 					echo"<input type='text' class='input-div' name='dataNascimento' id='dataNascimento' value='".$edit->getDataNascimento()."' placeholder='DD/MM/AAAA' size='24'/><br />";
 						
-					echo"<label name='certidaoNascimento' for='certidaoNascimento'>Certidão de Nascimento:</label><br />";
+					echo"<label name='certidaoNascimento' for='certidaoNascimento' class='labelForms'>Cert. Nasc.:</label>";
 					echo"<input type='text' class='input-div' id='certidaoNascimento' name='certidaoNascimento' value='".$edit->getCertidaoNascimento()."' placeholder='Número' required='' size='24' /> <br />";
 					echo"<label name='rg' for='rg'  class='labelForms'>RG:</label>";
 					echo"<input type='text' class='input-div' id='rg' name='rg' value='".$edit->getRg()."' placeholder='RG' required='' size='24' /> <br />";
@@ -440,15 +443,15 @@
                                         
                                         
                                         if($edit->getSexo()==1){
-                                            echo"<label name='sexo'  for='sexo'>Masculino</label>";
-                                            echo"<input type='radio' class='input-div' name='sexo' class='sexo' value='1' checked='checked' /><br />";
-                                            echo"<label name='sexo'  for='sexo'>Feminino </label>";
-                                            echo"<input type='radio' class='input-div' name='sexo' class='sexo' value='2' /><br />";
+                                            echo"<label name='sexo'  for='sexo' class='cssSexo'>Masculino</label>";
+                                            echo"<input type='radio' class='sexo input-div' name='sexo' class='sexo' value='1' checked='checked' /><br />";
+                                            echo"<label name='sexo'  for='sexo' class='cssSexo'>Feminino </label>";
+                                            echo"<input type='radio' class='sexo input-div' name='sexo' class='sexo' value='2' /><br />";
                                         }else{
-                                            echo"<label name='sexo'  for='sexo'>Masculino</label>";
-                                            echo"<input type='radio' class='input-div' name='sexo' class='sexo' value='1' /><br />";
-                                            echo"<label name='sexo'  for='sexo'>Feminino </label>";
-                                            echo"<input type='radio' class='input-div' name='sexo' class='sexo' value='2' checked='checked'/><br />";
+                                            echo"<label name='sexo'  for='sexo' class='cssSexo'>Masculino</label>";
+                                            echo"<input type='radio' class='sexo input-div' name='sexo' class='sexo' value='1' /><br />";
+                                            echo"<label name='sexo'  for='sexo' class='cssSexo'>Feminino </label>";
+                                            echo"<input type='radio' class='sexo input-div' name='sexo' class='sexo' value='2' checked='checked'/><br />";
 
                                         }
                                         /*
@@ -466,11 +469,12 @@
 
                                         }*/
                                         
-                                        
-                                        
-					echo"<label name='reservista' for='reservista'  class='reservista' style='display: none'  >Reservista:</label><br class='reservista' style='display: none' />";
+          
+                                        echo"<br/><div>";
+					echo"<label name='reservista' for='reservista'  class='reservista labelForms' style='display: none'>Reservista:</label>";
 					echo"<input type='text'  id='reservista' name='reservista' value='".$edit->getReservistaMilitar()."' placeholder='' class='reservista input-div' required='' style='display: none' size='24' /> <br class='reservista' style='display: none' />";
-					echo"<label name='titulo' for='titulo'  class='labelForms'>Título Eleitoral:</label>";
+					echo"</div>";
+                                        echo"<label name='titulo' for='titulo'  class='labelForms'>Título Eleitoral:</label>";
 					echo"<input type='text' class='input-div' id='titulo' name='titulo' value='".$edit->getTituloEleitoral()."' placeholder='' required='' size='24' /> <br />";
 					
 			 
@@ -518,23 +522,23 @@
                                    //selecionar o combobox TipoSanguineo
                                     echo"<script type='text/javascript'> $(document).ready(function(){  $('#tipoSanguineo').val(".$edit->getIdTipo_Sanguineo().")      }) </script>";//select ok
 				
-                                    
-                                    echo"<br class='divorcio' style='display: none' /><label name='conjugue' for='conjugue' class='divorcio' style='display: none'>Conjugue :</label><br class='divorcio' style='display: none' />";
-				   echo"<br class='casado' style='display: none' /><label name='conjugue' for='conjugue' class='casado' style='display: none'>Conjugue :</label><br class='casado' style='display: none' />";
+                                   echo "<div class='cssCas'>";
+                                   echo"<br class='divorcio' style='display: none' /><label name='conjugue' for='conjugue' class='divorcio' style='display: none'>Conjugue:</label>";
+				   echo"<br class='casado' style='display: none' /><label name='conjugue' for='conjugue' class='casado' style='display: none'>Conjugue:</label>";
 				   
-                                   echo"<input type='text'  id='conjugue' name='conjugue' placeholder='Nome ' value='".$edit->getConjugue()."' style='display: none' required='' class='emComum input-div'  size='100'/> <br class='emComum' style='display: none' />";
+                                   echo"<input type='text'  id='conjugue' name='conjugue' placeholder='Nome ' value='".$edit->getConjugue()."' style='display: none; margin-left:110px;' required='' class='emComum input-div'  size='70'/> <br class='emComum' style='display: none' />";
 					
-                                   echo"<label name='certidaoCasamentoDivorcio' for='certidaoCasamentoDivorcio' class='divorcio' style='display: none'>Certidão de Divorcio :</label><br class='divorcio' style='display: none' />";
-				   echo"<label name='certidaoCasamentoDivorcio' for='certidaoCasamentoDivorcio' class='casado' style='display: none'>Certidão de Casamento :</label><br class='casado' style='display: none' />";
+                                   echo"<label name='certidaoCasamentoDivorcio' for='certidaoCasamentoDivorcio' class='divorcio' style='display: none'>Certidão de Divorcio:</label>";
+				   echo"<label name='certidaoCasamentoDivorcio' for='certidaoCasamentoDivorcio' class='casado' style='display: none'>Certidão de Casamento:</label>";
 				   
-                                   echo"<input type='text' class='emComum input-div' id='certidaoCasamentoDivorcio' value='".$edit->getCertidaoCasamentoDivorcio()."' name='certidaoCasamentoDivorcio' placeholder='Numero ' size='24' style='display: none' required='' class='casado' /> <br class='emComum' style='display: none' />";
+                                   echo"<input type='text' class='emComum input-div' id='certidaoCasamentoDivorcio' value='".$edit->getCertidaoCasamentoDivorcio()."' name='certidaoCasamentoDivorcio' placeholder='Numero ' size='24' style='display: none; margin-left:24px;' required='' class='casado' /> <br class='emComum' style='display: none' />";
 					
-				   echo"<label name='dataCasamento' for='dataCasamento'  style='display: none' class='divorcio' >Data Divorcio :</label><br class='divorcio' style='display: none' />";
-				   echo"<label name='dataCasamento' for='dataCasamento'  style='display: none' class='casado' >Data Casamento :</label><br class='casado' style='display: none' />";
+				   echo"<label name='dataCasamento' for='dataCasamento'  style='display: none' class='divorcio' >Data Divorcio:</label>";
+				   echo"<label name='dataCasamento' for='dataCasamento'  style='display: none' class='casado' >Data Casamento:</label>";
 				   
-				   echo"<input type='text' class='input-div emComum' value='".$edit->getDataCasamento()."' id='dataCasamento' name='dataCasamento'  style='display: none' size='24' name='dataCasamento' placeholder='DD/MM/AAAA' /><br class='emComum' style='display: none' /> ";
+				   echo"<input type='text' class='input-div emComum' value='".$edit->getDataCasamento()."' id='dataCasamento' name='dataCasamento'  style='display: none; margin-left:69px;' size='24' name='dataCasamento' placeholder='DD/MM/AAAA' /><br class='emComum' style='display: none' /> ";
                                    echo "<input type='hidden' id='casadoDivorciado' value='".$edit->getCasadoDivorciado()."' name='casadoDivorciado' />";//verificar 
-                                    
+                                   echo "</div>";
                                     
                                     
                                     

@@ -296,3 +296,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edf6f9', end
       margin-top: -15px;
       margin-left: 680px;
   }  
+  
+  .cssSexo{
+      position: absolute;
+      left: 203px;
+      padding: 3px;
+  }
+  
+  .sexo{
+      position: absolute;
+      left: 153px;
+  }
+  
+  .cssCas{
+      position: absolute;
+      left: 410px;
+      top: 582px;
+  }
+  
