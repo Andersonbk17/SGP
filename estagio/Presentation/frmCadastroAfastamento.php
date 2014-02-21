@@ -85,7 +85,12 @@
                 <legend> Afastamentos</legend>
                 
                 <!--<label name="usuario" class="_funcionario" for="funcionario" >Funcionário:</label><br class="_funcionario" /> -->
-                <label name="usuario" class="labelForms" for="funcionario" >Funcionário:</label>
+                <?php
+					if(!isset($_SESSION['idFuncionario']))
+					{
+					echo"<label name='usuario' class='labelForms' for='funcionario' >Funcionário:</label>";
+					}
+				?>
                     <select id="funcionario" class="input-div _funcionario" name="funcionario"  required="">
                         <option selected value="0">Selecione</option>
                         

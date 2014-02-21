@@ -239,7 +239,7 @@
                                    
 					
 					   echo"<label name='tipoSanguineo' for='tipoSanguineo' class='labelForms'>Tipo Sanguineo:</label>";
-					   echo"<select id='tipoSanguineo' class='input-div-select' name='tipoSanguineo' required=''>";
+					   echo"<select id='tipoSanguineo' class='input-div-select' name='tipoSanguineo' required='true'>";
 					   echo"<option selected value='0'>Selecione</option>";
 					   
 					   include_once '../DataAccess/TipoSanguineoDAO.php';
@@ -502,7 +502,7 @@
                                    echo"<script type='text/javascript'> $(document).ready(function(){  $('#estadoCivil').val(".$edit->getIdEstado_Civil().")      }) </script>";//select ok
 					
 					   echo"<label name='tipoSanguineo' for='tipoSanguineo'  class='labelForms'>Tipo Sanguineo:</label>";
-					   echo"<select id='tipoSanguineo' class='input-div-select' name='tipoSanguineo' required=''>";
+					   echo"<select id='tipoSanguineo' class='input-div-select' name='tipoSanguineo' required='true'>";
 					   echo"<option selected value='0'>Selecione</option>";
 					   
 					   include_once '../DataAccess/TipoSanguineoDAO.php';
@@ -663,6 +663,7 @@
 					  echo"<label name='numeroPortaria' for='numeroPortaria' class='labelForms'>Numero Portaria:</label>";
 					  echo"<input type='text' class='input-div' id='numeroPortaria' name='numeroPortaria' placeholder='' value=".$edit->getPortariaNomeacao()." required='' size='24' /> <br />";
 					  echo"<label name='dataPosse' for='dataPosse' class='labelForms'>Data Posse:</label>";
+					  
 					  echo"<input type='text' class='input-div' id='dataPosse' name='dataPosse' placeholder='DD/MM/AAAA'  value='".$edit->getDataPosse()."' required='' size='24' /> <br />";
 					  echo"<label name='dataExercicio' for='dataExercicio' class='labelForms'>Data Exercício:</label>";
 					  
@@ -728,6 +729,7 @@
 			 
 				   echo "</textarea><br /><br/><br/>";
 			           echo"<div class='btnS1'>";
+				   echo"<a href=main.php?pagina=frmCadastroDependente.php&idF=".$edit->getId()."><input type='button' id='proximo' name='proximo' value='Próximo' class='botao'/></a>";
 				   echo"<a href=main.php?pagina=frmCadastroP.php&aux=0><input type='button' id='cancelar' name='cancelar' value='Cancelar' class='botao'/></a>";
 				    echo"<input type='submit' id='enviar' class='botao' name='enviar' value='Salvar' />";   
 				   echo"</div>";

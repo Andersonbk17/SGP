@@ -101,22 +101,24 @@ if (isset($_SESSION['idFuncionario'])) {
         if(isset($_GET['op'])){
             if(isset($_SESSION['idFuncionario'])){
                 $idF = $_SESSION['idFuncionario'];
-            }
-            $caminho = "../Controller/CtlEditarDependente.php?op=2&func=".$idF."";
-        }else{
-            $caminho = "../Controller/CtlEditarDependente.php?op=1";
-        }
+				$caminho = "../Controller/CtlEditarDependente.php?op=2&func=".$idF."";
+            }else{
+				$caminho = "../Controller/CtlEditarDependente.php?op=1";
+			}
+		}
     ?>
 
     <body>
         <fieldset>
             <form action="<?php echo $caminho; ?>" method="post" id="frmCadastroDependentes" name="frmCadastroDependentes">
 
-                <label name="usuario" class="_funcionario" for="funcionario" >Nome do Funcionário *:</label><br class="_funcionario" />
+                <!--
+				<label name="usuario" class="_funcionario" for="funcionario" >Nome do Funcionário *:</label><br class="_funcionario" />
                 <select id="funcionario" class="input-div _funcionario" name="funcionario"  required="">
                     <option selected value="0">Selecione</option>
 
                     <?php
+					/*
                     include_once '../DataAccess/FuncionarioDAO.php';
                     include_once '../DomainModel/Funcionario.php';
 
@@ -128,31 +130,51 @@ if (isset($_SESSION['idFuncionario'])) {
                     foreach ($tipo as $i) {
                         echo "<option value=" . $i->getId() . ">" . $i->getNome() . "</option> ";
                     }
+					*/
                     ?>
 
                 </select><br class="_funcionario"  />
-                 
+                -->
 
 
-                <label for="nome"> Nome do Dependente *</label><br />
+                <label for="nome" class="labelForms">Dependente:</label>
                 <input type="hidden" id="id" name="id" value="<?php echo $novo->getId(); ?>">
                 <input type="text" id="nome" name="nome" class="input-div" value="<?php echo $novo->getNome(); ?>" required="" /><br />
 
-                <label for="nome"> Data de Nascimento *</label><br />
+                <label for="nome" class="labelForms">Nascimento:</label>
                 <input type="text" id="dataNascimento" class="input-div" name="dataNascimento" value="<?php echo $novo->getDataNascimento(); ?>" required="" /><br />
                 
-                <label name="sexo" for="sexo">Sexo * :</label><br /> 
+                <label name="sexo" for="sexo" class="labelForms">Sexo:</label>
+				
+				
+				
                 <?php
                     if($novo->getSexo()==1){
-                        echo"<label name='sexo'  for='sexo'>Masculino</label>";
+						/*
+						echo"<label name='sexo'  for='sexo' class='input-div-select'>Masculino</label>";
                         echo"<input type='radio' class='input-div' name='sexo' class='sexo' value='1' checked='checked' /><br />";
                         echo"<label name='sexo'  for='sexo'>Feminino </label>";
                         echo"<input type='radio' class='input-div' name='sexo' class='sexo' value='2' /><br />";
+						*/
+						echo"<select name='sexo' id='sexo' class='input-div-select'>";
+						echo"<option  value=''>Selecione...  </option>";
+						echo"<option  selected='' value='1'>Masculino</option>";
+						echo"<option  value='2'>Feminino</option>";
+						echo"</select><br/>";
+						
+						
                     }else{
-                        echo"<label name='sexo'  for='sexo'>Masculino</label>";
+                        /*
+						echo"<label name='sexo'  for='sexo' class='input-div-select'>Masculino</label>";
                         echo"<input type='radio' class='input-div' name='sexo' class='sexo' value='1' /><br />";
                         echo"<label name='sexo'  for='sexo'>Feminino </label>";
                         echo"<input type='radio' class='input-div' name='sexo' class='sexo' value='2' checked='checked'/><br />";
+						*/
+						echo"<select name='sexo' id='sexo' class='input-div-select'>";
+						echo"<option  value=''>Selecione...  </option>";
+						echo"<option  value='1'>Masculino</option>";
+						echo"<option  selected='' value='2'>Feminino</option>";
+						echo"</select><br/>";
                         
                     }
                 ?>
@@ -179,7 +201,7 @@ if (isset($_SESSION['idFuncionario'])) {
 
         </fieldset> <br />
 
-        <fieldset id="dependentes" name="dependentes" style="display: none">
+        <fieldset id="dependentes" name="dependentes" style="display: ">
             <legend>Dependentes Cadastrados</legend>
 <?php
 include_once '../DataAccess/DependenteDAO.php';
@@ -188,7 +210,17 @@ include_once '../DataAccess/../DomainModel/Dependente.php';
 $dao = new DependenteDAO();
 $dependente = new Dependente();
 
-$dependente = $dao->ListarTodos($_SESSION['idFuncionario']);
+if(!isset($_SESSION['idFuncionario'])){
+					if(isset($_GET['idF'])){
+						$id = $_GET['idF'];
+						$dependente = $dao->ListarTodos($id);
+					}
+			   }else{
+					$dependente = $dao->ListarTodos($_SESSION['idFuncionario']);
+			   }
+               
+
+//$dependente = $dao->ListarTodos($_SESSION['idFuncionario']);
 
 
 echo "<table class='tbl' name='tbl' id='tbl' border='1' >";

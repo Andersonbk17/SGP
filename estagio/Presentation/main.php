@@ -17,7 +17,7 @@
 
 <!DOCTYPE html>
 	<!-- Script google analytics-->      
-	<?xml version="1.0" encoding="utf-8"?>
+	<? xml version="1.0" encoding="utf-8" ?>
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br" dir="ltr" >
 	<!-- Inicio Cabeçalho-->
 	
@@ -134,7 +134,7 @@
             <!-- Inicio Menu-->                               
             <div id="nav">          
 				<ul class="layouts level-1 menuDinamico">
-					<li class="open" ><a href="#" >Home</a></li>
+					<li class="open" ><a href="../Presentation/main.php" >Home</a></li>
 					<!-- Inicio Menu Dinamico -->
 					<li class="open">
 						<a class=" menuDinamico" href="" id="mCadastros" >Cadastros</a>
